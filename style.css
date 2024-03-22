@@ -271,6 +271,7 @@ section{
     font-size: .9rem;
     color: var(--font-color);
     line-height: 1.5rem;
+    text-align: justify;
 }
 
 .btn-box{
@@ -1642,6 +1643,7 @@ color: #084e81;
 
 .about-content p{
     color: var(--font-color);
+    text-align: justify;
 }
 
 .text-box p{

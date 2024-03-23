@@ -1643,6 +1643,10 @@ color: #084e81;
 
 .about-content p{
     color: var(--font-color);
+    
+}
+
+.anasib{
     text-align: justify;
 }
 

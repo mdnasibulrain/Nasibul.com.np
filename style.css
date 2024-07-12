@@ -925,9 +925,9 @@ body{
 .skills-scontainer ul li {
 
   list-style: url(211930_star_icon.png);
-font-size: .9rem;
+font-size: .8rem;
   letter-spacing: 1px;
-  font-weight: 500;
+  font-weight: 600;
   margin-left: 4rem;
   padding: .5rem;
 
@@ -1809,6 +1809,7 @@ color: #084e81;
 
 .servicesItem h3{
     margin: 1rem 0 0.5rem;
+    font-size: 1.5rem;
 }
 
 .servicesItem p{

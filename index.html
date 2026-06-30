@@ -930,7 +930,7 @@ To learn more about my qualifications, practical experience, certifications, and
             <div class="cvContent">
                 <a href="https://rb.gy/ohbw12" target="_blank" class="btn d-CV">My Resume <i class='bx bx-download'></i></a>
 
-              <a href="https://rb.gy/xnjx6e" target="_blank" class="btn d-CV">My Document <i class="uil uil-file-alt"></i></a>
+              <a href="#" id="documentMenuTrigger" class="btn">My Document <i class="uil uil-file-alt"></i></a>
 
             </div>
         </div>
@@ -1866,6 +1866,51 @@ To learn more about my qualifications, practical experience, certifications, and
   </div>
 </div>
 
+    <div id="customDocumentModal" class="custom-modal">
+  <div class="custom-modal-content">
+    <span class="custom-doc-close-btn" style="position: absolute; right: 20px; top: 12px; font-size: 30px; cursor: pointer; color: #888; transition: 0.3s;">&times;</span>
+    <h3 class="modal-main-title">Select Position to Download Documents</h3>
+    <p class="modal-subtitle">Choose the position to download certificates & experience letters:</p>
+    
+    <div class="custom-cv-options">
+      <a href="YOUR_LINK_FOR_ACCOUNTING_CLERK_DOCUMENTS" class="btn custom-cv-link" target="_blank">
+        <div class="cv-text-wrapper">
+          <span class="cv-title">Accounting Clerk Docs</span>
+          <span class="cv-tags">Academic • Tally & QuickBooks Certificates</span>
+        </div>
+        <i class='bx bx-download cv-icon'></i>
+      </a>
+
+      <a href="YOUR_LINK_FOR_COMPUTER_OPERATOR_DOCUMENTS" class="btn custom-cv-link" target="_blank">
+        <div class="cv-text-wrapper">
+          <span class="cv-title">Computer Operator Docs</span>
+          <span class="cv-tags">ADCS Certificate • Experience Letters</span>
+        </div>
+        <i class='bx bx-download cv-icon'></i>
+      </a>
+
+      <a href="YOUR_LINK_FOR_STOREKEEPER_DOCUMENTS" class="btn custom-cv-link" target="_blank">
+        <div class="cv-text-wrapper">
+          <span class="cv-title">Storekeeper Docs</span>
+          <span class="cv-tags">Mela Stores Experience Certificate</span>
+        </div>
+        <i class='bx bx-download cv-icon'></i>
+      </a>
+
+      <a href="YOUR_LINK_FOR_CASHIER_DOCUMENTS" class="btn custom-cv-link" target="_blank">
+        <div class="cv-text-wrapper">
+          <span class="cv-title">Cashier Docs</span>
+          <span class="cv-tags">POS Training & Character Certificates</span>
+        </div>
+        <i class='bx bx-download cv-icon'></i>
+      </a>
+    </div>
+    
+    <p class="modal-footer-note">All documents are verified and scanned in high resolution.</p>
+  </div>
+</div>
+
+
 
     <style>
 /* Custom Modal Background */
@@ -1995,28 +2040,54 @@ To learn more about my qualifications, practical experience, certifications, and
 
     <script>
 document.addEventListener("DOMContentLoaded", function() {
+  // === CV Modal Logic ===
   const cvButtons = document.querySelectorAll(".d-CV");
-  const customModal = document.getElementById("customCvModal");
-  const closeBtn = document.querySelector(".custom-close-btn");
+  const customCvModal = document.getElementById("customCvModal");
+  const closeCvBtn = document.querySelector(".custom-close-btn");
 
   cvButtons.forEach(button => {
     button.addEventListener("click", function(event) {
       event.preventDefault(); 
-      customModal.style.display = "block";
+      customCvModal.style.display = "block";
     });
   });
 
-  closeBtn.addEventListener("click", function() {
-    customModal.style.display = "none";
+  closeCvBtn.addEventListener("click", function() {
+    customCvModal.style.display = "none";
   });
 
+
+  // === Document Modal Logic (Using ID Only) ===
+  const docTrigger = document.getElementById("documentMenuTrigger");
+  const customDocModal = document.getElementById("customDocumentModal");
+  const closeDocBtn = document.querySelector(".custom-doc-close-btn");
+
+  if(docTrigger) {
+    docTrigger.addEventListener("click", function(event) {
+      event.preventDefault();
+      customDocModal.style.display = "block";
+    });
+  }
+
+  if(closeDocBtn) {
+    closeDocBtn.addEventListener("click", function() {
+      customDocModal.style.display = "none";
+    });
+  }
+
+
+  // === Global Window Click (To close modals when clicking outside) ===
   window.addEventListener("click", function(event) {
-    if (event.target == customModal) {
-      customModal.style.display = "none";
+    if (event.target == customCvModal) {
+      customCvModal.style.display = "none";
+    }
+    if (event.target == customDocModal) {
+      customDocModal.style.display = "none";
     }
   });
 });
 </script>
+
 
 
 

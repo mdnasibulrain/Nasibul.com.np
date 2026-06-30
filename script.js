@@ -343,3 +343,32 @@ ScrollReveal().reveal('.allServices,.portfolio-gallery,.blog-box,footer,.img-her
    }
 
  });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Aapke existing "d-CV" class wale saare buttons ko select karna
+  const cvButtons = document.querySelectorAll(".d-CV");
+  const customModal = document.getElementById("customCvModal");
+  const closeBtn = document.querySelector(".custom-close-btn");
+
+  // Har ek Download CV button par click event lagana
+  cvButtons.forEach(button => {
+    button.addEventListener("click", function(event) {
+      // Purane google drive link par redirect hone se rokna
+      event.preventDefault(); 
+      // Popup window ko open karna
+      customModal.style.display = "block";
+    });
+  });
+
+  // 'X' click karne par close hona
+  closeBtn.addEventListener("click", function() {
+    customModal.style.display = "none";
+  });
+
+  // Popup ke bahar click karne par close hona
+  window.addEventListener("click", function(event) {
+    if (event.target == customModal) {
+      customModal.style.display = "none";
+    }
+  });
+});

@@ -177,9 +177,10 @@
                                     <span>Secure Payment QR 🔐</span>
                                 </div>
 
-                                <div id="qrcode-canvas-container" class="w-36 h-36 flex items-center justify-center bg-white rounded-xl overflow-hidden p-1 mt-1">
+                                <div id="qrcode-canvas-container" class="w-40 h-40 flex items-center justify-center bg-white rounded-xl overflow-hidden p-1 mt-1">
                                     <div class="text-xs text-slate-400 animate-pulse text-center" data-i18n="generatingQr">Generating QR Code...</div>
                                 </div>
+                                <div id="qrcode-canvas-target" class="hidden"></div>
                                 
                                 <div class="mt-2 text-center">
                                     <span class="inline-flex items-center space-x-1 text-[9px] font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">
@@ -962,7 +963,10 @@
 
         function generateDynamicQR() {
             const container = document.getElementById('qrcode-canvas-container');
+            const targetContainer = document.getElementById('qrcode-canvas-target');
             container.innerHTML = '';
+            targetContainer.innerHTML = '';
+
             const accNum = CONFIG.bankAccount.accountNumber;
             const accName = CONFIG.bankAccount.accountName.replace(/ /g, '');
             const bankCode = CONFIG.bankAccount.bankCode;
@@ -970,10 +974,21 @@
             const qrPayloadStr = `00020101021226680016np.com.nchl.qrib0116${accNum}0208${bankCode}0304${cipsCode}52045999530312454032995802NP5912${accName}6008KATHMANDU6304`;
 
             try {
+                // Render visible QR in container
                 new QRCode(container, {
                     text: qrPayloadStr,
                     width: 150,
                     height: 150,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff",
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+
+                // Render hidden high-res QR for download
+                new QRCode(targetContainer, {
+                    text: qrPayloadStr,
+                    width: 250,
+                    height: 250,
                     colorDark: "#000000",
                     colorLight: "#ffffff",
                     correctLevel: QRCode.CorrectLevel.H
@@ -984,15 +999,30 @@
         }
 
         function downloadQRCodeImage() {
-            const canvas = document.querySelector('#qrcode-canvas-container canvas');
-            if (!canvas) {
+            const targetContainer = document.getElementById('qrcode-canvas-target');
+            const qrImg = targetContainer.querySelector('img');
+            const qrCanvas = targetContainer.querySelector('canvas');
+
+            let downloadUrl = "";
+            if (qrCanvas) {
+                downloadUrl = qrCanvas.toDataURL("image/png");
+            } else if (qrImg && qrImg.src) {
+                downloadUrl = qrImg.src;
+            } else {
+                const visibleCanvas = document.querySelector('#qrcode-canvas-container canvas');
+                if (visibleCanvas) {
+                    downloadUrl = visibleCanvas.toDataURL("image/png");
+                }
+            }
+
+            if (!downloadUrl) {
                 alert("QR Code not ready yet!");
                 return;
             }
-            const imageUri = canvas.toDataURL("image/png");
+
             const downloadLink = document.createElement('a');
             const methodName = currentState.selectedMethod ? currentState.selectedMethod.name : 'Payment';
-            downloadLink.href = imageUri;
+            downloadLink.href = downloadUrl;
             downloadLink.download = `QR_${methodName.replace(/\s+/g, '_')}.png`;
             document.body.appendChild(downloadLink);
             downloadLink.click();

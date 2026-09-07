@@ -2,8 +2,9 @@
 <html lang="ne" class="h-full bg-slate-900 antialiased">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NSPAY - Nepal Secure Payment Portal</title>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -84,7 +85,7 @@
 </head>
 <body class="h-full font-sans antialiased text-slate-800 bg-slate-900 min-h-screen flex items-center justify-center p-3 sm:p-5">
 
-    <!-- STRICT PORTRAIT SIZE CONTAINER: MAX-W-MD -->
+    <!-- PORTRAIT CONTAINER -->
     <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[96vh] my-auto animate-fade-in">
         
         <!-- HEADER -->
@@ -148,7 +149,7 @@
                         <button onclick="switchCategory('qrNetworks')" id="tab-qrNetworks" class="py-1.5 px-2 rounded-md text-center text-slate-700 bg-white hover:bg-slate-50 transition-all truncate cursor-pointer">QR Payment</button>
                     </div>
 
-                    <!-- PAYMENT METHODS GRID - STRICTLY COL-3 ON ALL SCREENS -->
+                    <!-- PAYMENT METHODS GRID -->
                     <div id="payment-methods-grid" class="grid grid-cols-3 gap-2 max-h-[260px] overflow-y-auto custom-scrollbar p-0.5">
                         <!-- Rendered by JS -->
                     </div>
@@ -171,7 +172,7 @@
                     <div class="bg-gradient-to-br from-primary-50/40 via-white to-emerald-50/20 rounded-xl border border-slate-200 p-3.5 flex flex-col items-center text-center gap-3">
                         
                         <div class="flex-shrink-0 flex flex-col items-center">
-                            <!-- High End Quality Full HD QR Container with Proper Padding -->
+                            <!-- High End Quality Full HD QR Container -->
                             <div class="relative bg-white p-4 rounded-2xl border-2 border-primary-500/20 shadow-md qr-glow">
                                 <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full shadow-xs tracking-wider flex items-center space-x-1 whitespace-nowrap">
                                     <i data-lucide="shield-check" class="w-3 h-3 text-white"></i>
@@ -330,7 +331,7 @@
                         </div>
                     </div>
 
-                    <!-- PREMIUM RECEIPT STYLE ORDER SUMMARY -->
+                    <!-- ITEMIZED ORDER RECEIPT -->
                     <div class="bg-white border border-slate-200 rounded-xl p-3.5 text-left shadow-sm relative overflow-hidden space-y-2.5">
                         <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-emerald-500 via-teal-500 to-primary-500"></div>
 
@@ -349,7 +350,7 @@
                             </span>
                         </div>
 
-                        <!-- Itemized Receipt Box -->
+                        <!-- Itemized Box -->
                         <div class="bg-slate-50/80 rounded-lg p-2.5 border border-slate-200/80 space-y-1.5 text-xs">
                             <div class="flex justify-between items-center border-b border-slate-200/60 pb-1">
                                 <span class="text-slate-500 text-[11px]" data-i18n="recName">Customer Name</span>
@@ -369,14 +370,13 @@
                             </div>
                         </div>
 
-                        <!-- STRICTLY 1-ROW COMPACT ARROW TRIGGER (NO TEXT, NO SECONDARY ICONS) -->
+                        <!-- INSTANT WHATSAPP CTA -->
                         <div class="bg-gradient-to-r from-emerald-50 via-teal-50/50 to-emerald-50 border border-emerald-200 rounded-xl px-3 py-2 flex items-center justify-between gap-2 shadow-2xs">
                             <div class="min-w-0">
                                 <span class="text-xs font-black text-emerald-950 block leading-tight truncate" data-i18n="instantWhatsappTitle">Instant WhatsApp Delivery</span>
                                 <span class="text-[9px] text-emerald-800 font-medium block truncate" data-i18n="instantWhatsappSub">Tap to get your ebook link immediately on WhatsApp</span>
                             </div>
                             
-                            <!-- Clean Arrow Trigger (No Text, No Secondary Icons) -->
                             <a id="instant-whatsapp-cta" href="#" target="_blank" rel="noopener noreferrer" class="shrink-0 w-8 h-8 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg shadow-sm transition-all active:scale-95 flex items-center justify-center cursor-pointer">
                                 <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
                             </a>
@@ -384,7 +384,7 @@
 
                     </div>
 
-                    <!-- Secondary Actions -->
+                    <!-- Actions -->
                     <div class="pt-0.5 flex flex-col gap-1.5 text-xs">
                         <button onclick="downloadPDFReceipt()" class="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-lg shadow-xs transition-all flex items-center justify-center space-x-1.5 cursor-pointer">
                             <i data-lucide="download" class="w-3.5 h-3.5 text-emerald-400"></i>
@@ -395,59 +395,44 @@
                         </button>
                     </div>
 
-                    <!-- Trust Badges -->
-                    <div class="pt-1.5 border-t border-slate-200 flex items-center justify-center gap-3 text-[10px] text-slate-600 font-medium">
-                        <span class="flex items-center space-x-1">
-                            <i data-lucide="shield-check" class="w-3 h-3 text-emerald-600"></i>
-                            <span data-i18n="trustEncrypted">256-Bit SSL</span>
-                        </span>
-                        <span>•</span>
-                        <span class="flex items-center space-x-1">
-                            <i data-lucide="check-circle" class="w-3 h-3 text-emerald-600"></i>
-                            <span data-i18n="trustGuaranteed">100% Guaranteed</span>
-                        </span>
-                    </div>
-
-                </div>
-            </section>
-
-            <!-- TRUST FEATURES BANNER -->
-            <section class="bg-slate-50/80 border border-slate-200 rounded-xl p-2.5 shadow-2xs text-xs text-slate-700">
-                <div class="grid grid-cols-3 gap-2 text-center divide-x divide-slate-200">
-                    <div class="flex flex-col items-center px-1 space-y-0.5">
-                        <div class="w-6 h-6 bg-white border border-slate-200 text-primary-600 rounded-full flex items-center justify-center shadow-2xs">
-                            <i data-lucide="lock" class="w-3 h-3"></i>
-                        </div>
-                        <span class="font-bold text-slate-900 text-[11px]" data-i18n="trustSecure">Secure Pay</span>
-                        <span class="text-[10px] text-slate-500" data-i18n="trustSecureSub">Direct transfer</span>
-                    </div>
-                    <div class="flex flex-col items-center px-1 space-y-0.5">
-                        <div class="w-6 h-6 bg-white border border-slate-200 text-emerald-600 rounded-full flex items-center justify-center shadow-2xs">
-                            <i data-lucide="zap" class="w-3 h-3"></i>
-                        </div>
-                        <span class="font-bold text-slate-900 text-[11px]" data-i18n="trustFast">Instant Delivery</span>
-                        <span class="text-[10px] text-slate-500" data-i18n="trustFastSub">Quick access</span>
-                    </div>
-                    <div class="flex flex-col items-center px-1 space-y-0.5">
-                        <div class="w-6 h-6 bg-white border border-slate-200 text-teal-600 rounded-full flex items-center justify-center shadow-2xs">
-                            <i data-lucide="headphones" class="w-3 h-3"></i>
-                        </div>
-                        <span class="font-bold text-slate-900 text-[11px]" data-i18n="trustSupport">Support</span>
-                        <span class="text-[10px] text-slate-500" data-i18n="trustSupportSub">Assistance 24/7</span>
-                    </div>
                 </div>
             </section>
 
         </main>
 
-        <!-- FOOTER -->
-        <footer class="shrink-0 bg-white border-t border-slate-200 px-4 py-2 text-center text-[10px] text-slate-600 font-medium">
-            <p>© 2026 NSPAY. All rights reserved. Nepal Secure Payment Portal.</p>
+        <!-- FIXED FOOTER WITH TRUST BADGES & CREDIT -->
+        <footer class="shrink-0 bg-white border-t border-slate-200 px-3 py-2 text-center text-[10px] text-slate-600 font-medium z-10 space-y-1.5">
+            <!-- Trust indicators (Compact & Cardless) -->
+            <div class="grid grid-cols-3 gap-1 text-center divide-x divide-slate-200 py-0.5">
+                <div class="flex flex-col items-center px-1">
+                    <div class="flex items-center space-x-1">
+                        <i data-lucide="lock" class="w-3 h-3 text-primary-600"></i>
+                        <span class="font-bold text-slate-800 text-[10px] leading-none" data-i18n="trustSecure">Secure Pay</span>
+                    </div>
+                    <span class="text-[9px] text-slate-500 mt-0.5 leading-none" data-i18n="trustSecureSub">Direct transfer</span>
+                </div>
+                <div class="flex flex-col items-center px-1">
+                    <div class="flex items-center space-x-1">
+                        <i data-lucide="zap" class="w-3 h-3 text-emerald-600"></i>
+                        <span class="font-bold text-slate-800 text-[10px] leading-none" data-i18n="trustFast">Instant Delivery</span>
+                    </div>
+                    <span class="text-[9px] text-slate-500 mt-0.5 leading-none" data-i18n="trustFastSub">Quick access</span>
+                </div>
+                <div class="flex flex-col items-center px-1">
+                    <div class="flex items-center space-x-1">
+                        <i data-lucide="headphones" class="w-3 h-3 text-teal-600"></i>
+                        <span class="font-bold text-slate-800 text-[10px] leading-none" data-i18n="trustSupport">Support</span>
+                    </div>
+                    <span class="text-[9px] text-slate-500 mt-0.5 leading-none" data-i18n="trustSupportSub">Assistance 24/7</span>
+                </div>
+            </div>
+            
+            <!-- Footer copyright credit line -->
+            <p class="pt-1 border-t border-slate-100 text-[9px] text-slate-400">© 2026 NSPAY. All rights reserved. Nepal Secure Payment Portal.</p>
         </footer>
 
     </div>
 
-    <!-- HIDDEN PDF TEMPLATE -->
     <div id="receipt-pdf-template" class="hidden bg-white p-8 max-w-lg mx-auto font-sans text-slate-800 border border-slate-300">
         <div class="border-b border-slate-200 pb-4 mb-4 flex justify-between items-center">
             <div>
@@ -673,7 +658,7 @@
                 autoFilledEbook: "✨ लिङ्कबाट स्वतः भरियो",
                 phSearch: "eSewa, nBank खोज्नुहोस्...",
                 labelScreenshot: "भुक्तानीको Screenshot / PDF रसिद *",
-                uploadText: "यहाँ क्लिक गर्नुहोस् वा रसिद (Image/PDF) तानेर राख्नुहोस्",
+                uploadText: "यहाँ क्लिक गर्नुहोस् वा रसिद तानेर राख्नुहोस्",
                 uploadSubText: "JPG, PNG, WEBP, PDF (अधिकतम ५ MB)",
                 btnRemove: "हटाउनुहोस्",
                 submitWhatsappBtn: "भुक्तानी प्रमाणिकरण पूरा गर्नुहोस्",
@@ -780,8 +765,6 @@
                 document.getElementById('input-ebook-id').value = ebookParam;
                 const autoFillMsg = document.getElementById('help-ebook-id');
                 if (autoFillMsg) autoFillMsg.classList.remove('hidden');
-            } else {
-                document.getElementById('input-ebook-id').value = '';
             }
 
             if (amountParam && !isNaN(amountParam)) {
@@ -849,10 +832,6 @@
             renderPaymentMethods(query);
         }
 
-        function getActiveList() {
-            return PAYMENT_DATA[currentCategory] || [];
-        }
-
         function renderPaymentMethods(searchQuery = '') {
             const grid = document.getElementById('payment-methods-grid');
             grid.innerHTML = '';
@@ -870,12 +849,10 @@
                     item.name.toLowerCase().includes(q) || 
                     (item.short_name && item.short_name.toLowerCase().includes(q)) ||
                     (item.app_name && item.app_name.toLowerCase().includes(q)) ||
-                    (item.network && item.network.toLowerCase().includes(q)) ||
                     (item.logoText && item.logoText.toLowerCase().includes(q))
                 );
             } else {
-                const categoryItems = getActiveList();
-                list = categoryItems.map(i => ({ ...i, categoryType: currentCategory }));
+                list = (PAYMENT_DATA[currentCategory] || []).map(i => ({ ...i, categoryType: currentCategory }));
             }
 
             if (list.length === 0) {
@@ -899,11 +876,9 @@
                 const bgBadgeColor = item.color || "bg-primary-600";
                 const badgeText = item.logoText || item.name.substring(0, 4);
 
-                let iconHtml = `<div class="w-7 h-7 rounded-lg ${bgBadgeColor} text-white font-extrabold text-[9px] flex items-center justify-center shadow-xs tracking-tighter truncate px-0.5">${badgeText}</div>`;
-
                 card.innerHTML = `
                     ${isSelected ? '<span class="absolute top-1 right-1 w-3.5 h-3.5 bg-primary-600 text-white rounded-full flex items-center justify-center text-[9px] font-bold"><i data-lucide="check" class="w-2.5 h-2.5"></i></span>' : ''}
-                    ${iconHtml}
+                    <div class="w-7 h-7 rounded-lg ${bgBadgeColor} text-white font-extrabold text-[9px] flex items-center justify-center shadow-xs tracking-tighter truncate px-0.5">${badgeText}</div>
                     <span class="text-[11px] font-bold text-slate-800 line-clamp-1 w-full px-0.5 leading-tight">${item.name}</span>
                     <span class="text-[9px] text-slate-500 truncate w-full leading-none">${item.app_name || item.network || 'Official'}</span>
                 `;
@@ -918,15 +893,11 @@
                 if (el) {
                     if (id === targetScreenId) {
                         el.classList.remove('hidden');
-                        el.classList.add('animate-fade-in');
                     } else {
                         el.classList.add('hidden');
-                        el.classList.remove('animate-fade-in');
                     }
                 }
             });
-            const mainContainer = document.querySelector('main');
-            if (mainContainer) mainContainer.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function selectPaymentMethod(item) {
@@ -950,7 +921,6 @@
             const item = currentState.selectedMethod;
             const instructionEl = document.getElementById('qr-sub-instruction');
             if (item && item.name) {
-                // Use app_name if available (e.g., NIC Asia MoBank) for better user comprehension, falling back to item.name
                 const appDisplayName = item.app_name || item.name;
                 instructionEl.innerHTML = currentLang === 'ne'
                     ? `${appDisplayName} खोल्नुहोस्, QR Scan गर्नुहोस् र विज्ञापनमा तोकिएको रकम भुक्तानी गर्नुहोस्।`
@@ -968,7 +938,6 @@
             container.innerHTML = '';
             targetContainer.innerHTML = '';
 
-            // Exact JSON payload requested by user
             const exactJsonPayload = JSON.stringify({
                 accountNumber: CONFIG.bankAccount.accountNumber,
                 accountName: CONFIG.bankAccount.accountName,
@@ -978,7 +947,6 @@
             });
 
             try {
-                // Render visible High-Quality QR in container (Size 170 for clear rendering)
                 new QRCode(container, {
                     text: exactJsonPayload,
                     width: 170,
@@ -988,7 +956,6 @@
                     correctLevel: QRCode.CorrectLevel.H
                 });
 
-                // Render high-res Full HD QR (Size 800 with padding) for pristine download quality
                 new QRCode(targetContainer, {
                     text: exactJsonPayload,
                     width: 800,
@@ -1004,12 +971,10 @@
 
         function downloadQRCodeImage() {
             const targetContainer = document.getElementById('qrcode-canvas-target');
-            const qrImg = targetContainer.querySelector('img');
             const qrCanvas = targetContainer.querySelector('canvas');
-
             let downloadUrl = "";
+
             if (qrCanvas) {
-                // Add clean professional padding around high-res canvas for full HD download
                 const paddedCanvas = document.createElement('canvas');
                 const padding = 80;
                 paddedCanvas.width = qrCanvas.width + (padding * 2);
@@ -1019,19 +984,9 @@
                 ctx.fillRect(0, 0, paddedCanvas.width, paddedCanvas.height);
                 ctx.drawImage(qrCanvas, padding, padding);
                 downloadUrl = paddedCanvas.toDataURL("image/png");
-            } else if (qrImg && qrImg.src) {
-                downloadUrl = qrImg.src;
-            } else {
-                const visibleCanvas = document.querySelector('#qrcode-canvas-container canvas');
-                if (visibleCanvas) {
-                    downloadUrl = visibleCanvas.toDataURL("image/png");
-                }
             }
 
-            if (!downloadUrl) {
-                alert("QR Code not ready yet!");
-                return;
-            }
+            if (!downloadUrl) return;
 
             const downloadLink = document.createElement('a');
             const methodName = currentState.selectedMethod ? currentState.selectedMethod.name : 'Payment';
@@ -1123,37 +1078,8 @@
             const fullName = document.getElementById('input-fullname').value.trim();
             const amountVal = document.getElementById('input-amount').value.trim();
             const ebookIdVal = document.getElementById('input-ebook-id').value.trim();
-            
-            const errName = document.getElementById('err-fullname');
-            const errAmount = document.getElementById('err-amount');
-            const errEbook = document.getElementById('err-ebook-id');
-            const errFile = document.getElementById('err-screenshot');
 
-            errName.classList.add('hidden');
-            errAmount.classList.add('hidden');
-            if (errEbook) errEbook.classList.add('hidden');
-            errFile.classList.add('hidden');
-
-            if (!fullName) {
-                errName.innerText = "Please enter your full name.";
-                errName.classList.remove('hidden');
-                return;
-            }
-            if (!amountVal || isNaN(amountVal) || Number(amountVal) <= 0) {
-                errAmount.innerText = "Please enter a valid amount.";
-                errAmount.classList.remove('hidden');
-                return;
-            }
-            if (!ebookIdVal) {
-                if (errEbook) {
-                    errEbook.innerText = "Please enter the Ebook ID.";
-                    errEbook.classList.remove('hidden');
-                }
-                return;
-            }
-            if (!currentState.uploadedFile) {
-                errFile.innerText = "Payment screenshot is required.";
-                errFile.classList.remove('hidden');
+            if (!fullName || !amountVal || !ebookIdVal || !currentState.uploadedFile) {
                 return;
             }
 
@@ -1190,8 +1116,6 @@ _Please send my Ebook access link._`;
             currentState.uploadedFile = null;
             document.getElementById('upload-preview').classList.add('hidden');
             document.getElementById('upload-prompt').classList.remove('hidden');
-            const autoFillMsg = document.getElementById('help-ebook-id');
-            if (autoFillMsg) autoFillMsg.classList.add('hidden');
         }
 
         function renderSuccessScreen(fullName) {

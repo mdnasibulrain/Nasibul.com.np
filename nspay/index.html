@@ -487,9 +487,6 @@
             }
         };
 
-        /* ==========================================
-           PAYMENT METHODS DATASET
-           ========================================== */
         const PAYMENT_DATA = {
             // 21 DIGITAL WALLETS
             wallets: [
@@ -953,9 +950,11 @@
             const item = currentState.selectedMethod;
             const instructionEl = document.getElementById('qr-sub-instruction');
             if (item && item.name) {
+                // Use app_name if available (e.g., NIC Asia MoBank) for better user comprehension, falling back to item.name
+                const appDisplayName = item.app_name || item.name;
                 instructionEl.innerHTML = currentLang === 'ne'
-                    ? `${item.name} खोल्नुहोस्, QR Scan गर्नुहोस् र विज्ञापनमा तोकिएको रकम भुक्तानी गर्नुहोस्।`
-                    : `Open ${item.name} and scan the QR code to pay securely.`;
+                    ? `${appDisplayName} खोल्नुहोस्, QR Scan गर्नुहोस् र विज्ञापनमा तोकिएको रकम भुक्तानी गर्नुहोस्।`
+                    : `Open ${appDisplayName} and scan the QR code to pay securely.`;
             } else {
                 instructionEl.innerHTML = currentLang === 'ne'
                     ? `एप खोल्नुहोस्, QR Scan गर्नुहोस् र भुक्तानी गर्नुहोस्।`

@@ -171,13 +171,14 @@
                     <div class="bg-gradient-to-br from-primary-50/40 via-white to-emerald-50/20 rounded-xl border border-slate-200 p-3.5 flex flex-col items-center text-center gap-3">
                         
                         <div class="flex-shrink-0 flex flex-col items-center">
-                            <div class="relative bg-white p-3 rounded-2xl border-2 border-primary-500/20 shadow-md qr-glow">
+                            <!-- High End Quality Full HD QR Container with Proper Padding -->
+                            <div class="relative bg-white p-4 rounded-2xl border-2 border-primary-500/20 shadow-md qr-glow">
                                 <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-[9px] font-extrabold uppercase px-2 py-0.5 rounded-full shadow-xs tracking-wider flex items-center space-x-1 whitespace-nowrap">
                                     <i data-lucide="shield-check" class="w-3 h-3 text-white"></i>
-                                    <span>Secure Payment QR 🔐</span>
+                                    <span>Full HD Secure QR 🔐</span>
                                 </div>
 
-                                <div id="qrcode-canvas-container" class="w-40 h-40 flex items-center justify-center bg-white rounded-xl overflow-hidden p-1 mt-1">
+                                <div id="qrcode-canvas-container" class="w-44 h-44 flex items-center justify-center bg-white rounded-xl overflow-hidden p-2 mt-1">
                                     <div class="text-xs text-slate-400 animate-pulse text-center" data-i18n="generatingQr">Generating QR Code...</div>
                                 </div>
                                 <div id="qrcode-canvas-target" class="hidden"></div>
@@ -185,14 +186,14 @@
                                 <div class="mt-2 text-center">
                                     <span class="inline-flex items-center space-x-1 text-[9px] font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full border border-slate-200">
                                         <i data-lucide="lock" class="w-3 h-3 text-primary-600"></i>
-                                        <span>256-Bit Encrypted</span>
+                                        <span>Full HD • Exact JSON Payload</span>
                                     </span>
                                 </div>
                             </div>
                             
                             <button onclick="downloadQRCodeImage()" class="mt-2.5 w-full py-2 px-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-xl transition-all shadow-xs flex items-center justify-center space-x-1.5 cursor-pointer">
                                 <i data-lucide="download" class="w-3.5 h-3.5 text-primary-400"></i>
-                                <span data-i18n="downloadQrBtn">Download QR Code</span>
+                                <span data-i18n="downloadQrBtn">Download Full HD QR Code</span>
                             </button>
                         </div>
 
@@ -481,12 +482,13 @@
                 accountNumber: "0315759479191001",
                 accountName: "ISHUL KAWARI",
                 bankCode: "BOALNPKA",
+                accountType: "Sarbashrestha Sahaj Bachat Khata Online",
                 bankCodeCIPS: "2301"
             }
         };
 
         /* ==========================================
-           3. PAYMENT METHODS DATASET (ALL WALLETS & BANKS)
+           PAYMENT METHODS DATASET
            ========================================== */
         const PAYMENT_DATA = {
             // 21 DIGITAL WALLETS
@@ -953,10 +955,10 @@
             if (item && item.name) {
                 instructionEl.innerHTML = currentLang === 'ne'
                     ? `${item.name} खोल्नुहोस्, QR Scan गर्नुहोस् र विज्ञापनमा तोकिएको रकम भुक्तानी गर्नुहोस्।`
-                    : `Open ${item.name}, scan the QR code and pay the exact amount.`;
+                    : `Open ${item.name} and scan the QR code to pay securely.`;
             } else {
                 instructionEl.innerHTML = currentLang === 'ne'
-                    ? `एप खोल्नुहोस्, QR Scan गर्नुहोस् र विज्ञापनमा तोकिएको रकम भुक्तानी गर्नुहोस्।`
+                    ? `एप खोल्नुहोस्, QR Scan गर्नुहोस् र भुक्तानी गर्नुहोस्।`
                     : `Open app, scan QR code and pay.`;
             }
         }
@@ -967,28 +969,31 @@
             container.innerHTML = '';
             targetContainer.innerHTML = '';
 
-            const accNum = CONFIG.bankAccount.accountNumber;
-            const accName = CONFIG.bankAccount.accountName.replace(/ /g, '');
-            const bankCode = CONFIG.bankAccount.bankCode;
-            const cipsCode = CONFIG.bankAccount.bankCodeCIPS;
-            const qrPayloadStr = `00020101021226680016np.com.nchl.qrib0116${accNum}0208${bankCode}0304${cipsCode}52045999530312454032995802NP5912${accName}6008KATHMANDU6304`;
+            // Exact JSON payload requested by user
+            const exactJsonPayload = JSON.stringify({
+                accountNumber: CONFIG.bankAccount.accountNumber,
+                accountName: CONFIG.bankAccount.accountName,
+                bankCode: CONFIG.bankAccount.bankCode,
+                accountType: CONFIG.bankAccount.accountType,
+                bankCodeCIPS: CONFIG.bankAccount.bankCodeCIPS
+            });
 
             try {
-                // Render visible QR in container
+                // Render visible High-Quality QR in container (Size 170 for clear rendering)
                 new QRCode(container, {
-                    text: qrPayloadStr,
-                    width: 150,
-                    height: 150,
+                    text: exactJsonPayload,
+                    width: 170,
+                    height: 170,
                     colorDark: "#000000",
                     colorLight: "#ffffff",
                     correctLevel: QRCode.CorrectLevel.H
                 });
 
-                // Render hidden high-res QR for download
+                // Render high-res Full HD QR (Size 800 with padding) for pristine download quality
                 new QRCode(targetContainer, {
-                    text: qrPayloadStr,
-                    width: 250,
-                    height: 250,
+                    text: exactJsonPayload,
+                    width: 800,
+                    height: 800,
                     colorDark: "#000000",
                     colorLight: "#ffffff",
                     correctLevel: QRCode.CorrectLevel.H
@@ -1005,7 +1010,16 @@
 
             let downloadUrl = "";
             if (qrCanvas) {
-                downloadUrl = qrCanvas.toDataURL("image/png");
+                // Add clean professional padding around high-res canvas for full HD download
+                const paddedCanvas = document.createElement('canvas');
+                const padding = 80;
+                paddedCanvas.width = qrCanvas.width + (padding * 2);
+                paddedCanvas.height = qrCanvas.height + (padding * 2);
+                const ctx = paddedCanvas.getContext('2d');
+                ctx.fillStyle = "#ffffff";
+                ctx.fillRect(0, 0, paddedCanvas.width, paddedCanvas.height);
+                ctx.drawImage(qrCanvas, padding, padding);
+                downloadUrl = paddedCanvas.toDataURL("image/png");
             } else if (qrImg && qrImg.src) {
                 downloadUrl = qrImg.src;
             } else {
@@ -1023,7 +1037,7 @@
             const downloadLink = document.createElement('a');
             const methodName = currentState.selectedMethod ? currentState.selectedMethod.name : 'Payment';
             downloadLink.href = downloadUrl;
-            downloadLink.download = `QR_${methodName.replace(/\s+/g, '_')}.png`;
+            downloadLink.download = `FullHD_QR_${methodName.replace(/\s+/g, '_')}.png`;
             document.body.appendChild(downloadLink);
             downloadLink.click();
             document.body.removeChild(downloadLink);

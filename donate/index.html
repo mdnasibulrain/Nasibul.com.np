@@ -1,1860 +1,1530 @@
 <!DOCTYPE html>
 <html lang="ne" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD. NASA Ebooks — Practical Knowledge & Skills for Nepali Youth</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>MD. NS Ebook Store | SRAIN BOOKS — Premium Digital Ebooks for Nepali Youth</title>
+  <meta name="description" content="Explore premium practical ebooks on Computer Skills, Digital Marketing, LokSewa, Share Market & Nepali Youth Career Guides by MD. NS (MD. NASA) & SRAIN BOOKS.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              800: '#1e293b',
+              900: '#0f172a'
+            },
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a'
+            },
+            gold: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309'
+            }
+          },
+          fontFamily: {
+            sans: ['Mukta', 'Inter', 'Segoe UI', '-apple-system', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-blue': '0 10px 30px -5px rgba(37, 99, 235, 0.25)',
+            'glow-gold': '0 10px 30px -5px rgba(245, 158, 11, 0.3)',
+            'glow-emerald': '0 10px 30px -5px rgba(16, 185, 129, 0.25)',
+            'card-light': '0 12px 35px -8px rgba(15, 23, 42, 0.08)',
+            'card-hover': '0 20px 40px -10px rgba(15, 23, 42, 0.12)',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Google Fonts: Inter & Mukta for refined Devanagari typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Mukta:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Mukta', 'Inter', sans-serif;
+      background-color: #f8fafc;
+      color: #0f172a;
+      -webkit-tap-highlight-color: transparent;
+    }
     
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: {
-                            800: '#0F172A',
-                            900: '#0A0F1D',
-                            DEFAULT: '#1E293B'
-                        },
-                        brand: {
-                            blue: '#1D4ED8',
-                            darkblue: '#1E40AF',
-                            teal: '#0D9488',
-                            cyan: '#06B6D4',
-                            orange: '#F97316',
-                            amber: '#F59E0B',
-                            green: '#10B981',
-                            bg: '#F8FAFC'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans Devanagari', 'sans-serif'],
-                        heading: ['Poppins', 'Noto Sans Devanagari', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
 
-    <style>
-        body {
-            font-family: 'Inter', 'Noto Sans Devanagari', sans-serif;
-            background-color: #F8FAFC;
-            color: #1E293B;
-        }
-        .font-heading {
-            font-family: 'Poppins', 'Noto Sans Devanagari', sans-serif;
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #F1F5F9;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #94A3B8;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #64748B;
-        }
-        /* Continuous Ticker Animation */
-        @keyframes ticker {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        .animate-ticker {
-            display: flex;
-            width: 200%;
-            animation: ticker 25s linear infinite;
-        }
-        .animate-ticker:hover {
-            animation-play-state: paused;
-        }
-    </style>
+    .glass-card-light {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05);
+    }
+
+    .glass-card-gold-light {
+      background: linear-gradient(135deg, #ffffff 0%, #fffdf5 100%);
+      border: 1.5px solid #fde68a;
+      box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.12);
+    }
+
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #b45309 0%, #d97706 50%, #b45309 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .blue-gradient-text {
+      background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #1e40af 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(1deg); }
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 0.7; transform: scale(1.04); }
+    }
+
+    .animate-float {
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+
+    .animate-glow-pulse {
+      animation: pulseGlow 4s ease-in-out infinite;
+    }
+
+    .book-spine-effect {
+      position: relative;
+    }
+    .book-spine-effect::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 12px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0.15) 50%, rgba(255,255,255,0.1) 100%);
+      border-radius: 4px 0 0 4px;
+      z-index: 10;
+    }
+
+    .pb-safe-nav {
+      padding-bottom: 5rem;
+    }
+    @media (min-width: 768px) {
+      .pb-safe-nav {
+        padding-bottom: 0rem;
+      }
+    }
+  </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased pb-20 md:pb-0 selection:bg-blue-100 selection:text-blue-700">
+<body class="bg-paper-50 text-slate-900 pb-safe-nav antialiased selection:bg-brand-600 selection:text-white">
 
-    <!-- SECTION 01 — FLASH SALE ANNOUNCEMENT BAR -->
-    <div id="flash-bar" class="bg-gradient-to-r from-blue-900 via-blue-800 to-teal-800 text-white text-xs md:text-sm py-2 px-4 overflow-hidden relative z-50 shadow-sm border-b border-blue-700">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="overflow-hidden w-full relative">
-                <div class="animate-ticker flex whitespace-nowrap items-center space-x-8" id="ticker-content">
-                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-bolt text-amber-400"></i> <strong class="text-amber-300">आजको Special Ebook Offer:</strong> हरेक Ebook मा विशेष छूट उपलब्ध छ!</span>
-                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-cyan-300"></i> Practical Knowledge for Nepali Youth — Learn New Skills Today.</span>
-                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-box-open text-emerald-400"></i> Multiple Ebooks मा Special Combo Savings & Extra Discounts.</span>
-                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-300"></i> निशुल्क Preview हेर्नुहोस् र आफ्नो उपयुक्त Ebook छान्नुहोस्!</span>
-                    <!-- Duplicate for infinite seamless scroll -->
-                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-bolt text-amber-400"></i> <strong class="text-amber-300">आजको Special Ebook Offer:</strong> हरेक Ebook मा विशेष छूट उपलब्ध छ!</span>
-                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-graduation-cap text-cyan-300"></i> Practical Knowledge for Nepali Youth — Learn New Skills Today.</span>
-                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-box-open text-emerald-400"></i> Multiple Ebooks मा Special Combo Savings & Extra Discounts.</span>
-                    <span class="inline-flex items-center gap-2"><i class="fa-solid fa-file-pdf text-rose-300"></i> निशुल्क Preview हेर्नुहोस् र आफ्नो उपयुक्त Ebook छान्नुहोस्!</span>
+  <div id="app" class="min-h-screen flex flex-col justify-between">
+    <!-- Rendered dynamically by JavaScript -->
+  </div>
+
+  <!-- Global Toast Notification Container -->
+  <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+  <!-- Global Modal Container for Reader & Direct Checkout -->
+  <div id="modal-container" class="relative z-50"></div>
+
+  <script>
+    const DEFAULT_STORE = {
+      storeInfo: {
+        brandName: "MD. NASA",
+        authorName: "MD. NS",
+        subtitle: "Premium Digital Ebooks for Nepali Youth",
+        supportPhone: "+977-9702784684",
+        supportWhatsapp: "https://wa.me/9779702784684?text=Hello%20MD.%20NS%20Ebook%20Store,%20I%20want%20to%20buy%20your%20practical%20ebooks.",
+        promoText: "⚡ 50% सम्मको विशेष छूट! खरिद गरेपछि PDF फाइल तत्काल WhatsApp / Email मा प्राप्त हुनेछ।"
+      },
+      categories: [
+        { id: "ALL", label: "सबै Ebooks", icon: "fa-border-all" },
+        { id: "COMPUTER", label: "कम्प्युटर र अफिस सीप", icon: "fa-desktop" },
+        { id: "DIGITAL", label: "डिजिटल र प्रविधि सीप", icon: "fa-laptop-code" },
+        { id: "LOKSEWA", label: "लोकसेवा र परीक्षा तयारी", icon: "fa-graduation-cap" },
+        { id: "FINANCE", label: "शेयर बजार र वित्त", icon: "fa-chart-line" },
+        { id: "CAREER", label: "करियर र व्यक्तित्व विकास", icon: "fa-user-tie" }
+      ],
+      ebooks: [
+        {
+          id: "comp-1",
+          title: "COMPUTER SKILLS FOR NEPALI YOUTH",
+          subtitle: "Zero देखि Job-Ready सम्मको Practical Computer Master Guide",
+          category: "COMPUTER",
+          author: "MD. NS",
+          regularPrice: 999,
+          salePrice: 499,
+          discountPercent: 50,
+          isBestseller: true,
+          badgeText: "🔥 TOP SELLER",
+          accentColor: "from-blue-700 via-brand-600 to-indigo-800",
+          payUrl: "https://srain.com.np/PAY-COMPUTER-SKILLS",
+          summary: "कम्प्युटरको basic knowledge देखि practical office work र job-ready skills सम्म step-by-step सिक्नका लागि तयार गरिएको beginner-friendly practical eBook.",
+          highlights: [
+            "MS Word & Excel Practical Real-World Office Work",
+            "Nepali Unicode Typing & Official Document Design",
+            "Folder Management & Essential Shortcut Keys",
+            "ChatGPT र Practical AI Skills for Office Work"
+          ],
+          previewPages: [
+            {
+              pageNumber: 1,
+              heading: "अध्याय १: कम्प्युटरको परिचय र व्यावहारिक कन्सेप्ट",
+              content: "कम्प्युटर भनेको के हो?\n\nकम्प्युटर एक यस्तो डिजिटल इलेक्ट्रोनिक मेसिन हो जसले प्रयोगकर्ता (User) बाट डाटा लिन्छ (Input), त्यसलाई दिएको निर्देशन अनुसार प्रोसेस (Process) गर्छ र नतिजा (Output) देखाउँछ।\n\nमुख्य ३ चरणहरू:\n१. Input (माउस, किबोर्ड, स्क्यानर)\n२. Processing (CPU - Central Processing Unit)\n३. Output (मोनिटर, प्रिन्टर)\n\nव्यवहारिक उदाहरण:\nजसरी चामललाई कुकरमा राखेर पकाएपछि भात बन्छ, त्यसैगरी डाटाहरू प्रोसेस भएपछि उपयोगी सूचना (Information) बन्दछ।"
+            },
+            {
+              pageNumber: 2,
+              heading: "Hardware र Software को वास्तविक प्रयोग",
+              content: "कम्प्युटरलाई मुख्य दुई भागमा विभाजन गरिन्छ:\n\n१. Hardware (हाडवेयर):\nकम्प्युटरका ती भौतिक भागहरू जसलाई हामी छुन र देख्न सक्छौँ।\nउदाहरण: Monitor, Keyboard, Mouse, CPU Box, Hard Disk.\n\n२. Software (सफ्टवेयर):\nकम्प्युटर चलाउनका लागि बनाइएका प्रोग्राम वा निर्देशनहरूको समूह।\nउदाहरण: Windows 11, MS Word, MS Excel, Google Chrome."
+            },
+            {
+              pageNumber: 3,
+              heading: "अध्याय २: File & Folder Master Shortcuts",
+              content: "अफिसमा व्यवस्थित तरिकाले फाइल सुरक्षित राख्ने तरिका:\n\n१. नयाँ Folder बनाउन: Ctrl + Shift + N\n२. File Rename गर्ने: F2 Key थिच्नुहोस्\n३. Shortcut Keys (महत्वपूर्ण):\n• Ctrl + C : Copy गर्ने\n• Ctrl + V : Paste गर्ने\n• Ctrl + X : Cut (सार्ने)\n• Ctrl + Z : Undo"
+            }
+          ]
+        },
+        {
+          id: "digital-1",
+          title: "DIGITAL MARKETING & CANVA GRAPHICS",
+          subtitle: "आफ्नो बिजनेश र Social Media को लागि Smart Practical Guide",
+          category: "DIGITAL",
+          author: "MD. NS",
+          regularPrice: 899,
+          salePrice: 450,
+          discountPercent: 49,
+          isBestseller: true,
+          badgeText: "⭐ HIGH DEMAND",
+          accentColor: "from-amber-600 via-orange-600 to-rose-700",
+          payUrl: "https://srain.com.np/PAY-DIGITAL-MARKETING",
+          summary: "Social media marketing, Facebook Ads setup, Graphic Design (Canva) र Digital Content creation को पूर्ण व्यवहारिक गाइड।",
+          highlights: [
+            "Canva बाट Professional Mobile Posters/Banners Design",
+            "Facebook & Instagram Page Management Skills",
+            "Basic Facebook Boost/Ads Setup & Strategy",
+            "Content Writing & Digital Branding Secrets"
+          ],
+          previewPages: [
+            {
+              pageNumber: 1,
+              heading: "Chapter 1: Digital Branding Fundamentals",
+              content: "डिजिटल मार्केटिङ भनेको के हो?\n\nइन्टरनेट, सोसल मिडिया र डिजिटल च्यानलहरूको प्रयोग गरी आफ्ना सेवा वा उत्पादनहरू लक्षित ग्राहकसम्म पुर्‍याउने प्रक्रिया नै डिजिटल मार्केटिङ हो।"
+            }
+          ]
+        },
+        {
+          id: "loksewa-1",
+          title: "LOKSEWA COMPUTER OPERATOR SUCCESS GUIDE",
+          subtitle: "लोकसेवा कम्प्युटर अपरेटर र डाटा एन्ट्री परीक्षा विशेष",
+          category: "LOKSEWA",
+          author: "MD. NS",
+          regularPrice: 1199,
+          salePrice: 599,
+          discountPercent: 50,
+          isBestseller: false,
+          badgeText: "🎓 EXAM SPECIAL",
+          accentColor: "from-emerald-700 via-teal-600 to-cyan-800",
+          payUrl: "https://srain.com.np/PAY-LOKSEWA-COMPUTER",
+          summary: "संघीय र प्रदेश लोकसेवा कम्प्युटर अपरेटर परीक्षाको Syllabus अनुसार Objective MCQs र Practical Exam Tips को सङ्गालो।",
+          highlights: [
+            "1000+ Topic-wise Solved Objective Questions",
+            "Practical Exam Models & Speed Typing Test Tricks",
+            "Syllabus Based Chapter Summaries & Definitions",
+            "Previous Year Solved Question Sets"
+          ],
+          previewPages: [
+            {
+              pageNumber: 1,
+              heading: "अध्याय १: कम्प्युटर अपरेटर परीक्षा ढाँचा",
+              content: "प्रथम चरण: वस्तुगत (MCQs) - १०० पूर्णाङ्क\nद्वितीय चरण: प्रयोगात्मक (Practical Exam) - ५० पूर्णाङ्क र अन्तर्वार्ता"
+            }
+          ]
+        },
+        {
+          id: "finance-1",
+          title: "SHARE MARKET FOR BEGINNERS (NEPSE Guide)",
+          subtitle: "Primary IPO देखि Secondary Trading सम्म बुझ्ने सरल पुस्तक",
+          category: "FINANCE",
+          author: "MD. NS",
+          regularPrice: 799,
+          salePrice: 399,
+          discountPercent: 50,
+          isBestseller: false,
+          badgeText: "📈 EASY FINANCE",
+          accentColor: "from-purple-700 via-indigo-700 to-slate-800",
+          payUrl: "https://srain.com.np/PAY-SHARE-MARKET",
+          summary: "नेपालको शेयर बजारमा नयाँ हुनुहुन्छ? IPO भर्ने, TMS चलाउने, Chart बुझ्ने र सुरक्षित लगानी गर्ने व्यावहारिक नेपाली गाइड।",
+          highlights: [
+            "MeroShare & IPO Application Step-by-Step",
+            "Secondary Market & TMS Account Setup Guide",
+            "Fundamental vs Technical Analysis Basics",
+            "Risk Management & Smart Portfolio Building"
+          ],
+          previewPages: [
+            {
+              pageNumber: 1,
+              heading: "अध्याय १: शेयर बजारको आधारभूत ज्ञान",
+              content: "शेयर भनेको के हो?\n\nकुनै पनि कम्पनीको कुल पुँजीलाई स-साना बराबर भागहरूमा विभाजन गर्दा आउने एक इकाइ (Unit) लाई शेयर भनिन्छ।"
+            }
+          ]
+        },
+        {
+          id: "career-1",
+          title: "OFFICIAL CV, COVER LETTER & INTERVIEW MASTERY",
+          subtitle: "नेपाली युवाहरूका लागि Job-Ready Career Guide",
+          category: "CAREER",
+          author: "MD. NS",
+          regularPrice: 699,
+          salePrice: 349,
+          discountPercent: 50,
+          isBestseller: false,
+          badgeText: "🚀 CAREER BOOST",
+          accentColor: "from-sky-700 via-blue-700 to-slate-900",
+          payUrl: "https://srain.com.np/PAY-CV-CAREER",
+          summary: "Professional CV बनाउने, Official Letter/Email लेख्ने र Job Interview मा सफल हुने व्यावहारिक तरिकाहरू।",
+          highlights: [
+            "Ready-to-use CV & Cover Letter Templates",
+            "Nepali & English Official Email Formats",
+            "Top 20 Frequent Interview Questions & Answers",
+            "Salary Negotiation & Workplace Professionalism"
+          ],
+          previewPages: [
+            {
+              pageNumber: 1,
+              heading: "अध्याय १: Professional CV बनाउने तरिका",
+              content: "उत्कृष्ट CV मा हुनुपर्ने ५ मुख्य कुराहरू:\n१. Contact Details\n२. Career Objective\n३. Work Experience\n४. Education & Computer Skills\n५. References"
+            }
+          ]
+        },
+        {
+          id: "comp-2",
+          title: "MS EXCEL ADVANCED & DATA MANAGEMENT",
+          subtitle: "Excel Formulas, Pivot Table & Salary Sheet Mastery",
+          category: "COMPUTER",
+          author: "MD. NS",
+          regularPrice: 899,
+          salePrice: 449,
+          discountPercent: 50,
+          isBestseller: false,
+          badgeText: "📊 EXCEL SPECIAL",
+          accentColor: "from-teal-700 via-emerald-700 to-blue-900",
+          payUrl: "https://srain.com.np/PAY-EXCEL-ADVANCED",
+          summary: "Excel का महत्वपूर्ण Formulas (VLOOKUP, IF, COUNTIF), Pivot Tables, Chart Design र Office Salary Sheet बनाउन सिक्नुहोस्।",
+          highlights: [
+            "Essential Formulas & Functions Practical Mastery",
+            "Data Sorting, Filtering & Validation Tricks",
+            "Automated Salary & Attendance Sheet Design",
+            "Professional Chart, Graph & Dashboard Creation"
+          ],
+          previewPages: [
+            {
+              pageNumber: 1,
+              heading: "अध्याय १: Excel Formulas Basic to Advanced",
+              content: "=SUM(), =AVERAGE(), =IF(), =VLOOKUP() को व्यवहारिक प्रयोग।"
+            }
+          ]
+        }
+      ],
+      combos: [
+        {
+          id: "combo-1",
+          title: "3-IN-1 COMPUTER & CAREER MASTERY BUNDLE",
+          subtitle: "Computer Skills + Official CV & Letter Guide + Advanced Excel",
+          regularPrice: 2597,
+          comboPrice: 899,
+          saveAmount: 1698,
+          badge: "👑 POPULAR CHOICE",
+          payUrl: "https://srain.com.np/PAY-COMBO-3IN1",
+          items: [
+            "📘 Computer Skills For Nepali Youth eBook",
+            "📗 Official CV, Cover Letter & Interview Guide",
+            "📙 MS Excel Advanced & Data Management eBook"
+          ]
+        },
+        {
+          id: "combo-2",
+          title: "ALL-IN-ONE DIGITAL & CAREER MEGA BUNDLE",
+          subtitle: "कम्प्युटर सीप, डिजिटल मार्केटिङ, शेयर बजार र करियर ६ वटै पुस्तकहरूको मेगा सेट",
+          regularPrice: 4494,
+          comboPrice: 1499,
+          saveAmount: 2995,
+          badge: "💎 ULTIMATE VALUE (SAVE 67%)",
+          payUrl: "https://srain.com.np/PAY-MEGA-BUNDLE",
+          items: [
+            "📘 Computer Skills For Nepali Youth eBook",
+            "📗 Digital Marketing & Canva Graphics Guide",
+            "📙 Share Market For Beginners (NEPSE Guide)",
+            "📕 Official CV & Cover Letter Mastery",
+            "📔 MS Excel Advanced & Data Management",
+            "📒 LokSewa Computer Operator Success Guide"
+          ]
+        }
+      ],
+      reviews: [
+        { name: "Suman Shrestha", location: "Kathmandu", rating: 5, role: "Computer Operator Trainee", text: "Computer Skills eBook पढिसकेपछि मैले अफिसियल Excel र Unicode Nepali typing एकदम सजिलै सिक्न सकेँ। MD. NS Sir को भाषा अति सरल छ!" },
+        { name: "Anita Thapa", location: "Pokhara", rating: 5, role: "Digital Marketer / Freelancer", text: "Canva Graphics & Digital Marketing Book ले गर्दा मैले आफ्नो स्थानीय पसलको लागि आफै Poster र Facebook Ads डिजाइन गर्न थालेको छु।" },
+        { name: "Ramesh Sharma", location: "Chitwan", rating: 5, role: "LokSewa Aspirant", text: "LokSewa Operator Guide को MCQs र Practical models ले मेरो परीक्षा तयारीलाई एकदमै बलियो बनायो। High value content!" }
+      ],
+      benefits: [
+        { icon: "💻", title: "Practical Learning", desc: "सिद्धान्त मात्र होइन, दैनिक जीवन र कार्यालयीन कार्यमा तत्काल प्रयोग गर्न सकिने व्यवहारिक ज्ञान।" },
+        { icon: "🇳🇵", title: "Beginner-Friendly Nepali", desc: "नेपाली पाठकहरूलाई सजिलै बुझ्न मिल्ने सरल भाषा, स्पष्ट उदाहरण र आवश्यक Technical शब्दहरूको सन्तुलन।" },
+        { icon: "🎯", title: "Career-Oriented Content", desc: "विद्यार्थी, job seekers र aspiring professionals को सीप अभिवृद्धि र करियर तयारीमा केन्द्रित।" },
+        { icon: "📑", title: "Structured Topics", desc: "विषयवस्तुलाई अध्यायगत रूपमा व्यवस्थित गरी क्रमैसँग सिक्न सकिने स्पष्ट रूपरेखा।" },
+        { icon: "📱", title: "Easy Digital Access", desc: "मोबाइल, ट्याब्लेट वा कम्प्युटरमा HD Quality PDF Format मा सजिलै अध्ययन गर्न सकिने।" },
+        { icon: "⚡", title: "Lifetime Access", desc: "एक पटक खरिद गरेपछि सधैंका लागि तपाईंको डिभाइसमा सुरक्षित रहने, कुनै मासिक शुल्क नपर्ने।" }
+      ],
+      faqs: [
+        { q: "यो eBook कसरी र कहिले प्राप्त हुन्छ?", a: "Payment सफल भएलगत्तै तपाईंलाई WhatsApp वा Email मार्फत तत्काल HD PDF Download Link र Access प्राप्त हुनेछ।" },
+        { q: "के यो पुस्तक मोबाइलबाट पढ्न मिल्छ?", a: "हो! यो eBook मोबाइल, ट्याब्लेट र कम्प्युटर/ल्यापटप जुनसुकै device मा सजिलै HD Quality मा पढ्न सकिने गरी तयार पारिएको छ।" },
+        { q: "Payment कसरी गर्ने?", a: "तपाईंले eSewa, Khalti, Mobile Banking वा बैंक ट्रान्सफर मार्फत सजिलै भुक्तानी गर्न सक्नुहुन्छ। Buy Now बटन थिचेपछि भुक्तानी प्रक्रिया देखिनेछ।" },
+        { q: "कम्प्युटरको केही ज्ञान नभएका सुरुवाती व्यक्तिले पढ्न सक्छन्?", a: "हो! यो पुस्तक 'Zero Knowledge' भएका व्यक्तिहरूलाई नै ध्यानमा राखेर एकदमै सरल नेपाली भाषामा तयार पारिएको छ।" }
+      ]
+    };
+
+    function loadStore() {
+      try {
+        const saved = localStorage.getItem('md_ns_ebook_store_v3');
+        if (saved) return JSON.parse(saved);
+      } catch (e) {
+        console.error("Failed to load store:", e);
+      }
+      return JSON.parse(JSON.stringify(DEFAULT_STORE));
+    }
+
+    function saveStore(data) {
+      try {
+        localStorage.setItem('md_ns_ebook_store_v3', JSON.stringify(data));
+        showToast("✅ परिवर्तनहरू सफलतापुर्वक सेभ भयो!", "success");
+      } catch (e) {
+        console.error("Failed to save store:", e);
+        showToast("❌ सेभ गर्न सकिएन", "error");
+      }
+    }
+
+    let appState = loadStore();
+    let currentCategoryFilter = "ALL";
+    let currentSearchQuery = "";
+    let selectedCustomBundleIds = [];
+
+    // Admin Auth State
+    const INITIAL_ADMIN_HASH = "8f3994e637184ff73a1ef5d4bdf88241d3b378eb88185bb81d858cf09fbf63d0"; // SHA-256 for NS143@Nasibul
+    let isAdminLoggedIn = sessionStorage.getItem('srain_admin_auth') === 'true';
+
+    async function hashPassword(password) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(password);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+
+      const toast = document.createElement('div');
+      toast.className = `pointer-events-auto px-4 py-3 rounded-2xl shadow-xl text-xs sm:text-sm font-bold transition-all duration-300 transform translate-y-2 opacity-0 flex items-center gap-2 border ${
+        type === 'success' ? 'bg-emerald-600 text-white border-emerald-500 shadow-glow-emerald' : 
+        type === 'error' ? 'bg-rose-600 text-white border-rose-500 shadow-xl' : 'bg-slate-900 text-white border-slate-700'
+      }`;
+      
+      toast.innerHTML = message;
+      container.appendChild(toast);
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-2', 'opacity-0');
+      }, 10);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    function handleRouting() {
+      const hash = window.location.hash || '#/';
+      const app = document.getElementById('app');
+
+      if (hash.startsWith('#/admin') || hash === '#admin') {
+        renderAdminView(app);
+      } else {
+        renderPublicView(app);
+      }
+      if (!hash.includes('preview') && !hash.includes('modal')) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    window.addEventListener('hashchange', handleRouting);
+    window.addEventListener('load', handleRouting);
+
+    function renderPublicView(container) {
+      const { storeInfo, categories, ebooks, combos, benefits, faqs, reviews } = appState;
+
+      container.innerHTML = `
+        <div class="relative bg-paper-50 min-h-screen text-slate-800">
+          
+          <!-- Background Subtle Soft Gradient Orbs -->
+          <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-brand-500/10 rounded-full blur-3xl pointer-events-none animate-glow-pulse"></div>
+          <div class="fixed bottom-1/3 right-1/4 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none animate-glow-pulse"></div>
+
+          <!-- 1. STICKY LIGHT HEADER -->
+          <header class="sticky top-0 z-40 w-full glass-card-light border-b border-slate-200/90 shadow-sm transition-all">
+            <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2">
+              
+              <!-- Brand Logo & Author Name -->
+              <a href="#hero" class="flex items-center gap-2.5 group focus:outline-none min-w-0">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-brand-700 via-brand-600 to-amber-500 text-white flex items-center justify-center font-black text-base sm:text-lg shadow-glow-blue group-hover:scale-105 transition-transform shrink-0">
+                  MN
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 02 — COMPACT STICKY HEADER -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-            <!-- Brand Logo & Title -->
-            <a href="#hero" class="flex items-center gap-3 group">
-                <div id="header-logo-container" class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 to-teal-600 flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-105 transition-transform">
-                    NS
+                <div class="flex flex-col min-w-0">
+                  <div class="flex items-center gap-1.5 truncate">
+                    <span class="font-black text-base sm:text-lg tracking-tight text-slate-900 leading-none truncate">${storeInfo.brandName}</span>
+                    <span class="text-[9px] sm:text-[10px] bg-emerald-100 text-emerald-800 border border-emerald-300 font-extrabold px-1.5 py-0.5 rounded-md flex items-center gap-1 shrink-0">
+                      <i class="fa-solid fa-circle-check text-emerald-600"></i> VERIFIED
+                    </span>
+                  </div>
+                  <span class="text-[10px] sm:text-xs text-slate-500 font-semibold tracking-wide truncate mt-0.5">By ${storeInfo.authorName} • Practical Ebooks</span>
                 </div>
-                <div>
-                    <h1 class="font-heading font-bold text-slate-900 text-lg leading-tight group-hover:text-blue-700 transition-colors" id="header-brand-name">MD. NS</h1>
-                    <p class="text-xs text-slate-500 font-medium tracking-wide" id="header-brand-sub">MD. NASA Ebook Store</p>
-                </div>
-            </a>
+              </a>
 
-            <!-- Search Bar (Desktop & Mobile expanded) -->
-            <div class="flex-1 max-w-md hidden sm:block relative">
-                <div class="relative">
-                    <input type="text" id="global-search-input" onkeyup="handleSearch(this.value)" placeholder="Ebook, Keyword वा Category खोज्नुहोस्..." class="w-full bg-slate-100 border border-slate-200 rounded-full py-2 pl-10 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-slate-400 text-sm"></i>
-                    <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 text-sm">
-                        <i class="fa-solid fa-xmark"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Action Controls -->
-            <div class="flex items-center gap-3">
-                <!-- Mobile Search Toggle -->
-                <button onclick="toggleMobileSearch()" class="sm:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors" title="Search">
-                    <i class="fa-solid fa-magnifying-glass text-lg"></i>
-                </button>
-
-                <!-- Navigation Quick Links (Desktop) -->
-                <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-600 mr-2">
-                    <a href="#hero" class="hover:text-blue-700 transition-colors">Home</a>
-                    <a href="#library" class="hover:text-blue-700 transition-colors">Ebooks</a>
-                    <a href="#combos" class="hover:text-blue-700 transition-colors">Combos</a>
-                    <a href="#bundles" class="hover:text-blue-700 transition-colors">Bundles</a>
-                    <a href="#faq" class="hover:text-blue-700 transition-colors">FAQ</a>
-                </nav>
-
-                <!-- Cart Button -->
-                <button onclick="openCartDrawer()" class="relative bg-blue-50 hover:bg-blue-100 text-blue-700 px-3.5 py-2 rounded-xl flex items-center gap-2 font-semibold text-sm transition-colors border border-blue-200">
-                    <i class="fa-solid fa-cart-shopping text-base"></i>
-                    <span class="hidden md:inline">Cart</span>
-                    <span id="cart-badge" class="bg-blue-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Search Dropdown Bar -->
-        <div id="mobile-search-bar" class="hidden sm:hidden px-4 pb-3 border-t border-slate-100 pt-2 bg-slate-50">
-            <div class="relative">
-                <input type="text" onkeyup="handleSearch(this.value)" placeholder="Search ebooks..." class="w-full bg-white border border-slate-300 rounded-lg py-2 pl-10 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
-                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-slate-400 text-sm"></i>
-            </div>
-        </div>
-    </header>
-
-    <!-- SECTION 03 — HERO SALES SECTION -->
-    <section id="hero" class="relative bg-gradient-to-b from-blue-50/70 via-white to-slate-50 pt-8 pb-12 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Main Hero Header Copy -->
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-800 text-xs md:text-sm font-semibold mb-4 border border-blue-200 shadow-sm">
-                    <i class="fa-solid fa-star text-amber-500"></i> MD. NASA Official Practical Ebook Store
-                </span>
-                <h2 id="hero-headline" class="font-heading text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-4">
-                    आफ्नो Skill, Knowledge र Career लाई अर्को स्तरमा लैजानुहोस्।
-                </h2>
-                <p id="hero-subtitle" class="text-slate-600 text-base md:text-lg leading-relaxed font-medium">
-                    नेपाली युवाका लागि सरल भाषामा तयार गरिएका Practical Ebooks — Computer Skills देखि Digital Skills, LokSewa, Share Market, Personality Development र Career Guides सम्म।
-                </p>
-            </div>
-
-            <!-- Featured Ebook Dynamic Hero Card / Slider -->
-            <div class="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-200 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative overflow-hidden" id="hero-featured-card">
-                <!-- Decorative background radial blob -->
-                <div class="absolute -right-20 -top-20 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-60 pointer-events-none"></div>
-
-                <!-- Left Column: Ebook Cover Showcase -->
-                <div class="md:col-span-5 flex flex-col items-center justify-center">
-                    <div class="relative group w-full max-w-xs">
-                        <div class="absolute -inset-1.5 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-300"></div>
-                        <img id="hero-book-image" src="https://placehold.co/400x560/1e293b/ffffff?text=Computer+Skills+Guide" alt="Featured Ebook Cover" class="relative rounded-xl shadow-2xl w-full h-auto object-cover border border-slate-200 bg-white">
-                        <span id="hero-badge-tag" class="absolute top-3 left-3 bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-md shadow">FEATURED</span>
-                    </div>
-
-                    <!-- Slider Controls -->
-                    <div class="flex items-center gap-4 mt-6">
-                        <button onclick="prevHeroSlide()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors shadow-sm" title="Previous Ebook">
-                            <i class="fa-solid fa-arrow-left text-sm"></i>
-                        </button>
-                        <span id="hero-slide-indicator" class="text-xs font-semibold text-slate-500">1 / 3</span>
-                        <button onclick="nextHeroSlide()" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition-colors shadow-sm" title="Next Ebook">
-                            <i class="fa-solid fa-arrow-right text-sm"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Right Column: Product Info & Actions -->
-                <div class="md:col-span-7 flex flex-col justify-between space-y-5">
-                    <div>
-                        <div class="flex items-center gap-2 mb-2">
-                            <span id="hero-category-badge" class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Computer Skills</span>
-                            <span class="text-amber-500 text-sm font-bold flex items-center gap-1">
-                                <i class="fa-solid fa-star"></i> <span id="hero-rating-val">4.9</span> (30+ reviews)
-                            </span>
-                        </div>
-                        <h3 id="hero-book-title" class="font-heading text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-                            Computer Skills for Nepali Youth
-                        </h3>
-                        <p id="hero-book-subtitle" class="text-slate-500 text-sm font-medium mb-4">
-                            Zero देखि Job-Ready सम्मको Practical Computer & Office Software Guide
-                        </p>
-                        <p id="hero-book-summary" class="text-slate-600 text-sm line-clamp-3 leading-relaxed mb-4">
-                            यो Ebook ले नेपाली विद्यार्थी, job seekers र beginner हरूलाई Word, Excel, PowerPoint, Email/Internet र Office Tools हरू सरल र practical तरिकाले सिकाउँछ।
-                        </p>
-                    </div>
-
-                    <!-- Price & Savings Block -->
-                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 flex flex-wrap items-center justify-between gap-4">
-                        <div>
-                            <div class="text-xs text-slate-500 font-semibold uppercase tracking-wider">Special Discounted Price</div>
-                            <div class="flex items-baseline gap-2">
-                                <span class="text-3xl font-extrabold text-blue-700 font-heading" id="hero-discount-price">NPR 499</span>
-                                <span class="text-base text-slate-400 line-through" id="hero-regular-price">NPR 999</span>
-                            </div>
-                        </div>
-                        <div class="flex flex-col items-end">
-                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2.5 py-1 rounded-full border border-emerald-200" id="hero-save-badge">
-                                Save NPR 500 (50% OFF)
-                            </span>
-                            <span class="text-xs text-rose-600 font-medium mt-1 flex items-center gap-1">
-                                <i class="fa-regular fa-clock"></i> Limited Time Offer
-                            </span>
-                        </div>
-                    </div>
-
-                    <!-- Primary CTAs -->
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                        <a href="https://www.nasibul.com.np/nspay" target="_blank" rel="noopener noreferrer" class="flex-1 bg-gradient-to-r from-blue-700 to-blue-800 hover:from-blue-800 hover:to-blue-900 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-blue-500/20 text-center flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5">
-                            <i class="fa-solid fa-cart-shopping"></i> Buy Now — Proceed to NSPAY
-                        </a>
-                        <button onclick="openCurrentHeroPreview()" class="bg-white border-2 border-slate-300 hover:border-slate-400 text-slate-700 font-bold py-3 px-5 rounded-xl text-center flex items-center justify-center gap-2 transition-colors">
-                            <i class="fa-regular fa-eye text-blue-600"></i> Preview Chapter
-                        </button>
-                    </div>
-
-                    <p class="text-xs text-slate-500 text-center sm:text-left flex items-center justify-center sm:justify-start gap-1">
-                        <i class="fa-solid fa-shield-halved text-emerald-600"></i> Payment NSPAY मार्फत हुनेछ। Verified पछि WhatsApp/Email मा Ebook पठाइनेछ।
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 04 — FULL-WIDTH TRUST CARD -->
-    <section class="bg-white border-y border-slate-200 py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-r from-blue-900 to-slate-900 text-white rounded-2xl p-6 md:p-8 shadow-md flex flex-col lg:flex-row items-center justify-between gap-6">
-                <!-- Trust Text -->
-                <div class="space-y-2 text-center lg:text-left">
-                    <div class="flex items-center justify-center lg:justify-start gap-2 text-amber-400 font-semibold text-sm">
-                        <i class="fa-solid fa-check-circle"></i> 100% Genuine Practical Learning Resources
-                    </div>
-                    <h4 class="font-heading font-bold text-xl md:text-2xl text-white">
-                        तपाईंको विश्वासीलो digital learning साथी — MD. NASA
-                    </h4>
-                    <p class="text-slate-300 text-sm max-w-2xl leading-relaxed">
-                        तपाईंले रोज्नुभएको Ebook को Preview, विषयवस्तु र मूल्य हेरेर आफ्नो आवश्यकता अनुसार छान्नुहोस्। NSPAY मार्फत payment गरेपछि verification पूरा भएपछि WhatsApp वा Email बाट ebook manually प्राप्त गर्नुहुनेछ।
-                    </p>
-                </div>
-
-                <!-- Trust Badges Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full lg:w-auto shrink-0">
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-3.5 rounded-xl text-center">
-                        <i class="fa-solid fa-lock text-emerald-400 text-xl mb-1"></i>
-                        <div class="text-xs font-bold text-white">Secure NSPAY</div>
-                        <div class="text-[10px] text-slate-300">Trusted Gateway</div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-3.5 rounded-xl text-center">
-                        <i class="fa-brands fa-whatsapp text-emerald-400 text-xl mb-1"></i>
-                        <div class="text-xs font-bold text-white">Direct Delivery</div>
-                        <div class="text-[10px] text-slate-300">WhatsApp / Email</div>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 p-3.5 rounded-xl text-center col-span-2 sm:col-span-1">
-                        <i class="fa-solid fa-book-open text-cyan-400 text-xl mb-1"></i>
-                        <div class="text-xs font-bold text-white">Beginner Friendly</div>
-                        <div class="text-[10px] text-slate-300">Natural Nepali Language</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 05 — EBOOK BENEFITS AND LEARNING OUTCOMES -->
-    <section class="py-14 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h3 class="font-heading text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-                    यी Ebooks किन तपाईंको लागि महत्वपूर्ण छन्?
-                </h3>
-                <p class="text-slate-600 text-sm md:text-base">
-                    किताबी ज्ञान मात्र होइन — व्यावहारिक सीप, आत्मविश्वास र वास्तविक जीवनमा काम लाग्ने जानकारी।
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Benefit Card 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-language"></i>
-                    </div>
-                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">सरल नेपाली भाषामा</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        जटिल प्राविधिक शब्दहरूलाई सजिलैसँग बुझ्न सकिने सरल नेपाली र आवश्यक स्थानमा अंग्रेजी शब्दावली प्रयोग गरिएको छ।
-                    </p>
-                </div>
-
-                <!-- Benefit Card 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-laptop-code"></i>
-                    </div>
-                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">Step-by-Step Practical Examples</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        प्रत्येक Chapter मा अभ्यास, उदाहरण र Screenshot हरू राखिएको छ जसले गर्दा सिक्न र प्रयोग गर्न अत्यन्तै सजिलो हुन्छ।
-                    </p>
-                </div>
-
-                <!-- Benefit Card 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-briefcase"></i>
-                    </div>
-                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">Career & Job Readiness</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Computer Operator, Office Assistant, Digital Work र LokSewa तयारीका लागि आवश्यक व्यावहारिक ज्ञान पाइन्छ।
-                    </p>
-                </div>
-
-                <!-- Benefit Card 4 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-mobile-screen"></i>
-                    </div>
-                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">Mobile र Laptop दुवैमा पढ्न मिल्ने</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        PDF Format मा उपलब्ध हुने भएकोले तपाईं जुनसुकै समयमा आफ्नो स्मार्टफोन, ट्याब्लेट वा ल्यापटपमा अध्ययन गर्न सक्नुहुन्छ।
-                    </p>
-                </div>
-
-                <!-- Benefit Card 5 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">Financial & Market Literacy</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Share Market, personal money management र modern digital opportunities बारे स्पष्ट र जिम्मेवार जानकारी।
-                    </p>
-                </div>
-
-                <!-- Benefit Card 6 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-700 flex items-center justify-center text-xl mb-4 font-bold">
-                        <i class="fa-solid fa-[#1e40af] fa-user-gear text-rose-700"></i>
-                    </div>
-                    <h4 class="font-heading font-bold text-lg text-slate-900 mb-2">Self-Confidence & Growth</h4>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        व्यक्तित्व विकास, Communication Skills र सकारात्मक सोच निर्माणका लागि विशेष टिप्स र तरिकाहरू।
-                    </p>
-                </div>
-            </div>
-
-            <div class="mt-10 text-center">
-                <a href="#library" class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-xl shadow-md transition-colors">
-                    आफ्नो Learning Journey सुरु गर्नुहोस् <i class="fa-solid fa-arrow-down"></i>
+              <!-- Header CTAs -->
+              <div class="flex items-center gap-1.5 sm:gap-3 shrink-0">
+                <a href="${storeInfo.supportWhatsapp}" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   aria-label="Contact WhatsApp Support"
+                   class="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-500 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-extrabold text-xs transition-all shadow-glow-emerald">
+                  <i class="fa-brands fa-whatsapp text-base sm:text-lg"></i>
+                  <span class="hidden sm:inline">WhatsApp</span>
                 </a>
+
+                <a href="#/admin" 
+                   aria-label="Admin Portal"
+                   class="inline-flex items-center justify-center gap-1.5 text-xs font-bold text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 border border-slate-300 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-xl transition-all">
+                  <i class="fa-solid fa-lock text-xs"></i>
+                  <span class="hidden sm:inline">Admin</span>
+                </a>
+              </div>
+
             </div>
-        </div>
-    </section>
+          </header>
 
-    <!-- SECTION 06 — EBOOK OUTLINE AND CHAPTER DETAILS -->
-    <section class="py-14 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                <div class="lg:col-span-5 space-y-6">
-                    <span class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Inside The Book</span>
-                    <h3 class="font-heading text-3xl font-bold text-slate-900">
-                        Ebook Outline र Chapter Detail
-                    </h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        हाम्रा Ebooks हरू हावादारी गफ होइन, व्यवस्थित र पाठ्यक्रमानुसार चरणबद्ध रूपमा तयार गरिएका छन्। तल Featured Ebook को नमुना Chapter संरचना हेर्नुहोस्।
-                    </p>
-
-                    <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3">
-                        <h4 class="font-bold text-slate-800 text-sm flex items-center gap-2">
-                            <i class="fa-solid fa-list-check text-blue-600"></i> यो Ebook भित्र के-के समावेश छन्?
-                        </h4>
-                        <ul class="text-xs text-slate-600 space-y-2 pl-2">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> 10+ Detailed Practical Chapters</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Real Office Work Examples & Templates</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Important Short-cut Keys & Commands</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500"></i> Interview Questions & Practice Sets</li>
-                        </ul>
-                    </div>
-
-                    <button onclick="openCurrentHeroPreview()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 transition-colors">
-                        <i class="fa-solid fa-file-pdf text-rose-400"></i> Sample Preview PDF डाउनलोड / हेर्नुहोस्
-                    </button>
-                </div>
-
-                <!-- Accordion Chapter List -->
-                <div class="lg:col-span-7 space-y-4" id="chapter-accordion">
-                    <!-- Chapter Item 1 -->
-                    <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
-                        <button onclick="toggleAccordion('ch1')" class="w-full text-left p-4 md:p-5 font-heading font-bold text-slate-900 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
-                            <span class="flex items-center gap-3">
-                                <span class="bg-blue-600 text-white text-xs px-2.5 py-1 rounded-md">CH 01</span>
-                                Computer Basics & Operating System Mastery
-                            </span>
-                            <i id="ch1-icon" class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
-                        </button>
-                        <div id="ch1-content" class="p-4 md:p-5 text-sm text-slate-600 hidden border-t border-slate-200 bg-white">
-                            Computer को आधारभूत ज्ञान, Hardware/Software परिचय, Windows Operating System, File Management, Folder Control र Shortcut Keys हरूको प्रयोग।
-                        </div>
-                    </div>
-
-                    <!-- Chapter Item 2 -->
-                    <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
-                        <button onclick="toggleAccordion('ch2')" class="w-full text-left p-4 md:p-5 font-heading font-bold text-slate-900 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
-                            <span class="flex items-center gap-3">
-                                <span class="bg-blue-600 text-white text-xs px-2.5 py-1 rounded-md">CH 02</span>
-                                Microsoft Word (Document Formatting & Typing)
-                            </span>
-                            <i id="ch2-icon" class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
-                        </button>
-                        <div id="ch2-content" class="p-4 md:p-5 text-sm text-slate-600 hidden border-t border-slate-200 bg-white">
-                            Official Letters, Applications, Reports, Tables, Mail Merge, Page Layout र Nepali/English Typing सम्बन्धी सम्पूर्ण ज्ञान।
-                        </div>
-                    </div>
-
-                    <!-- Chapter Item 3 -->
-                    <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
-                        <button onclick="toggleAccordion('ch3')" class="w-full text-left p-4 md:p-5 font-heading font-bold text-slate-900 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
-                            <span class="flex items-center gap-3">
-                                <span class="bg-blue-600 text-white text-xs px-2.5 py-1 rounded-md">CH 03</span>
-                                Microsoft Excel (Data Entry & Formulas)
-                            </span>
-                            <i id="ch3-icon" class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
-                        </button>
-                        <div id="ch3-content" class="p-4 md:p-5 text-sm text-slate-600 hidden border-t border-slate-200 bg-white">
-                            Basic to Intermediate Formulas (SUM, AVERAGE, IF, VLOOKUP), Salary Sheet, Bill Invoice, Data Filtering र Charts प्रयोग।
-                        </div>
-                    </div>
-
-                    <!-- Chapter Item 4 -->
-                    <div class="border border-slate-200 rounded-2xl overflow-hidden bg-white shadow-sm">
-                        <button onclick="toggleAccordion('ch4')" class="w-full text-left p-4 md:p-5 font-heading font-bold text-slate-900 flex items-center justify-between bg-slate-50 hover:bg-slate-100 transition-colors">
-                            <span class="flex items-center gap-3">
-                                <span class="bg-blue-600 text-white text-xs px-2.5 py-1 rounded-md">CH 04</span>
-                                Internet, Email Ethics & Digital Safety
-                            </span>
-                            <i id="ch4-icon" class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
-                        </button>
-                        <div id="ch4-content" class="p-4 md:p-5 text-sm text-slate-600 hidden border-t border-slate-200 bg-white">
-                            Professional Email लेख्ने तरिका, Google Drive/Cloud storage, Internet Browsing Safety र Online Account Protection.
-                        </div>
-                    </div>
-                </div>
+          <!-- 2. HIGH-CONTRAST FLASH PROMO TICKER -->
+          <section class="bg-gradient-to-r from-brand-900 via-brand-800 to-slate-900 text-white py-2.5 border-b border-brand-950 text-xs sm:text-sm shadow-inner">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+              <p class="font-extrabold flex items-center justify-center gap-2 truncate">
+                <span class="inline-flex h-2.5 w-2.5 rounded-full bg-amber-400 animate-ping"></span>
+                <span>${storeInfo.promoText}</span>
+              </p>
+              <a href="#combo-section" class="shrink-0 text-xs font-black text-amber-300 hover:text-white underline decoration-amber-400">
+                Combo Offers (Save 67%) &rarr;
+              </a>
             </div>
-        </div>
-    </section>
+          </section>
 
-    <!-- SECTION 07 — AUTHOR MISSION AND READER GOALS -->
-    <section class="py-14 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <!-- Mission Statement -->
-                <div class="lg:col-span-6 space-y-4">
-                    <span class="bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold px-3.5 py-1.5 rounded-full inline-block">OUR MISSION</span>
-                    <h3 class="font-heading text-3xl md:text-4xl font-extrabold text-white leading-tight">
-                        नेपाली युवालाई Practical Knowledge र Digital Skills ले सशक्त बनाउने अभियान।
-                    </h3>
-                    <p class="text-slate-300 text-sm md:text-base leading-relaxed">
-                        हाम्रो उद्देश्य सैद्धान्तिक र अप्ठ्यारो किताबी ज्ञानभन्दा माथि उठेर नेपाली युवाहरूलाई वास्तविक जीवन र करियरमा उपयोगी हुने व्यावहारिक ज्ञान सर्वसुलभ रूपमा उपलब्ध गराउनु हो।
-                    </p>
-                    <div class="pt-2 flex items-center gap-4 text-slate-400 text-xs">
-                        <span><i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Practical Focus</span>
-                        <span><i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Easy Access</span>
-                        <span><i class="fa-solid fa-circle-check text-emerald-400 mr-1"></i> Continuous Learning</span>
-                    </div>
-                </div>
+          <section id="hero" class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Left Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                  
+                  <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 border border-brand-200 text-brand-700 text-xs sm:text-sm font-extrabold shadow-sm">
+                    <i class="fa-solid fa-shield-halved text-amber-500"></i>
+                    नेपाल भरका १०,०००+ युवा पाठकहरूको रोजाइ
+                  </div>
 
-                <!-- Goals Cards -->
-                <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/15">
-                        <i class="fa-solid fa-bullseye text-amber-400 text-2xl mb-2"></i>
-                        <h4 class="font-bold text-white text-base mb-1">Career Foundation</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">Computer, Digital Tools र Job Preparation मा दह्रो जग निर्माण गर्ने।</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/15">
-                        <i class="fa-solid fa-brain text-cyan-400 text-2xl mb-2"></i>
-                        <h4 class="font-bold text-white text-base mb-1">Self-Reliance</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">आफ्नो सीप आफैं विकास गरी नयाँ अवसरहरू चिन्न सक्ने बन्ने।</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/15">
-                        <i class="fa-solid fa-coins text-emerald-400 text-2xl mb-2"></i>
-                        <h4 class="font-bold text-white text-base mb-1">Financial Awareness</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">Share Market र डिजिटल वित्तीय माध्यमहरूको सहि र जिम्मेवार ज्ञान।</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/15">
-                        <i class="fa-solid fa-user-tie text-purple-400 text-2xl mb-2"></i>
-                        <h4 class="font-bold text-white text-base mb-1">Personality Growth</h4>
-                        <p class="text-xs text-slate-300 leading-relaxed">आत्मविश्वास, बोल्ने कला र सकारात्मक दृष्टिकोण अभिवृद्धि गर्ने।</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                  <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 leading-[1.2] tracking-tight">
+                    व्यवहारिक सीप सिक्नुहोस्, <br>
+                    <span class="blue-gradient-text">आफ्नो भविष्य</span> उज्यालो बनाउनुहोस्।
+                  </h1>
 
-    <!-- SECTION 08 — MULTIPLE EBOOK LIBRARY -->
-    <section id="library" class="py-14 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Ebook Catalog</span>
-                <h3 class="font-heading text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-3">
-                    हाम्रा उपलब्ध Ebooks हरू छान्नुहोस्
-                </h3>
-                <p class="text-slate-600 text-sm md:text-base">
-                    6 प्रमुख विधामा आधारित Practical Ebooks — आवश्यकता अनुसार एउटा वा बढी Ebook रोज्नुहोस्।
-                </p>
-            </div>
+                  <p class="text-base sm:text-lg text-slate-600 font-medium leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Computer Skills, Digital Marketing, LokSewa, Share Market, Personality Development र Youth Career Guides सम्बन्धी उच्च गुणस्तरीय Practical Ebooks अब एउटै स्टोरमा।
+                  </p>
 
-            <!-- Category Tabs / Filter Buttons -->
-            <div class="flex items-center justify-start lg:justify-center gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar" id="category-filter-bar">
-                <button onclick="filterCategory('All')" class="cat-btn active bg-blue-700 text-white px-4 py-2 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap shadow-sm transition-all">
-                    All Categories (<span id="cat-count-all">6</span>)
-                </button>
-                <button onclick="filterCategory('Computer Skills')" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all">
-                    Computer Skills
-                </button>
-                <button onclick="filterCategory('Digital Skills and Online Incomes')" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all">
-                    Digital Skills
-                </button>
-                <button onclick="filterCategory('LokSewa')" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all">
-                    LokSewa
-                </button>
-                <button onclick="filterCategory('Share Market')" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all">
-                    Share Market
-                </button>
-                <button onclick="filterCategory('Personality Development')" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all">
-                    Personality Development
-                </button>
-                <button onclick="filterCategory('Nepali Youth Career Guides')" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all">
-                    Career Guides
-                </button>
-            </div>
-
-            <!-- Library Controls Bar (Sort & Extra Filters) -->
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white p-4 rounded-2xl border border-slate-200 mb-8 shadow-sm">
-                <div class="text-xs md:text-sm text-slate-500 font-medium">
-                    देखाइएका Ebooks: <strong text-slate-800 id="catalog-showing-count">6</strong>
-                </div>
-                <div class="flex items-center gap-3 w-full sm:w-auto">
-                    <label for="sort-select" class="text-xs font-semibold text-slate-500 whitespace-nowrap">Sort By:</label>
-                    <select id="sort-select" onchange="handleSort(this.value)" class="bg-slate-50 border border-slate-200 rounded-lg text-xs md:text-sm font-medium py-1.5 px-3 focus:outline-none focus:ring-2 focus:ring-blue-600">
-                        <option value="featured">Featured First</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="newest">Newest Releases</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Ebook Product Grid (2 columns on mobile, 3 on desktop) -->
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6" id="product-grid">
-                <!-- Products will be dynamically populated here via JS -->
-            </div>
-
-            <!-- Empty Results State -->
-            <div id="empty-catalog-msg" class="hidden text-center py-12 bg-white rounded-3xl border border-slate-200">
-                <i class="fa-solid fa-book-open text-slate-300 text-5xl mb-3"></i>
-                <h4 class="font-bold text-slate-700 text-lg">कुनै Ebook भेटिएन।</h4>
-                <p class="text-slate-500 text-sm mt-1">कृपया Filter वा Search keyword परिवर्तन गरी हेर्नुहोस्।</p>
-                <button onclick="resetFilters()" class="mt-4 bg-blue-700 text-white font-semibold text-xs px-4 py-2 rounded-xl">Clear Filters</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 10 — CUSTOM COMBO BUILDER -->
-    <section id="combos" class="py-14 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Custom Savings</span>
-                <h3 class="font-heading text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-3">
-                    Custom Combo Builder — आफैं छान्नुहोस्, बढी बचत गर्नुहोस्!
-                </h3>
-                <p class="text-slate-600 text-sm md:text-base">
-                    तपाईंलाई आवश्यक कम्तीमा २ वा सोभन्दा बढी Ebooks छानी आफ्नै Combo Pack बनाउनुहोस् र Extra Combo Discount प्राप्त गर्नुहोस्।
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <!-- Ebook Selection List (Left Column) -->
-                <div class="lg:col-span-7 space-y-3" id="combo-selection-list">
-                    <!-- Checkbox items injected dynamically -->
-                </div>
-
-                <!-- Combo Summary Box (Right Column) -->
-                <div class="lg:col-span-5 bg-gradient-to-br from-slate-900 to-blue-950 text-white rounded-3xl p-6 md:p-8 shadow-xl sticky top-24 border border-slate-800">
-                    <div class="flex items-center justify-between pb-4 border-b border-white/10 mb-4">
-                        <h4 class="font-heading font-bold text-xl text-white">तपाईंको Custom Combo</h4>
-                        <span id="combo-selected-count-badge" class="bg-emerald-500 text-slate-950 font-extrabold text-xs px-2.5 py-1 rounded-full">0 Selected</span>
-                    </div>
-
-                    <div id="combo-selected-items-list" class="space-y-2 mb-6 max-h-48 overflow-y-auto pr-1 text-xs text-slate-300">
-                        <p class="italic text-slate-400">कृपया देब्रेपट्टीबाट Ebooks हरू select गर्नुहोस्...</p>
-                    </div>
-
-                    <div class="space-y-2 text-sm border-t border-white/10 pt-4 mb-6">
-                        <div class="flex justify-between text-slate-300">
-                            <span>कुल जम्मा मूल्य (Individual Total):</span>
-                            <span id="combo-raw-total">NPR 0</span>
-                        </div>
-                        <div class="flex justify-between text-emerald-400 font-semibold">
-                            <span>Combo Special Savings:</span>
-                            <span id="combo-savings-val">- NPR 0</span>
-                        </div>
-                        <div class="flex justify-between text-lg font-bold text-white border-t border-white/15 pt-2">
-                            <span>अन्तिम Combo मूल्य:</span>
-                            <span id="combo-final-total" class="font-heading text-amber-400">NPR 0</span>
-                        </div>
-                    </div>
-
-                    <a href="https://www.nasibul.com.np/nspay" target="_blank" rel="noopener noreferrer" id="combo-buy-btn" class="w-full bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-extrabold py-3.5 px-6 rounded-xl text-center block transition-colors shadow-lg shadow-emerald-500/20">
-                        Proceed to NSPAY (Buy Combo)
+                  <!-- CTA Buttons -->
+                  <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                    <a href="#ebook-catalog" 
+                       class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-black text-base px-8 py-4 rounded-2xl shadow-glow-blue transition-all transform hover:-translate-y-0.5">
+                      <i class="fa-solid fa-book-open text-lg"></i>
+                      <span>Ebook Catalog हेर्नुहोस्</span>
                     </a>
-                    <p class="text-[11px] text-slate-400 text-center mt-3 leading-snug">
-                        Note: NSPAY मा Payment गर्दा Combo को कुल रकम दाखिला गरी Screenshot WhatsApp/Email मा पठाउनुहोला।
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <a href="#combo-section" 
+                       class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-base px-8 py-4 rounded-2xl shadow-glow-gold transition-all transform hover:-translate-y-0.5 border border-amber-600">
+                      <i class="fa-solid fa-crown text-slate-950"></i>
+                      <span>Mega Value Bundles</span>
+                    </a>
+                  </div>
 
-    <!-- SECTION 11 — CAREER GROWTH AND FUTURE SUCCESS -->
-    <section class="py-14 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Career Roadmap</span>
-                <h3 class="font-heading text-3xl font-bold text-slate-900 mt-2 mb-3">
-                    भविष्यको लागि Job-Oriented Skill Learning Path
-                </h3>
-                <p class="text-slate-600 text-sm">
-                    तपाईंको करियर र सीप अभिवृद्धिका लागि उपयुक्त चरणबद्ध मार्ग:
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-                <!-- Step 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
-                    <span class="w-8 h-8 rounded-full bg-blue-700 text-white font-bold text-sm flex items-center justify-center mb-4">1</span>
-                    <h4 class="font-bold text-slate-900 text-base mb-2">Basic Computer</h4>
-                    <p class="text-slate-600 text-xs leading-relaxed">Word, Excel, Typing र Office Software मा पकड बनाउने।</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
-                    <span class="w-8 h-8 rounded-full bg-teal-600 text-white font-bold text-sm flex items-center justify-center mb-4">2</span>
-                    <h4 class="font-bold text-slate-900 text-base mb-2">Digital Skills</h4>
-                    <p class="text-slate-600 text-xs leading-relaxed">Internet tools, modern workflows र digital opportunities बुझ्ने।</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
-                    <span class="w-8 h-8 rounded-full bg-purple-600 text-white font-bold text-sm flex items-center justify-center mb-4">3</span>
-                    <h4 class="font-bold text-slate-900 text-base mb-2">Communication</h4>
-                    <p class="text-slate-600 text-xs leading-relaxed">व्यक्तित्व विकास, भर्बल-ननभर्बल कम्युनिकेसन र आत्मविश्वास बढाउने।</p>
-                </div>
-                <!-- Step 4 -->
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 relative shadow-sm">
-                    <span class="w-8 h-8 rounded-full bg-amber-600 text-white font-bold text-sm flex items-center justify-center mb-4">4</span>
-                    <h4 class="font-bold text-slate-900 text-base mb-2">Job & Career</h4>
-                    <p class="text-slate-600 text-xs leading-relaxed">Computer Operator, Office Assistant वा LokSewa परीक्षाको तयारी गर्ने।</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 12 — FEATURED BUNDLES AND COMBO OFFERS -->
-    <section id="bundles" class="py-14 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-10">
-                <span class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Best Value</span>
-                <h3 class="font-heading text-3xl md:text-4xl font-extrabold text-slate-900 mt-2 mb-3">
-                    Special Featured Bundles
-                </h3>
-                <p class="text-slate-600 text-sm md:text-base">
-                    सम्बन्धित विषयवस्तुका Ebooks हरूको तयारी प्याकेज — छुट्टाछुट्टै किन्नुभन्दा ठूलो बचत!
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="bundles-grid">
-                <!-- Bundle Card 1 -->
-                <div class="bg-slate-50 rounded-3xl p-6 md:p-8 border border-slate-200 shadow-md flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">3 Ebooks Pack</span>
-                            <span class="text-emerald-700 bg-emerald-100 text-xs font-bold px-2.5 py-1 rounded-md">Save NPR 800</span>
-                        </div>
-                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-2">Computer & Digital Skills Combo</h4>
-                        <p class="text-slate-600 text-sm mb-4">Computer Basics + Digital Skills + Office Tools</p>
-                        
-                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600"></i> Computer Skills for Nepali Youth</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600"></i> Digital Skills & Online Opportunities</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-600"></i> MS Office Shortcuts & Master Guide</li>
-                        </ul>
+                  <!-- Trust Badges Bar -->
+                  <div class="pt-6 border-t border-slate-200 grid grid-cols-3 gap-3 text-center lg:text-left">
+                    <div class="p-3 bg-white rounded-2xl border border-slate-200/80 shadow-sm">
+                      <span class="block text-xl sm:text-2xl font-black text-slate-900">100%</span>
+                      <span class="text-xs text-slate-500 font-bold">Practical Guide</span>
                     </div>
+                    <div class="p-3 bg-white rounded-2xl border border-slate-200/80 shadow-sm">
+                      <span class="block text-xl sm:text-2xl font-black text-amber-600">Instant</span>
+                      <span class="text-xs text-slate-500 font-bold">WhatsApp Delivery</span>
+                    </div>
+                    <div class="p-3 bg-white rounded-2xl border border-slate-200/80 shadow-sm">
+                      <span class="block text-xl sm:text-2xl font-black text-emerald-600">Lifetime</span>
+                      <span class="text-xs text-slate-500 font-bold">PDF Access</span>
+                    </div>
+                  </div>
 
-                    <div class="bg-white p-4 rounded-2xl border border-slate-200 flex items-center justify-between gap-4">
+                </div>
+
+                <!-- Hero Right Column: Floating 3D Ebook Visual -->
+                <div class="lg:col-span-5 flex justify-center">
+                  <div class="relative w-full max-w-md">
+                    
+                    <!-- Backdrop Glow Circle -->
+                    <div class="absolute -inset-2 bg-gradient-to-r from-brand-400 via-amber-300 to-emerald-400 rounded-3xl blur-xl opacity-50 animate-glow-pulse"></div>
+                    
+                    <div class="relative glass-card-gold-light rounded-3xl p-6 sm:p-8 space-y-5 shadow-card-hover border-2 border-amber-300">
+                      
+                      <div class="flex items-center justify-between">
+                        <span class="text-xs font-black text-amber-900 uppercase tracking-wider bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+                          FEATURED BESTSELLER
+                        </span>
+                        <span class="text-xs font-extrabold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-md border border-emerald-300">
+                          <i class="fa-solid fa-star text-amber-500"></i> 4.9 / 5 Rating
+                        </span>
+                      </div>
+
+                      <!-- Interactive Visual Ebook Spine/Cover Mockup -->
+                      <div class="relative aspect-[3/4] bg-gradient-to-br from-brand-800 via-brand-700 to-indigo-900 rounded-2xl p-6 text-white flex flex-col justify-between book-spine-effect shadow-2xl border border-brand-500 animate-float">
                         <div>
-                            <span class="text-xs text-slate-400 line-through">NPR 1,797</span>
-                            <div class="text-2xl font-extrabold text-blue-700 font-heading">NPR 999</div>
+                          <div class="flex items-center justify-between border-b border-brand-500/60 pb-3">
+                            <span class="text-[10px] font-black tracking-widest text-amber-300 uppercase">${storeInfo.brandName} PUBLICATION</span>
+                            <span class="text-[10px] font-bold bg-amber-500 text-slate-950 px-2 py-0.5 rounded">PDF EBOOK</span>
+                          </div>
+
+                          <h3 class="text-2xl sm:text-3xl font-black mt-4 leading-tight text-white">
+                            COMPUTER SKILLS FOR NEPALI YOUTH
+                          </h3>
+                          <p class="text-xs text-blue-100 mt-3 leading-relaxed">
+                            Zero देखि Job-Ready सम्मको Practical Computer Master Guide
+                          </p>
                         </div>
-                        <a href="https://www.nasibul.com.np/nspay" target="_blank" rel="noopener noreferrer" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2.5 px-5 rounded-xl text-xs sm:text-sm transition-colors">
-                            Buy Bundle Now
-                        </a>
-                    </div>
-                </div>
 
-                <!-- Bundle Card 2 -->
-                <div class="bg-slate-50 rounded-3xl p-6 md:p-8 border border-slate-200 shadow-md flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-full">Mega Pack (6 Ebooks)</span>
-                            <span class="text-emerald-700 bg-emerald-100 text-xs font-bold px-2.5 py-1 rounded-md">Save NPR 1,500</span>
+                        <div class="pt-4 border-t border-brand-500/60 flex items-center justify-between">
+                          <div>
+                            <span class="text-[9px] text-blue-200 block uppercase font-bold">AUTHOR</span>
+                            <span class="text-xs font-extrabold text-white">${storeInfo.authorName}</span>
+                          </div>
+                          <div class="text-right">
+                            <span class="text-xs line-through text-blue-300 block">NPR 999</span>
+                            <span class="text-xl font-black text-amber-300">NPR 499</span>
+                          </div>
                         </div>
-                        <h4 class="font-heading text-2xl font-bold text-slate-900 mb-2">All-In-One Ultimate Mega Bundle</h4>
-                        <p class="text-slate-600 text-sm mb-4">६ वटै विधाका उत्कृष्ट Ebooks हरूको complete collection</p>
-                        
-                        <ul class="text-xs text-slate-600 space-y-2 mb-6">
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> ६ वटै विधाका १-१ Ebooks समावेश</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Complete Career & Skill Learning</li>
-                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-amber-600"></i> Lifetime Reading Reference</li>
-                        </ul>
-                    </div>
+                      </div>
 
-                    <div class="bg-white p-4 rounded-2xl border border-slate-200 flex items-center justify-between gap-4">
-                        <div>
-                            <span class="text-xs text-slate-400 line-through">NPR 3,294</span>
-                            <div class="text-2xl font-extrabold text-amber-600 font-heading">NPR 1,799</div>
-                        </div>
-                        <a href="https://www.nasibul.com.np/nspay" target="_blank" rel="noopener noreferrer" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2.5 px-5 rounded-xl text-xs sm:text-sm transition-colors">
-                            Buy Mega Bundle
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 14 — OFFERS, URGENCY AND SCARCITY SECTION -->
-    <section class="py-12 bg-gradient-to-r from-rose-900 via-slate-900 to-blue-950 text-white border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <span class="bg-rose-500/20 text-rose-300 border border-rose-500/30 text-xs font-bold px-3.5 py-1.5 rounded-full inline-block mb-3">LIMITED TIME CAMPAIGN</span>
-            <h3 class="font-heading text-2xl md:text-3xl font-bold mb-3">विशेष छुट अभियान समाप्त हुन बाँकी समय</h3>
-            <p class="text-slate-300 text-sm max-w-xl mx-auto mb-6">आजै आफ्नो उपयुक्त Ebook छानी NSPAY मार्फत सुरक्षित भुक्तानी गरी WhatsApp/Email मा Ebook प्राप्त गर्नुहोस्।</p>
-            
-            <!-- Countdown Timer Blocks -->
-            <div class="flex items-center justify-center gap-3 sm:gap-6 font-heading mb-8">
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 min-w-[70px] sm:min-w-[90px] border border-white/15">
-                    <span id="timer-hours" class="text-2xl sm:text-4xl font-extrabold text-amber-400 block">12</span>
-                    <span class="text-[10px] sm:text-xs text-slate-300 uppercase tracking-wider">Hours</span>
-                </div>
-                <span class="text-2xl font-bold text-slate-500">:</span>
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 min-w-[70px] sm:min-w-[90px] border border-white/15">
-                    <span id="timer-minutes" class="text-2xl sm:text-4xl font-extrabold text-amber-400 block">45</span>
-                    <span class="text-[10px] sm:text-xs text-slate-300 uppercase tracking-wider">Minutes</span>
-                </div>
-                <span class="text-2xl font-bold text-slate-500">:</span>
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-3 sm:p-4 min-w-[70px] sm:min-w-[90px] border border-white/15">
-                    <span id="timer-seconds" class="text-2xl sm:text-4xl font-extrabold text-amber-400 block">30</span>
-                    <span class="text-[10px] sm:text-xs text-slate-300 uppercase tracking-wider">Seconds</span>
-                </div>
-            </div>
-
-            <a href="#library" class="inline-block bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold py-3.5 px-8 rounded-xl transition-all shadow-lg shadow-amber-500/20">
-                Explore Available Ebooks Now
-            </a>
-        </div>
-    </section>
-
-    <!-- SECTION 15 — CUSTOMER REVIEWS AND TESTIMONIALS -->
-    <section class="py-14 bg-white border-t border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Reader Testimonials</span>
-                <h3 class="font-heading text-3xl font-bold text-slate-900 mt-2 mb-3">
-                    पाठकहरूको प्रतिक्रिया (Reviews)
-                </h3>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="reviews-container">
-                <!-- Review Card 1 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-                    <div class="text-amber-500 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-700 text-sm leading-relaxed italic">
-                        "Computer Skills Ebook ले मलाई Word र Excel सिक्न धेरै सजिलो बनाइदियो। नेपाली भाषामा सरल व्याख्या भएकोले ज्यादै उपयोगी लाग्यो।"
-                    </p>
-                    <div class="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
-                        <span class="font-bold text-slate-900">सुरेश शर्मा</span>
-                        <span class="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-semibold"><i class="fa-solid fa-check-circle"></i> Verified Reader</span>
-                    </div>
-                </div>
-
-                <!-- Review Card 2 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-                    <div class="text-amber-500 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-700 text-sm leading-relaxed italic">
-                        "NSPAY बाट भुक्तानी गरेपछि १५ मिनेटभित्रै WhatsApp मा PDF आइपुग्यो। Direct combo लिँदा पैसा पनि बचत भयो।"
-                    </p>
-                    <div class="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
-                        <span class="font-bold text-slate-900">पूजा श्रेष्ठ</span>
-                        <span class="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-semibold"><i class="fa-solid fa-check-circle"></i> Verified Reader</span>
-                    </div>
-                </div>
-
-                <!-- Review Card 3 -->
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-                    <div class="text-amber-500 text-sm">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="text-slate-700 text-sm leading-relaxed italic">
-                        "Share Market Ebook मा नयाँ लगानीकर्ताका लागि ज्यादै सन्तुलित र व्यावहारिक कुराहरू समेटिएका छन्।"
-                    </p>
-                    <div class="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
-                        <span class="font-bold text-slate-900">अमित खड्का</span>
-                        <span class="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-semibold"><i class="fa-solid fa-check-circle"></i> Verified Reader</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 16 — AUTHOR PROFILE -->
-    <section class="py-14 bg-slate-50 border-t border-slate-200">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-lg flex flex-col md:flex-row items-center gap-8">
-                <div class="w-36 h-36 md:w-44 md:h-44 rounded-2xl bg-gradient-to-tr from-blue-700 via-teal-600 to-slate-800 text-white flex items-center justify-center font-bold text-4xl shrink-0 shadow-md border-4 border-slate-100" id="author-img-box">
-                    MD. NS
-                </div>
-
-                <div class="space-y-4 text-center md:text-left">
-                    <div>
-                        <span class="text-xs font-bold text-blue-700 tracking-wider uppercase">Author & Publisher</span>
-                        <h3 class="font-heading text-2xl md:text-3xl font-extrabold text-slate-900" id="author-name-text">
-                            MD. NS (MD. NASA)
-                        </h3>
-                        <p class="text-slate-500 text-sm font-medium">Digital Educator & Practical Learning Advocate</p>
-                    </div>
-
-                    <p class="text-slate-600 text-sm leading-relaxed" id="author-bio-text">
-                        "हाम्रो लक्ष्य नेपाली विद्यार्थी, युवा र सिकारुहरूलाई दैनिक जीवन र आधुनिक कार्यक्षेत्रमा चाहिने उपयोगी सीपहरू सरल र स्पष्ट भाषामा उपलब्ध गराउनु हो। पुस्तकीय ज्ञान मात्र पर्याप्त छैन, व्यावहारिक ज्ञान नै वास्तविक प्रगति हो।"
-                    </p>
-
-                    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-2">
-                        <a href="https://wa.me/?text=Hello%20MD.%20NASA" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs py-2 px-4 rounded-xl flex items-center gap-2 transition-colors">
-                            <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp Contact
-                        </a>
-                        <a href="mailto:support@nasibul.com.np" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs py-2 px-4 rounded-xl flex items-center gap-2 transition-colors">
-                            <i class="fa-regular fa-envelope text-sm"></i> Email Support
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 17 — FAQ SECTION -->
-    <section id="faq" class="py-14 bg-white border-t border-slate-200">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-10">
-                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Clear Guidance</span>
-                <h3 class="font-heading text-3xl font-bold text-slate-900 mt-2 mb-3">
-                    प्रायः सोधिने प्रश्नहरू (FAQ)
-                </h3>
-            </div>
-
-            <div class="space-y-3" id="faq-container">
-                <!-- FAQ Item 1 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
-                    <button onclick="toggleFaq('faq1')" class="w-full text-left p-4 sm:p-5 font-bold text-slate-900 text-sm sm:text-base flex items-center justify-between hover:bg-slate-100">
-                        <span>१. Ebook भुक्तानी (Payment) कसरी गरिन्छ?</span>
-                        <i id="faq1-icon" class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
-                    </button>
-                    <div id="faq1-content" class="p-4 sm:p-5 text-sm text-slate-600 hidden border-t border-slate-200 bg-white leading-relaxed">
-                        तपाईंले Ebook वा Combo छानेपछि "Buy Now / Proceed to NSPAY" बटन थिचेर सुरक्षित NSPAY (https://www.nasibul.com.np/nspay) पेजमा पुग्नुहुनेछ। त्यहाँ eSewa, Khalti वा Banking बाट भुक्तानी गर्न सक्नुहुनेछ।
-                    </div>
-                </div>
-
-                <!-- FAQ Item 2 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
-                    <button onclick="toggleFaq('faq2')" class="w-full text-left p-4 sm:p-5 font-bold text-slate-900 text-sm sm:text-base flex items-center justify-between hover:bg-slate-100">
-                        <span>२. Payment गरेपछि Ebook कसरी र कति समयमा पाइन्छ?</span>
-                        <i id="faq2-icon" class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
-                    </button>
-                    <div id="faq2-content" class="p-4 sm:p-5 text-sm text-slate-600 hidden border-t border-slate-200 bg-white leading-relaxed">
-                        NSPAY मा भुक्तानी गरेपछि सोको Screenshot/Transaction Details हाम्रो WhatsApp वा Email मा पठाउनुपर्छ। Payment verify भएपछि १५ देखि ३० मिनेटभित्र Ebook (PDF) ससम्मान पठाउनेछौं।
-                    </div>
-                </div>
-
-                <!-- FAQ Item 3 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
-                    <button onclick="toggleFaq('faq3')" class="w-full text-left p-4 sm:p-5 font-bold text-slate-900 text-sm sm:text-base flex items-center justify-between hover:bg-slate-100">
-                        <span>३. Ebook मोबाइलमा पढ्न मिल्छ?</span>
-                        <i id="faq3-icon" class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
-                    </button>
-                    <div id="faq3-content" class="p-4 sm:p-5 text-sm text-slate-600 hidden border-t border-slate-200 bg-white leading-relaxed">
-                        अवश्य! सबै Ebooks हरू Standard PDF Format मा हुन्छन् जसलाई जुनसुकै Android, iPhone, Tablet वा Laptop/PC मा सजिलै पढ्न सकिन्छ।
-                    </div>
-                </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="border border-slate-200 rounded-2xl overflow-hidden bg-slate-50">
-                    <button onclick="toggleFaq('faq4')" class="w-full text-left p-4 sm:p-5 font-bold text-slate-900 text-sm sm:text-base flex items-center justify-between hover:bg-slate-100">
-                        <span>४. Ebook किन्नुअघि नमुना (Preview) हेर्न मिल्छ?</span>
-                        <i id="faq4-icon" class="fa-solid fa-chevron-down text-slate-400 text-sm"></i>
-                    </button>
-                    <div id="faq4-content" class="p-4 sm:p-5 text-sm text-slate-600 hidden border-t border-slate-200 bg-white leading-relaxed">
-                        हो, हरेक Ebook Card मा रहेको "Preview Chapter" बटनमा थिचेर Ebook को विषयसूची र नमुना पृष्ठहरू हेर्न सक्नुहुन्छ।
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 18 — CART DRAWER OR CART POPUP -->
-    <div id="cart-drawer" class="fixed inset-0 z-50 pointer-events-none hidden">
-        <!-- Backdrop -->
-        <div id="cart-backdrop" onclick="closeCartDrawer()" class="absolute inset-0 bg-slate-900/50 backdrop-blur-xs opacity-0 transition-opacity duration-300"></div>
-
-        <!-- Slide Drawer Panel -->
-        <div id="cart-panel" class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-white shadow-2xl flex flex-col justify-between transform translate-x-full transition-transform duration-300 pointer-events-auto">
-            <!-- Cart Header -->
-            <div class="p-4 sm:p-6 border-b border-slate-200 flex items-center justify-between bg-slate-50">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-cart-shopping text-blue-700 text-lg"></i>
-                    <h3 class="font-heading font-bold text-slate-900 text-lg">तपाईंको Shopping Cart</h3>
-                </div>
-                <button onclick="closeCartDrawer()" class="p-2 text-slate-400 hover:text-slate-600 rounded-lg">
-                    <i class="fa-solid fa-xmark text-lg"></i>
-                </button>
-            </div>
-
-            <!-- Cart Items List -->
-            <div class="p-4 sm:p-6 flex-1 overflow-y-auto space-y-4" id="cart-items-container">
-                <!-- Cart items dynamically injected -->
-            </div>
-
-            <!-- Cart Footer & Checkout -->
-            <div class="p-4 sm:p-6 border-t border-slate-200 bg-slate-50 space-y-4">
-                <div class="space-y-2 text-sm">
-                    <div class="flex justify-between text-slate-500">
-                        <span>Subtotal:</span>
-                        <span id="cart-subtotal">NPR 0</span>
-                    </div>
-                    <div class="flex justify-between text-emerald-600 font-semibold">
-                        <span>Estimated Savings:</span>
-                        <span id="cart-savings">- NPR 0</span>
-                    </div>
-                    <div class="flex justify-between text-base font-bold text-slate-900 border-t border-slate-200 pt-2">
-                        <span>कुल जम्मा (Total):</span>
-                        <span id="cart-total" class="font-heading text-blue-700 text-xl">NPR 0</span>
-                    </div>
-                </div>
-
-                <a href="https://www.nasibul.com.np/nspay" target="_blank" rel="noopener noreferrer" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-3.5 px-6 rounded-xl text-center block transition-colors shadow-md">
-                    Proceed to NSPAY (Pay Now)
-                </a>
-                <p class="text-[11px] text-slate-500 text-center leading-snug">
-                    Payment NSPAY मार्फत अलग्गै हुनेछ। Payment verify भएपछि ebook WhatsApp वा Email मार्फत manually पठाइनेछ।
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 19 — FOOTER -->
-    <footer class="bg-slate-950 text-slate-400 text-xs sm:text-sm pt-12 pb-24 md:pb-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-800">
-                <!-- Brand Info -->
-                <div class="space-y-3">
-                    <div class="flex items-center gap-3">
-                        <div class="w-8 h-8 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center">NS</div>
-                        <span class="font-heading font-bold text-white text-base">MD. NS / MD. NASA</span>
-                    </div>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        नेपाली युवाका लागि व्यावहारिक सीप, ज्ञान र करियर विकासका उपयोगी Ebooks सङ्ग्रह।
-                    </p>
-                </div>
-
-                <!-- Navigation Links -->
-                <div>
-                    <h5 class="font-bold text-white text-sm mb-3 font-heading">Quick Links</h5>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#hero" class="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#library" class="hover:text-white transition-colors">Ebooks Catalog</a></li>
-                        <li><a href="#combos" class="hover:text-white transition-colors">Custom Combo Builder</a></li>
-                        <li><a href="#bundles" class="hover:text-white transition-colors">Featured Bundles</a></li>
-                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <!-- Categories -->
-                <div>
-                    <h5 class="font-bold text-white text-sm mb-3 font-heading">Ebook Categories</h5>
-                    <ul class="space-y-2 text-xs">
-                        <li><a href="#library" onclick="filterCategory('Computer Skills')" class="hover:text-white transition-colors">Computer Skills</a></li>
-                        <li><a href="#library" onclick="filterCategory('Digital Skills and Online Incomes')" class="hover:text-white transition-colors">Digital Skills</a></li>
-                        <li><a href="#library" onclick="filterCategory('LokSewa')" class="hover:text-white transition-colors">LokSewa</a></li>
-                        <li><a href="#library" onclick="filterCategory('Share Market')" class="hover:text-white transition-colors">Share Market</a></li>
-                        <li><a href="#library" onclick="filterCategory('Personality Development')" class="hover:text-white transition-colors">Personality Development</a></li>
-                    </ul>
-                </div>
-
-                <!-- Payment & Support -->
-                <div class="space-y-3">
-                    <h5 class="font-bold text-white text-sm font-heading">Payment & Support</h5>
-                    <p class="text-xs text-slate-400">Payment Gateway: <strong class="text-emerald-400">NSPAY</strong></p>
-                    <a href="https://www.nasibul.com.np/nspay" target="_blank" class="inline-block text-blue-400 underline hover:text-blue-300 text-xs">www.nasibul.com.np/nspay</a>
-                    <div class="pt-2">
-                        <!-- Footer Protected Settings Link -->
-                        <button onclick="openSettingsModal()" class="text-slate-400 hover:text-white text-xs underline font-normal transition-colors">
-                            Settings
+                      <div class="grid grid-cols-2 gap-3 pt-2">
+                        <button onclick="openEbookPreviewModal('comp-1')" class="w-full py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-extrabold text-xs transition-all border border-slate-300 flex items-center justify-center gap-2 shadow-sm">
+                          <i class="fa-solid fa-eye text-brand-600"></i>
+                          <span>Quick Preview</span>
                         </button>
+
+                        <a href="https://srain.com.np/PAY-COMPUTER-SKILLS" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs transition-all shadow-glow-gold flex items-center justify-center gap-2">
+                          <i class="fa-solid fa-bolt"></i>
+                          <span>BUY NOW</span>
+                        </a>
+                      </div>
+
                     </div>
-                </div>
-            </div>
-
-            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-                <p>&copy; 2026 MD. NS / MD. NASA. All rights reserved.</p>
-                <div class="flex gap-4 text-xs">
-                    <span>Terms & Conditions</span>
-                    <span>Privacy Policy</span>
-                    <span>Digital Product Delivery Policy</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SECTION 20 — BOTTOM NAVIGATION (Mobile) -->
-    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-40 px-3 py-2 shadow-lg">
-        <div class="flex items-center justify-around text-center text-[10px] font-semibold text-slate-600">
-            <a href="#hero" class="flex flex-col items-center gap-1 hover:text-blue-700">
-                <i class="fa-solid fa-house text-base"></i>
-                <span>HOME</span>
-            </a>
-            <a href="#library" class="flex flex-col items-center gap-1 hover:text-blue-700">
-                <i class="fa-solid fa-book-open text-base"></i>
-                <span>EBOOKS</span>
-            </a>
-            <button onclick="openCartDrawer()" class="flex flex-col items-center gap-1 relative text-slate-600 hover:text-blue-700">
-                <i class="fa-solid fa-cart-shopping text-base"></i>
-                <span>CART</span>
-                <span id="bottom-cart-badge" class="absolute -top-1 right-2 bg-blue-600 text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
-            </button>
-            <a href="#combos" class="flex flex-col items-center gap-1 hover:text-blue-700">
-                <i class="fa-solid fa-tags text-base"></i>
-                <span>OFFERS</span>
-            </a>
-            <a href="https://wa.me/?text=Hi%20MD.%20NASA" target="_blank" class="flex flex-col items-center gap-1 hover:text-blue-700">
-                <i class="fa-brands fa-whatsapp text-base text-emerald-600"></i>
-                <span>SUPPORT</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- SECTION 09 & 21 — MODALS -->
-
-    <!-- Product Quick View Modal -->
-    <div id="quickview-modal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 relative shadow-2xl max-h-[90vh] overflow-y-auto border border-slate-200">
-            <button onclick="closeQuickView()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="qv-content" class="space-y-4">
-                <!-- Content filled via JS -->
-            </div>
-        </div>
-    </div>
-
-    <!-- PDF Preview Modal -->
-    <div id="pdf-preview-modal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-3xl w-full p-6 relative shadow-2xl max-h-[90vh] flex flex-col">
-            <div class="flex items-center justify-between pb-4 border-b border-slate-200">
-                <h4 class="font-bold text-slate-900 text-lg flex items-center gap-2">
-                    <i class="fa-solid fa-file-pdf text-rose-500"></i> <span id="preview-modal-title">Ebook Sample Preview</span>
-                </h4>
-                <button onclick="closePdfPreview()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="flex-1 py-6 overflow-y-auto text-center space-y-4">
-                <div class="bg-slate-50 border border-slate-200 p-8 rounded-2xl">
-                    <i class="fa-solid fa-book-open-reader text-slate-400 text-5xl mb-3"></i>
-                    <h5 class="font-bold text-slate-800 text-base" id="preview-sample-heading">Ebook Preview Chapter</h5>
-                    <p class="text-xs text-slate-500 max-w-md mx-auto mt-2" id="preview-sample-text">
-                        यो Ebook को नमुना अंश (Sample Chapter) हो। पूर्ण Ebook प्राप्त गर्नका लागि NSPAY मार्फत सुरक्षित भुक्तानी गर्नुहोस्।
-                    </p>
-                </div>
-            </div>
-            <div class="pt-4 border-t border-slate-200 flex items-center justify-end gap-3">
-                <button onclick="closePdfPreview()" class="px-4 py-2 text-xs font-semibold text-slate-600 bg-slate-100 rounded-xl">Close</button>
-                <a href="https://www.nasibul.com.np/nspay" target="_blank" class="px-5 py-2 text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-xl">Proceed to NSPAY</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- SECTION 21 — PROTECTED SETTINGS INTERFACE MODAL -->
-    <div id="settings-modal" class="fixed inset-0 z-50 hidden bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-4xl w-full p-6 relative shadow-2xl max-h-[90vh] overflow-y-auto border border-slate-200">
-            <!-- Modal Header -->
-            <div class="flex items-center justify-between pb-4 border-b border-slate-200 mb-6">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-gears text-blue-700 text-xl"></i>
-                    <h3 class="font-heading font-bold text-slate-900 text-xl">Protected Page & Catalog Settings</h3>
-                </div>
-                <button onclick="closeSettingsModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-
-            <!-- Settings Password Protection Screen -->
-            <div id="settings-login-screen" class="space-y-4 max-w-md mx-auto py-8">
-                <div class="text-center space-y-2">
-                    <i class="fa-solid fa-lock text-slate-400 text-4xl mb-2"></i>
-                    <h4 class="font-bold text-slate-800 text-lg">Demo Manager Login</h4>
-                    <p class="text-xs text-slate-500">कृपया Settings सम्पादन गर्न Manager Password हाल्नुहोस्।</p>
-                </div>
-                <div>
-                    <input type="password" id="settings-pass-input" placeholder="Password: NS84684@Nasibul" class="w-full bg-slate-50 border border-slate-300 rounded-xl py-2.5 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-blue-600">
-                    <p id="settings-login-err" class="text-rose-600 text-xs mt-1 hidden font-semibold">गलत Password! पुनः प्रयास गर्नुहोस्।</p>
-                </div>
-                <button onclick="authenticateSettings()" class="w-full bg-blue-700 hover:bg-blue-800 text-white font-bold py-2.5 rounded-xl text-sm transition-colors">
-                    Unlock Settings
-                </button>
-                <p class="text-[11px] text-slate-400 text-center">Demo password: <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-700">NS84684@Nasibul</code></p>
-            </div>
-
-            <!-- Settings Content (Hidden until unlocked) -->
-            <div id="settings-content-screen" class="hidden space-y-6">
-                <!-- Settings Tabs -->
-                <div class="flex border-b border-slate-200 gap-4 text-sm font-semibold">
-                    <button onclick="switchSettingsTab('products')" id="tab-btn-products" class="pb-2 border-b-2 border-blue-700 text-blue-700">Product Manager</button>
-                    <button onclick="switchSettingsTab('content')" id="tab-btn-content" class="pb-2 text-slate-500 hover:text-slate-800">Page Copy Settings</button>
-                    <button onclick="switchSettingsTab('export')" id="tab-btn-export" class="pb-2 text-slate-500 hover:text-slate-800">Data Import/Export</button>
+                  </div>
                 </div>
 
-                <!-- Tab 1: Product Manager -->
-                <div id="set-tab-products" class="space-y-4">
+              </div>
+            </div>
+          </section>
+
+          <section id="ebook-catalog" class="py-16 sm:py-24 bg-white border-t border-slate-200/80 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              
+              <!-- Section Header -->
+              <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs font-black tracking-widest text-brand-700 bg-brand-50 border border-brand-200 px-4 py-1.5 rounded-full uppercase">
+                  OUR DIGITAL LIBRARY
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">Explore Practical Ebooks</h2>
+                <p class="text-base sm:text-lg text-slate-600 font-medium">
+                  आफ्नो रुचि, आवश्यकता र Learning Goal अनुसार उपयोगी Practical Ebook छान्नुहोस्।
+                </p>
+              </div>
+
+              <!-- Horizontal Scrollable Category Filter Tabs -->
+              <div class="mt-10 overflow-x-auto no-scrollbar pb-2">
+                <div class="flex items-center justify-start sm:justify-center gap-3 min-w-max px-2" id="category-tabs-container">
+                  ${categories.map(cat => `
+                    <button onclick="setCategoryFilter('${cat.id}')" class="px-5 py-3 rounded-2xl font-extrabold text-xs sm:text-sm flex items-center gap-2.5 transition-all ${
+                      currentCategoryFilter === cat.id 
+                        ? 'bg-gradient-to-r from-brand-600 to-brand-700 text-white shadow-glow-blue border border-brand-600' 
+                        : 'bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900 border border-slate-200'
+                    }">
+                      <i class="fa-solid ${cat.icon} ${currentCategoryFilter === cat.id ? 'text-white' : 'text-brand-600'}"></i>
+                      <span>${cat.label}</span>
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+
+              <!-- Search Bar & Counter -->
+              <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-4 bg-paper-50 p-4 rounded-2xl border border-slate-200 shadow-sm">
+                <div class="text-sm font-bold text-slate-700" id="ebook-count-text">
+                  <!-- JS search count -->
+                </div>
+                <div class="w-full sm:w-96 relative">
+                  <input type="text" 
+                         id="catalog-search" 
+                         value="${currentSearchQuery}"
+                         oninput="handleSearchInput(this.value)"
+                         placeholder="Search Ebooks (उदा: Excel, Share, LokSewa)..."
+                         class="w-full pl-10 pr-4 py-3 text-sm bg-white border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 placeholder-slate-400 font-medium shadow-sm">
+                  <i class="fa-solid fa-magnifying-glass text-slate-400 absolute left-3.5 top-3.5 text-xs"></i>
+                </div>
+              </div>
+
+              <!-- Ebook Grid Container -->
+              <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="ebooks-grid">
+                <!-- Dynamically populated by JS -->
+              </div>
+
+            </div>
+          </section>
+
+          <section id="combo-section" class="py-16 sm:py-24 bg-gradient-to-b from-amber-50/40 via-paper-50 to-amber-50/20 border-y border-amber-200/60 relative overflow-hidden">
+            
+            <!-- Glowing Background Accent -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 bg-amber-400/15 blur-3xl rounded-full pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+              
+              <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span class="text-xs font-black tracking-widest text-amber-900 bg-amber-100 border border-amber-300 px-4 py-1.5 rounded-full uppercase">
+                  👑 VALUE BUNDLES & SPECIAL COMBOS
+                </span>
+                <h2 class="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight">
+                  एकै साथ धेरै Ebooks, <span class="gold-gradient-text">विशेष बचत!</span>
+                </h2>
+                <p class="text-base sm:text-lg text-slate-600 font-medium">
+                  आफ्नो Career Goal अनुसार Ebook Package छान्नुहोस् र ६७% सम्मको भारी छुट प्राप्त गर्नुहोस्।
+                </p>
+              </div>
+
+              <!-- Combo Bundle Cards Grid -->
+              <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8" id="combos-grid">
+                ${combos.map(cb => `
+                  <div class="glass-card-gold-light rounded-3xl p-6 sm:p-8 shadow-card-hover flex flex-col justify-between relative overflow-hidden border-2 border-amber-300 group hover:border-amber-400 transition-all">
+                    
+                    <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-amber-600 text-slate-950 text-[10px] font-black tracking-widest uppercase px-4 py-1 rounded-bl-xl shadow-sm">
+                      ${cb.badge}
+                    </div>
+
+                    <div>
+                      <span class="text-xs font-black text-amber-800 uppercase tracking-widest block mb-2">LIMITED TIME DISCOUNTED COMBO</span>
+                      <h3 class="text-2xl sm:text-3xl font-black text-slate-900 leading-tight mb-3">${cb.title}</h3>
+                      <p class="text-xs sm:text-sm text-slate-600 font-semibold mb-6 leading-relaxed">${cb.subtitle}</p>
+
+                      <div class="bg-white/90 rounded-2xl p-5 border border-amber-200/80 mb-6 space-y-3 shadow-sm">
+                        <p class="text-xs font-extrabold text-amber-900 uppercase tracking-wider flex items-center gap-2">
+                          <i class="fa-solid fa-box-open text-amber-600"></i> यस Package मा समावेश Ebooks:
+                        </p>
+                        <ul class="space-y-2.5">
+                          ${cb.items.map(it => `
+                            <li class="text-xs sm:text-sm font-bold text-slate-800 flex items-center gap-3">
+                              <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+                              <span>${it}</span>
+                            </li>
+                          `).join('')}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div class="flex items-baseline justify-between pt-4 border-t border-amber-200 mb-5">
+                        <div>
+                          <span class="text-xs text-slate-400 font-bold line-through block">Regular Price: NPR ${cb.regularPrice}</span>
+                          <span class="text-3xl sm:text-4xl font-black text-amber-700">NPR ${cb.comboPrice}</span>
+                        </div>
+                        <span class="text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-300 px-3 py-1.5 rounded-xl">
+                          SAVE NPR ${cb.saveAmount}
+                        </span>
+                      </div>
+
+                      <a href="${cb.payUrl}" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-sm sm:text-base py-4 rounded-2xl shadow-glow-gold transition-all transform hover:-translate-y-0.5 border border-amber-600">
+                        <i class="fa-solid fa-cart-shopping text-lg"></i>
+                        <span>GET THIS COMBO BUNDLE NOW</span>
+                      </a>
+                    </div>
+
+                  </div>
+                `).join('')}
+              </div>
+
+              <!-- Interactive Custom Bundle Builder Tool -->
+              <div class="mt-16 bg-white p-6 sm:p-10 rounded-3xl border border-brand-200 shadow-card-light">
+                <div class="text-center max-w-2xl mx-auto space-y-2 mb-8">
+                  <span class="text-xs font-black text-brand-700 uppercase tracking-widest bg-brand-50 px-3.5 py-1.5 rounded-full border border-brand-200">
+                    🛠️ BUILD YOUR OWN COMBO
+                  </span>
+                  <h3 class="text-2xl sm:text-3xl font-black text-slate-900">आफ्नै Custom Bundle बनाउनुहोस्</h3>
+                  <p class="text-xs sm:text-sm text-slate-500 font-medium">
+                    तपाईंलाई चाहिएको पुस्तकहरू रोज्नुहोस् (२ भन्दा बढी पुस्तक छान्दा २०% देखि ४०% थप छुट पाउनुहोस्!)
+                  </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="custom-bundle-items">
+                  <!-- Dynamically rendered custom items -->
+                </div>
+
+                <div id="custom-bundle-summary" class="mt-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <!-- Populated by JS -->
+                </div>
+              </div>
+
+            </div>
+          </section>
+
+          <section class="py-16 sm:py-20 bg-white border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              
+              <div class="text-center max-w-2xl mx-auto space-y-2 mb-12">
+                <span class="text-xs font-black tracking-widest text-emerald-800 uppercase bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200">
+                  REVIEWS & FEEDBACK
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black text-slate-900">पाठकहरूको अनुभव</h2>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                ${reviews.map(rev => `
+                  <div class="bg-paper-50 p-6 rounded-2xl space-y-4 border border-slate-200 hover:border-brand-400 hover:shadow-card-light transition-all">
                     <div class="flex items-center justify-between">
-                        <h4 class="font-bold text-slate-800 text-sm">Catalog Products List</h4>
-                        <button onclick="openAddNewProductForm()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2 px-3.5 rounded-xl flex items-center gap-1.5">
-                            <i class="fa-solid fa-plus"></i> Add New Product
-                        </button>
+                      <div class="flex items-center gap-1 text-amber-500 text-xs">
+                        ${Array(rev.rating).fill('<i class="fa-solid fa-star"></i>').join('')}
+                      </div>
+                      <span class="text-[10px] text-emerald-800 font-extrabold bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">VERIFIED READER</span>
                     </div>
 
-                    <!-- Products Table / List -->
-                    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs">
-                        <table class="w-full text-left border-collapse">
-                            <thead class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200">
-                                <tr>
-                                    <th class="p-3">Title</th>
-                                    <th class="p-3">Category</th>
-                                    <th class="p-3">Price</th>
-                                    <th class="p-3">Discount</th>
-                                    <th class="p-3 text-right">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="settings-products-table" class="divide-y divide-slate-100">
-                                <!-- Products rows filled via JS -->
-                            </tbody>
-                        </table>
+                    <p class="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed italic">
+                      "${rev.text}"
+                    </p>
+
+                    <div class="pt-3 border-t border-slate-200 flex items-center gap-3">
+                      <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-brand-600 to-indigo-600 text-white font-black text-xs flex items-center justify-center shadow-sm">
+                        ${rev.name.substring(0, 2).toUpperCase()}
+                      </div>
+                      <div>
+                        <h4 class="text-xs font-bold text-slate-900">${rev.name}</h4>
+                        <span class="text-[10px] text-slate-500 font-medium block">${rev.role} • ${rev.location}</span>
+                      </div>
                     </div>
-                </div>
+                  </div>
+                `).join('')}
+              </div>
 
-                <!-- Tab 2: Page Content Manager -->
-                <div id="set-tab-content" class="hidden space-y-4 text-xs">
-                    <div class="space-y-3">
-                        <label class="block font-bold text-slate-700">Hero Main Headline</label>
-                        <input type="text" id="edit-hero-headline" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-xs font-medium">
-
-                        <label class="block font-bold text-slate-700">Hero Subtitle</label>
-                        <textarea id="edit-hero-subtitle" rows="2" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-2.5 text-xs font-medium"></textarea>
-                    </div>
-
-                    <button onclick="savePageCopySettings()" class="bg-blue-700 text-white font-bold py-2 px-4 rounded-xl">Save Copy Settings</button>
-                </div>
-
-                <!-- Tab 3: Data Import/Export -->
-                <div id="set-tab-export" class="hidden space-y-4 text-xs">
-                    <p class="text-slate-600">तपाईं स्थानीय Product र Settings Data लाई JSON format मा Export वा Import गर्न सक्नुहुन्छ।</p>
-                    <div class="flex gap-3">
-                        <button onclick="exportCatalogData()" class="bg-slate-800 text-white font-bold py-2 px-4 rounded-xl">Export Catalog JSON</button>
-                        <button onclick="resetDefaultData()" class="bg-rose-600 text-white font-bold py-2 px-4 rounded-xl">Reset to Default Demo</button>
-                    </div>
-                </div>
             </div>
-        </div>
-    </div>
+          </section>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        const NSPAY_URL = "https://www.nasibul.com.np/nspay";
-        const SETTINGS_PASS = "NS84684@Nasibul";
-
-        // Default Demo Products Data Structure
-        const DEFAULT_PRODUCTS = [
-            {
-                id: "ebook-001",
-                title: "Computer Skills for Nepali Youth",
-                subtitle: "Zero देखि Job-Ready सम्मको Practical Computer Guide",
-                category: "Computer Skills",
-                image: "https://placehold.co/400x560/1e293b/ffffff?text=Computer+Skills+Guide",
-                shortSummary: "Word, Excel, PowerPoint, Internet र Office tools हरू नेपालीमा सरल ढङ्गले सिक्नुहोस्।",
-                description: "यो Ebook ले नेपाली विद्यार्थी र beginner हरूलाई Microsoft Office Package, Emailing, Typing र दैनिक अफिसमा चाहिने कम्प्युटर ज्ञान Step-by-Step सिकाउँछ।",
-                regularPrice: 999,
-                discountPrice: 499,
-                rating: 4.9,
-                reviewCount: 32,
-                featured: true,
-                isNew: true,
-                chapters: ["Computer Basics & Windows OS", "MS Word Document Formatting", "MS Excel Formulas & Charts", "Internet Ethics & Email Writing"]
-            },
-            {
-                id: "ebook-002",
-                title: "Digital Skills & Online Opportunities",
-                subtitle: "आधुनिक डिजिटल युगका सम्भावना र आवश्यक सीपहरू",
-                category: "Digital Skills and Online Incomes",
-                image: "https://placehold.co/400x560/0d9488/ffffff?text=Digital+Skills+Book",
-                shortSummary: "डिजिटल दुनियाँका उपयोगी Tools, Remote Work परिचय र Modern Digital Literacy.",
-                description: "नेपाली युवाहरूका लागि तयार पारिएको यो डिजिटल गाइडले इन्टरनेटका सही र सुरक्षित प्रयोगहरू, Freelance basic awareness र Digital Content Tools बुझ्न मद्दत गर्दछ।",
-                regularPrice: 899,
-                discountPrice: 449,
-                rating: 4.8,
-                reviewCount: 24,
-                featured: true,
-                isNew: false,
-                chapters: ["Digital Literacy Intro", "Social Media Safety & Management", "Basic Graphic & Video Tools", "Remote Work Ethics"]
-            },
-            {
-                id: "ebook-003",
-                title: "LokSewa Computer Operator Guide",
-                subtitle: "लोकसेवा कम्प्युटर अपरेटर परीक्षा विशेष तयारी गाइड",
-                category: "LokSewa",
-                image: "https://placehold.co/400x560/1e40af/ffffff?text=LokSewa+Operator+Guide",
-                shortSummary: "वस्तुगत र विषयगत प्रश्नोत्तर, Curriculum आधारित अध्ययन सामग्री।",
-                description: "लोकसेवा आयोगको कम्प्युटर अपरेटर र सहायक अपरेटर पदको तयारी गरिरहेका परीक्षार्थीहरूका लागि Syllabus अनुसार तयार पारिएको विशेष हस्तपुस्तिका।",
-                regularPrice: 1099,
-                discountPrice: 599,
-                rating: 4.9,
-                reviewCount: 45,
-                featured: false,
-                isNew: true,
-                chapters: ["LokSewa Syllabus Breakdown", "Model Questions & Answers", "Practical Exam Tips", "Past Question Papers Analysis"]
-            },
-            {
-                id: "ebook-004",
-                title: "Share Market Beginner Masterclass",
-                subtitle: "IPO, FPO देखि Secondary Market सम्मको आधारभूत ज्ञान",
-                category: "Share Market",
-                image: "https://placehold.co/400x560/047857/ffffff?text=Share+Market+Guide",
-                shortSummary: "सेयर बजारको प्राविधिक ज्ञान, वित्तीय साक्षरता र जोखिम व्यवस्थापन।",
-                description: "सेयर बजारमा प्रवेश गर्न चाहने नयाँ लगानीकर्ताका लागि NEPSE, MeroShare, Fundamental Analysis र जिम्मेवार लगानी सिद्धान्तबारे स्पष्ट जानकारी।",
-                regularPrice: 799,
-                discountPrice: 399,
-                rating: 4.7,
-                reviewCount: 19,
-                featured: false,
-                isNew: false,
-                chapters: ["Primary Market (IPO/FPO)", "Secondary Market Basics", "Company Financial Reports", "Risk Management"]
-            },
-            {
-                id: "ebook-005",
-                title: "Personality & Communication Growth",
-                subtitle: "आत्मविश्वास, बोल्ने कला र व्यक्तित्व विकास",
-                category: "Personality Development",
-                image: "https://placehold.co/400x560/6b21a8/ffffff?text=Personality+Growth",
-                shortSummary: "इन्टरभ्यु, अफिस र सार्वजनिक स्थलमा प्रभावकारी प्रस्तुतिका तरिकाहरू।",
-                description: "आफ्नो पर्सनालिटी, Body Language, Public Speaking Fear हटाउने तरिका र सकरात्मक सोच निर्माणका लागि विशेष practical Ebook।",
-                regularPrice: 699,
-                discountPrice: 349,
-                rating: 4.8,
-                reviewCount: 28,
-                featured: false,
-                isNew: false,
-                chapters: ["Self Confidence Mindset", "Body Language & Ethics", "Public Speaking Exercises", "Interview Preparation"]
-            },
-            {
-                id: "ebook-006",
-                title: "Nepali Youth Career & CV Masterguide",
-                subtitle: "CV, Cover Letter र Job Search को सम्पूर्ण रणनीति",
-                category: "Nepali Youth Career Guides",
-                image: "https://placehold.co/400x560/c2410c/ffffff?text=Career+CV+Masterguide",
-                shortSummary: "Professional CV बनाउने ढाँचा, Career planning र job interview तयारी।",
-                description: "नेपाल तथा विदेशमा रोजगार खोजिरहेका युवाहरूका लागि आकर्षक Resume लेखन, Email followup र Career Growth का सिद्धान्तहरू।",
-                regularPrice: 750,
-                discountPrice: 399,
-                rating: 4.9,
-                reviewCount: 38,
-                featured: true,
-                isNew: true,
-                chapters: ["Modern CV Templates", "Writing High-Converting Cover Letters", "Job Search Portals", "Interview Q&A Guide"]
-            }
-        ];
-
-        // Global State
-        let products = JSON.parse(localStorage.getItem('nasa_ebooks')) || DEFAULT_PRODUCTS;
-        let cart = JSON.parse(localStorage.getItem('nasa_cart')) || [];
-        let selectedComboIds = [];
-        let currentCategory = 'All';
-        let currentSort = 'featured';
-        let heroSlideIndex = 0;
-        let isSettingsUnlocked = false;
-
-        window.onload = function() {
-            renderCatalog();
-            renderComboBuilder();
-            updateCartUI();
-            startHeroSlider();
-            startCountdownTimer();
-        };
-
-        // Render Catalog Grid
-        function renderCatalog() {
-            const grid = document.getElementById('product-grid');
-            const showingCountEl = document.getElementById('catalog-showing-count');
-            const emptyMsg = document.getElementById('empty-catalog-msg');
-
-            let filtered = products.filter(p => {
-                if (currentCategory === 'All') return true;
-                return p.category === currentCategory;
-            });
-
-            // Sorting
-            if (currentSort === 'price-low') {
-                filtered.sort((a, b) => a.discountPrice - b.discountPrice);
-            } else if (currentSort === 'price-high') {
-                filtered.sort((a, b) => b.discountPrice - a.discountPrice);
-            } else if (currentSort === 'newest') {
-                filtered.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0));
-            } else {
-                filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
-            }
-
-            showingCountEl.innerText = filtered.length;
-
-            if (filtered.length === 0) {
-                grid.innerHTML = '';
-                emptyMsg.classList.remove('hidden');
-                return;
-            } else {
-                emptyMsg.classList.add('hidden');
-            }
-
-            grid.innerHTML = filtered.map(p => {
-                const saving = p.regularPrice - p.discountPrice;
-                const percent = Math.round((saving / p.regularPrice) * 100);
-
-                return `
-                <div class="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-all flex flex-col justify-between overflow-hidden group">
-                    <div class="p-3 sm:p-4 pb-0 relative">
-                        <!-- Cover Image -->
-                        <div class="relative overflow-hidden rounded-xl bg-slate-100 mb-3 aspect-[3/4] flex items-center justify-center">
-                            <img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/400x560/1e293b/ffffff?text=Ebook+Cover'">
-                            ${p.isNew ? `<span class="absolute top-2 left-2 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">NEW</span>` : ''}
-                            <span class="absolute top-2 right-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-0.5 rounded shadow">${percent}% OFF</span>
-                        </div>
-
-                        <!-- Info -->
-                        <span class="text-[10px] font-bold text-blue-700 uppercase tracking-wide block mb-1">${p.category}</span>
-                        <h4 class="font-heading font-bold text-slate-900 text-sm sm:text-base line-clamp-1 group-hover:text-blue-700 transition-colors" title="${p.title}">${p.title}</h4>
-                        <p class="text-xs text-slate-500 line-clamp-2 mt-1 mb-3">${p.shortSummary}</p>
+          <section class="py-16 sm:py-20 bg-paper-50 border-b border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="bg-white p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-card-light grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <div class="lg:col-span-4 flex justify-center">
+                  <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-3xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-amber-500 p-1 shadow-glow-blue">
+                    <div class="w-full h-full bg-slate-900 rounded-[22px] flex flex-col items-center justify-center text-center p-4 text-white">
+                      <span class="text-4xl font-black text-white mb-1">MD. NS</span>
+                      <span class="text-xs text-amber-400 font-black uppercase tracking-widest">AUTHOR & FOUNDER</span>
+                      <span class="text-[10px] text-slate-300 mt-2 font-semibold">SRAIN BOOKS / MD. NASA</span>
                     </div>
-
-                    <!-- Bottom Pricing & Buttons -->
-                    <div class="p-3 sm:p-4 pt-0 space-y-3">
-                        <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 flex items-center justify-between">
-                            <div>
-                                <span class="text-[10px] text-slate-400 line-through block leading-none">NPR ${p.regularPrice}</span>
-                                <span class="text-base font-extrabold text-blue-700 font-heading">NPR ${p.discountPrice}</span>
-                            </div>
-                            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded border border-emerald-100">
-                                Save ${saving}
-                            </span>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-2 text-xs">
-                            <button onclick="openQuickView('${p.id}')" class="bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2 rounded-xl transition-colors text-center">
-                                Preview
-                            </button>
-                            <button onclick="addToCart('${p.id}')" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 rounded-xl transition-colors text-center">
-                                + Cart
-                            </button>
-                        </div>
-
-                        <a href="${NSPAY_URL}" target="_blank" rel="noopener noreferrer" class="w-full bg-gradient-to-r from-blue-800 to-slate-900 hover:from-blue-900 hover:to-black text-white text-xs font-bold py-2.5 rounded-xl text-center block shadow transition-all">
-                            Buy Now (NSPAY)
-                        </a>
-                    </div>
+                  </div>
                 </div>
-                `;
-            }).join('');
-        }
 
-        // Category Filter Function
-        function filterCategory(cat) {
-            currentCategory = cat;
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                if (btn.innerText.includes(cat) || (cat === 'All' && btn.innerText.includes('All Categories'))) {
-                    btn.classList.add('bg-blue-700', 'text-white');
-                    btn.classList.remove('bg-white', 'text-slate-700');
-                } else {
-                    btn.classList.remove('bg-blue-700', 'text-white');
-                    btn.classList.add('bg-white', 'text-slate-700');
-                }
-            });
-            renderCatalog();
-        }
-
-        // Sort Handler
-        function handleSort(val) {
-            currentSort = val;
-            renderCatalog();
-        }
-
-        // Search Handler
-        function handleSearch(query) {
-            const clearBtn = document.getElementById('clear-search-btn');
-            if (query.trim().length > 0) {
-                clearBtn.classList.remove('hidden');
-            } else {
-                clearBtn.classList.add('hidden');
-            }
-
-            const q = query.toLowerCase();
-            const grid = document.getElementById('product-grid');
-            
-            const searched = products.filter(p => 
-                p.title.toLowerCase().includes(q) || 
-                p.category.toLowerCase().includes(q) || 
-                p.shortSummary.toLowerCase().includes(q)
-            );
-
-            document.getElementById('catalog-showing-count').innerText = searched.length;
-
-            if (searched.length === 0) {
-                grid.innerHTML = '';
-                document.getElementById('empty-catalog-msg').classList.remove('hidden');
-            } else {
-                document.getElementById('empty-catalog-msg').classList.add('hidden');
-                grid.innerHTML = searched.map(p => `
-                    <div class="bg-white rounded-2xl border border-slate-200 p-4 shadow-sm space-y-3">
-                        <h4 class="font-bold text-slate-900">${p.title}</h4>
-                        <p class="text-xs text-slate-500">${p.shortSummary}</p>
-                        <div class="flex items-center justify-between">
-                            <span class="font-bold text-blue-700">NPR ${p.discountPrice}</span>
-                            <button onclick="addToCart('${p.id}')" class="bg-blue-600 text-white text-xs px-3 py-1.5 rounded-lg font-bold">+ Add to Cart</button>
-                        </div>
-                    </div>
-                `).join('');
-            }
-        }
-
-        function clearSearch() {
-            document.getElementById('global-search-input').value = '';
-            document.getElementById('clear-search-btn').classList.add('hidden');
-            renderCatalog();
-        }
-
-        function toggleMobileSearch() {
-            const bar = document.getElementById('mobile-search-bar');
-            bar.classList.toggle('hidden');
-        }
-
-        function renderComboBuilder() {
-            const container = document.getElementById('combo-selection-list');
-            container.innerHTML = products.map(p => `
-                <label class="flex items-center justify-between bg-slate-50 hover:bg-slate-100 p-3.5 rounded-2xl border border-slate-200 cursor-pointer transition-colors">
-                    <div class="flex items-center gap-3">
-                        <input type="checkbox" onchange="toggleComboSelect('${p.id}')" class="w-4 h-4 text-emerald-600 rounded focus:ring-emerald-500">
-                        <div>
-                            <span class="font-bold text-slate-900 text-xs sm:text-sm block">${p.title}</span>
-                            <span class="text-[10px] text-slate-500">${p.category}</span>
-                        </div>
-                    </div>
-                    <span class="font-bold text-xs text-blue-700 font-heading">NPR ${p.discountPrice}</span>
-                </label>
-            `).join('');
-        }
-
-        function toggleComboSelect(id) {
-            const idx = selectedComboIds.indexOf(id);
-            if (idx > -1) {
-                selectedComboIds.splice(idx, 1);
-            } else {
-                selectedComboIds.push(id);
-            }
-            updateComboSummary();
-        }
-
-        function updateComboSummary() {
-            const countBadge = document.getElementById('combo-selected-count-badge');
-            const itemsList = document.getElementById('combo-selected-items-list');
-            const rawTotalEl = document.getElementById('combo-raw-total');
-            const savingsEl = document.getElementById('combo-savings-val');
-            const finalTotalEl = document.getElementById('combo-final-total');
-
-            countBadge.innerText = `${selectedComboIds.length} Selected`;
-
-            if (selectedComboIds.length === 0) {
-                itemsList.innerHTML = `<p class="italic text-slate-400">कृपया देब्रेपट्टीबाट Ebooks हरू select गर्नुहोस्...</p>`;
-                rawTotalEl.innerText = `NPR 0`;
-                savingsEl.innerText = `- NPR 0`;
-                finalTotalEl.innerText = `NPR 0`;
-                return;
-            }
-
-            const selectedProds = products.filter(p => selectedComboIds.includes(p.id));
-            let rawTotal = selectedProds.reduce((sum, p) => sum + p.discountPrice, 0);
-
-            // Additional 15% discount for Combo Pack if >= 2 books selected
-            let extraDiscount = selectedComboIds.length >= 2 ? Math.round(rawTotal * 0.15) : 0;
-            let finalTotal = rawTotal - extraDiscount;
-
-            itemsList.innerHTML = selectedProds.map(p => `
-                <div class="flex justify-between items-center py-1 border-b border-white/5">
-                    <span class="truncate max-w-[200px]">${p.title}</span>
-                    <span class="font-semibold text-white">NPR ${p.discountPrice}</span>
+                <div class="lg:col-span-8 space-y-4 text-center lg:text-left">
+                  <span class="text-xs font-black text-brand-700 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full border border-brand-200">
+                    AUTHOR'S MISSION
+                  </span>
+                  <h2 class="text-2xl sm:text-4xl font-black text-slate-900 leading-snug">नेपाली युवाहरूलाई Practical Computer & Digital Skills मा सक्षम बनाउने उद्देश्य</h2>
+                  <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-medium">
+                    हाम्रो मुख्य लक्ष्य सिद्धान्तमा मात्र सीमित नभई कार्यक्षेत्र (Office & Jobs) मा तुरुन्तै प्रयोग गर्न सकिने व्यावहारिक ज्ञान अति सरल नेपाली भाषामा उपलब्ध गराउनु हो। 
+                  </p>
+                  
+                  <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                    <a href="${storeInfo.supportWhatsapp}" target="_blank" class="px-6 py-3.5 rounded-2xl bg-emerald-600 text-white hover:bg-emerald-700 text-xs font-black transition-all shadow-glow-emerald flex items-center gap-2">
+                      <i class="fa-brands fa-whatsapp text-lg"></i>
+                      <span>Direct WhatsApp Support: ${storeInfo.supportPhone}</span>
+                    </a>
+                  </div>
                 </div>
-            `).join('');
 
-            rawTotalEl.innerText = `NPR ${rawTotal}`;
-            savingsEl.innerText = `- NPR ${extraDiscount} (15% Combo Extra)`;
-            finalTotalEl.innerText = `NPR ${finalTotal}`;
-        }
+              </div>
+            </div>
+          </section>
 
-        function addToCart(id) {
-            const prod = products.find(p => p.id === id);
-            if (!prod) return;
+          <section class="py-16 sm:py-20 bg-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center max-w-2xl mx-auto mb-10">
+                <h2 class="text-2xl sm:text-4xl font-black text-slate-900">
+                  ❓ बारम्बार सोधिने प्रश्नहरू (FAQ)
+                </h2>
+              </div>
 
-            const existing = cart.find(c => c.id === id);
-            if (!existing) {
-                cart.push({...prod, qty: 1});
-            }
-            saveCartState();
-            updateCartUI();
-            openCartDrawer();
-        }
-
-        function removeFromCart(id) {
-            cart = cart.filter(c => c.id !== id);
-            saveCartState();
-            updateCartUI();
-        }
-
-        function saveCartState() {
-            localStorage.setItem('nasa_cart', JSON.stringify(cart));
-        }
-
-        function updateCartUI() {
-            const badge = document.getElementById('cart-badge');
-            const bBadge = document.getElementById('bottom-cart-badge');
-            const itemsContainer = document.getElementById('cart-items-container');
-            const subtotalEl = document.getElementById('cart-subtotal');
-            const totalEl = document.getElementById('cart-total');
-
-            const totalItems = cart.length;
-            badge.innerText = totalItems;
-            bBadge.innerText = totalItems;
-
-            if (cart.length === 0) {
-                itemsContainer.innerHTML = `
-                    <div class="text-center py-12">
-                        <i class="fa-solid fa-cart-flatbed text-slate-300 text-4xl mb-3"></i>
-                        <p class="text-xs font-bold text-slate-500">तपाईंको Cart खाली छ।</p>
-                    </div>
-                `;
-                subtotalEl.innerText = `NPR 0`;
-                totalEl.innerText = `NPR 0`;
-                return;
-            }
-
-            let subtotal = cart.reduce((sum, c) => sum + (c.discountPrice * c.qty), 0);
-
-            itemsContainer.innerHTML = cart.map(item => `
-                <div class="flex items-center justify-between bg-slate-50 p-3 rounded-2xl border border-slate-200">
-                    <div class="flex items-center gap-3">
-                        <img src="${item.image}" alt="cover" class="w-10 h-14 object-cover rounded-lg border">
-                        <div>
-                            <h5 class="font-bold text-xs text-slate-900 line-clamp-1">${item.title}</h5>
-                            <span class="text-xs font-bold text-blue-700">NPR ${item.discountPrice}</span>
-                        </div>
-                    </div>
-                    <button onclick="removeFromCart('${item.id}')" class="text-rose-500 hover:text-rose-700 p-1.5 text-xs">
-                        <i class="fa-solid fa-trash"></i>
+              <div class="space-y-4">
+                ${faqs.map((faq, i) => `
+                  <div class="bg-paper-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
+                    <button onclick="toggleFaq('faq-${i}')" class="w-full px-6 py-5 text-left font-extrabold text-slate-900 flex justify-between items-center text-sm sm:text-base hover:bg-slate-100 transition-colors">
+                      <span>${faq.q}</span>
+                      <i class="fa-solid fa-chevron-down text-brand-600 text-xs transition-transform" id="faq-${i}-icon"></i>
                     </button>
-                </div>
-            `).join('');
-
-            subtotalEl.innerText = `NPR ${subtotal}`;
-            totalEl.innerText = `NPR ${subtotal}`;
-        }
-
-        function openCartDrawer() {
-            const drawer = document.getElementById('cart-drawer');
-            const backdrop = document.getElementById('cart-backdrop');
-            const panel = document.getElementById('cart-panel');
-
-            drawer.classList.remove('hidden', 'pointer-events-none');
-            setTimeout(() => {
-                backdrop.classList.remove('opacity-0');
-                panel.classList.remove('translate-x-full');
-            }, 10);
-        }
-
-        function closeCartDrawer() {
-            const drawer = document.getElementById('cart-drawer');
-            const backdrop = document.getElementById('cart-backdrop');
-            const panel = document.getElementById('cart-panel');
-
-            backdrop.classList.add('opacity-0');
-            panel.classList.add('translate-x-full');
-            setTimeout(() => {
-                drawer.classList.add('hidden', 'pointer-events-none');
-            }, 300);
-        }
-
-        function startHeroSlider() {
-            setInterval(() => {
-                nextHeroSlide();
-            }, 8000);
-        }
-
-        function nextHeroSlide() {
-            const featuredList = products.filter(p => p.featured);
-            if (featuredList.length === 0) return;
-            heroSlideIndex = (heroSlideIndex + 1) % featuredList.length;
-            updateHeroSlideUI(featuredList[heroSlideIndex]);
-        }
-
-        function prevHeroSlide() {
-            const featuredList = products.filter(p => p.featured);
-            if (featuredList.length === 0) return;
-            heroSlideIndex = (heroSlideIndex - 1 + featuredList.length) % featuredList.length;
-            updateHeroSlideUI(featuredList[heroSlideIndex]);
-        }
-
-        function updateHeroSlideUI(p) {
-            document.getElementById('hero-book-image').src = p.image;
-            document.getElementById('hero-category-badge').innerText = p.category;
-            document.getElementById('hero-book-title').innerText = p.title;
-            document.getElementById('hero-book-subtitle').innerText = p.subtitle;
-            document.getElementById('hero-book-summary').innerText = p.shortSummary;
-            document.getElementById('hero-discount-price').innerText = `NPR ${p.discountPrice}`;
-            document.getElementById('hero-regular-price').innerText = `NPR ${p.regularPrice}`;
-            
-            const saving = p.regularPrice - p.discountPrice;
-            const percent = Math.round((saving / p.regularPrice) * 100);
-            document.getElementById('hero-save-badge').innerText = `Save NPR ${saving} (${percent}% OFF)`;
-            
-            const featuredList = products.filter(p => p.featured);
-            document.getElementById('hero-slide-indicator').innerText = `${heroSlideIndex + 1} / ${featuredList.length}`;
-        }
-
-        function openCurrentHeroPreview() {
-            const featuredList = products.filter(p => p.featured);
-            const current = featuredList[heroSlideIndex] || products[0];
-            document.getElementById('preview-modal-title').innerText = `${current.title} — Preview`;
-            document.getElementById('pdf-preview-modal').classList.remove('hidden');
-        }
-
-        function closePdfPreview() {
-            document.getElementById('pdf-preview-modal').classList.add('hidden');
-        }
-
-        function openQuickView(id) {
-            const p = products.find(prod => prod.id === id);
-            if (!p) return;
-
-            const qvContent = document.getElementById('qv-content');
-            qvContent.innerHTML = `
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
-                    <div class="md:col-span-5 flex justify-center">
-                        <img src="${p.image}" class="rounded-xl shadow-lg border w-full max-w-[220px]">
+                    <div id="faq-${i}-content" class="px-6 py-5 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-600 font-medium leading-relaxed hidden">
+                      ${faq.a}
                     </div>
-                    <div class="md:col-span-7 space-y-3">
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded">${p.category}</span>
-                        <h3 class="font-bold text-xl text-slate-900">${p.title}</h3>
-                        <p class="text-xs text-slate-500">${p.subtitle}</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">${p.description}</p>
-                        <div class="text-lg font-bold text-blue-700">NPR ${p.discountPrice} <span class="text-xs text-slate-400 line-through">NPR ${p.regularPrice}</span></div>
-                        <div class="flex gap-2">
-                            <button onclick="addToCart('${p.id}')" class="flex-1 bg-blue-700 text-white font-bold py-2.5 rounded-xl text-xs">+ Add to Cart</button>
-                            <a href="${NSPAY_URL}" target="_blank" class="flex-1 bg-slate-900 text-white font-bold py-2.5 rounded-xl text-xs text-center">Proceed to NSPAY</a>
-                        </div>
-                    </div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          </section>
+
+          <div class="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 px-4 py-2.5 flex items-center justify-around text-center shadow-2xl">
+            <a href="#hero" class="flex flex-col items-center text-slate-600 hover:text-brand-600 text-[11px] font-bold">
+              <i class="fa-solid fa-house text-base text-brand-600"></i>
+              <span>Home</span>
+            </a>
+            <a href="#ebook-catalog" class="flex flex-col items-center text-slate-600 hover:text-brand-600 text-[11px] font-bold">
+              <i class="fa-solid fa-book text-base text-brand-600"></i>
+              <span>Ebooks</span>
+            </a>
+            <a href="#combo-section" class="flex flex-col items-center text-slate-600 hover:text-amber-600 text-[11px] font-bold">
+              <i class="fa-solid fa-crown text-base text-amber-500"></i>
+              <span>Combos</span>
+            </a>
+            <a href="${storeInfo.supportWhatsapp}" target="_blank" class="flex flex-col items-center text-emerald-600 text-[11px] font-bold">
+              <i class="fa-brands fa-whatsapp text-base"></i>
+              <span>Support</span>
+            </a>
+          </div>
+
+          <!-- FOOTER -->
+          <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-semibold">
+              <div class="flex items-center gap-2 text-slate-300">
+                <span class="font-black text-white">${storeInfo.brandName}</span>
+                <span>•</span>
+                <span>By ${storeInfo.authorName} © ${new Date().getFullYear()}</span>
+              </div>
+
+              <div class="flex items-center gap-6">
+                <a href="#hero" class="hover:text-white transition-colors">Back to Top</a>
+                <a href="#/admin" class="hover:text-white transition-colors">Admin CMS</a>
+                <a href="${storeInfo.supportWhatsapp}" target="_blank" class="hover:text-emerald-400 transition-colors">WhatsApp Support</a>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+      `;
+
+      // Render Dynamic Sections
+      renderCatalogGrid();
+      renderCustomBundleBuilder();
+    }
+
+    function setCategoryFilter(catId) {
+      currentCategoryFilter = catId;
+      handleRouting();
+    }
+
+    function handleSearchInput(query) {
+      currentSearchQuery = query;
+      renderCatalogGrid();
+    }
+
+    function renderCatalogGrid() {
+      const grid = document.getElementById('ebooks-grid');
+      const countText = document.getElementById('ebook-count-text');
+      if (!grid) return;
+
+      const { ebooks } = appState;
+
+      const filtered = ebooks.filter(b => {
+        const matchesCategory = currentCategoryFilter === "ALL" || b.category === currentCategoryFilter;
+        const q = currentSearchQuery.toLowerCase().trim();
+        const matchesSearch = !q || 
+          b.title.toLowerCase().includes(q) || 
+          b.subtitle.toLowerCase().includes(q) ||
+          b.summary.toLowerCase().includes(q) ||
+          (b.highlights && b.highlights.some(h => h.toLowerCase().includes(q)));
+        return matchesCategory && matchesSearch;
+      });
+
+      if (countText) {
+        countText.innerHTML = `Showing <span class="text-brand-700 font-black">${filtered.length}</span> of ${ebooks.length} Ebooks`;
+      }
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-16 text-center bg-white rounded-3xl border border-slate-200 shadow-sm">
+            <i class="fa-solid fa-book-open text-5xl text-slate-300 mb-4"></i>
+            <p class="text-slate-900 font-bold text-lg">कुनै पनि Ebook भेटिएन</p>
+            <p class="text-slate-500 text-xs mt-1">कृपया फरक खोज शब्द वा क्याटेगोरी प्रयास गर्नुहोस्।</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(b => `
+        <div class="bg-white rounded-3xl p-6 border border-slate-200/90 hover:border-brand-400 transition-all flex flex-col justify-between group shadow-card-light hover:shadow-card-hover relative">
+          
+          <div>
+            <!-- Header Badges -->
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] font-black uppercase tracking-widest bg-brand-50 text-brand-700 border border-brand-200 px-3 py-1 rounded-full">
+                ${b.category}
+              </span>
+              ${b.badgeText ? `
+                <span class="text-[10px] font-black bg-amber-100 text-amber-800 border border-amber-300 px-2.5 py-1 rounded-md">
+                  ${b.badgeText}
+                </span>
+              ` : ''}
+            </div>
+
+            <!-- Visual Ebook Book Cover Box -->
+            <div class="relative bg-gradient-to-br ${b.accentColor || 'from-brand-700 to-indigo-900'} text-white rounded-2xl p-5 mb-5 flex flex-col justify-between min-h-[170px] border border-slate-300/40 shadow-xl book-spine-effect group-hover:scale-[1.02] transition-transform">
+              <div>
+                <span class="text-[9px] text-amber-300 font-black uppercase tracking-widest block">${b.author} PUBLICATION</span>
+                <h3 class="text-lg font-black text-white mt-1.5 leading-snug">${b.title}</h3>
+              </div>
+              <div class="pt-3 border-t border-white/20 flex justify-between items-center text-[10px] text-slate-100">
+                <span class="font-bold">FORMAT: HD PDF</span>
+                <span class="text-amber-300 font-black"><i class="fa-solid fa-star"></i> PRACTICAL</span>
+              </div>
+            </div>
+
+            <p class="text-xs font-bold text-slate-700 line-clamp-2 mb-4">${b.subtitle}</p>
+
+            ${b.highlights ? `
+              <ul class="space-y-2 mb-6 border-t border-slate-100 pt-4">
+                ${b.highlights.slice(0, 3).map(h => `
+                  <li class="text-xs text-slate-600 font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-circle-check text-emerald-600 text-xs shrink-0"></i>
+                    <span class="truncate">${h}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            ` : ''}
+          </div>
+
+          <!-- Price & Action Buttons -->
+          <div class="pt-4 border-t border-slate-200">
+            <div class="flex items-baseline justify-between mb-4">
+              <div>
+                <span class="text-xs text-slate-400 line-through font-bold block">NPR ${b.regularPrice}</span>
+                <span class="text-2xl font-black text-slate-900">NPR ${b.salePrice}</span>
+              </div>
+              <span class="text-xs font-black bg-rose-100 text-rose-700 border border-rose-200 px-2.5 py-1 rounded-lg">
+                SAVE ${b.discountPercent}%
+              </span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <button onclick="openEbookPreviewModal('${b.id}')" class="w-full py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-extrabold text-xs transition-colors border border-slate-300 flex items-center justify-center gap-1.5 shadow-sm">
+                <i class="fa-solid fa-eye text-brand-600"></i>
+                <span>Preview</span>
+              </button>
+
+              <a href="${b.payUrl}" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-black text-xs transition-all shadow-glow-blue flex items-center justify-center gap-1.5">
+                <i class="fa-solid fa-bolt"></i>
+                <span>Buy Now</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      `).join('');
+    }
+
+    function renderCustomBundleBuilder() {
+      const container = document.getElementById('custom-bundle-items');
+      const summary = document.getElementById('custom-bundle-summary');
+      if (!container || !summary) return;
+
+      const { ebooks, storeInfo } = appState;
+
+      container.innerHTML = ebooks.map(b => {
+        const isSelected = selectedCustomBundleIds.includes(b.id);
+        return `
+          <div onclick="toggleCustomBundleSelection('${b.id}')" class="cursor-pointer p-4 rounded-2xl border transition-all ${
+            isSelected 
+              ? 'bg-brand-50 border-brand-600 text-slate-900 shadow-md ring-2 ring-brand-500/20' 
+              : 'bg-paper-50 border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-white'
+          } flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3 truncate">
+              <div class="w-6 h-6 rounded-lg ${isSelected ? 'bg-brand-600 text-white' : 'bg-slate-200 text-slate-600'} font-black text-xs flex items-center justify-center shrink-0">
+                ${isSelected ? '✓' : '+'}
+              </div>
+              <div class="truncate">
+                <h4 class="text-xs font-bold text-slate-900 truncate">${b.title}</h4>
+                <span class="text-[10px] text-slate-500 font-semibold">NPR ${b.salePrice}</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      // Calculate totals
+      const selectedBooks = ebooks.filter(b => selectedCustomBundleIds.includes(b.id));
+      const rawTotal = selectedBooks.reduce((acc, b) => acc + b.salePrice, 0);
+      
+      let discountRate = 0;
+      if (selectedBooks.length === 2) discountRate = 0.15; // 15% extra
+      if (selectedBooks.length >= 3) discountRate = 0.30; // 30% extra
+
+      const finalPrice = Math.round(rawTotal * (1 - discountRate));
+      const savedAmount = rawTotal - finalPrice;
+
+      const waMsg = encodeURIComponent(`Hello ${storeInfo.brandName}, I want to purchase my custom Ebook Bundle:\n\n` + 
+        selectedBooks.map(b => `• ${b.title}`).join('\n') + 
+        `\n\nTotal Books: ${selectedBooks.length}\nCustom Bundle Price: NPR ${finalPrice}`);
+
+      summary.innerHTML = `
+        <div>
+          <span class="text-xs text-slate-500 font-bold block">Selected: ${selectedBooks.length} Ebooks</span>
+          <span class="text-2xl font-black text-slate-900">NPR ${finalPrice} ${rawTotal > finalPrice ? `<span class="text-xs text-slate-400 line-through">NPR ${rawTotal}</span>` : ''}</span>
+          ${discountRate > 0 ? `<span class="text-xs font-extrabold text-emerald-700 block mt-0.5">🎉 Extra ${discountRate * 100}% Custom Bundle Discount Applied! (Saved NPR ${savedAmount})</span>` : ''}
+        </div>
+
+        <a href="https://wa.me/9779702784684?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs sm:text-sm shadow-glow-gold transition-all flex items-center justify-center gap-2 border border-amber-600 ${selectedBooks.length === 0 ? 'opacity-50 pointer-events-none' : ''}">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>Order Custom Bundle on WhatsApp</span>
+        </a>
+      `;
+    }
+
+    function toggleCustomBundleSelection(id) {
+      if (selectedCustomBundleIds.includes(id)) {
+        selectedCustomBundleIds = selectedCustomBundleIds.filter(i => i !== id);
+      } else {
+        selectedCustomBundleIds.push(id);
+      }
+      renderCustomBundleBuilder();
+    }
+
+    function openEbookPreviewModal(ebookId) {
+      const ebook = appState.ebooks.find(b => b.id === ebookId);
+      if (!ebook) return;
+
+      const modalContainer = document.getElementById('modal-container');
+      const pages = ebook.previewPages || [];
+      
+      let activePageIndex = 0;
+
+      function renderModalContent() {
+        const activePage = pages[activePageIndex] || pages[0];
+
+        modalContainer.innerHTML = `
+          <div class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 overflow-y-auto">
+            <div class="bg-white rounded-3xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden flex flex-col my-auto max-h-[90vh]">
+              
+              <!-- Modal Header -->
+              <div class="bg-slate-900 text-white px-6 py-4 flex items-center justify-between border-b border-slate-800">
+                <div class="flex items-center gap-3 truncate pr-2">
+                  <i class="fa-solid fa-book-open text-amber-400 text-lg"></i>
+                  <div class="truncate">
+                    <h3 class="font-black text-sm sm:text-base truncate text-white">${ebook.title}</h3>
+                    <span class="text-[10px] text-slate-300 block font-semibold">PREVIEW READER • BY ${ebook.author}</span>
+                  </div>
                 </div>
-            `;
-            document.getElementById('quickview-modal').classList.remove('hidden');
-        }
+                <button onclick="closeEbookPreviewModal()" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center text-sm shrink-0 border border-slate-700">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+              </div>
 
-        function closeQuickView() {
-            document.getElementById('quickview-modal').classList.add('hidden');
-        }
+              <!-- Page Switcher Bar -->
+              ${pages.length > 1 ? `
+                <div class="bg-paper-50 border-b border-slate-200 px-4 py-2 flex items-center gap-2 overflow-x-auto no-scrollbar">
+                  ${pages.map((p, idx) => `
+                    <button onclick="switchModalPage(${idx})" class="px-4 py-1.5 rounded-xl text-xs font-bold transition-all ${
+                      idx === activePageIndex ? 'bg-brand-600 text-white font-black shadow-sm' : 'bg-slate-200 text-slate-700 hover:bg-slate-300'
+                    }">
+                      Sample Page ${p.pageNumber}
+                    </button>
+                  `).join('')}
+                </div>
+              ` : ''}
 
-        function toggleAccordion(id) {
-            const content = document.getElementById(`${id}-content`);
-            const icon = document.getElementById(`${id}-icon`);
-            content.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        }
+              <!-- Reader Document Canvas -->
+              <div class="p-6 overflow-y-auto space-y-4 bg-paper-50 flex-1">
+                <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                  <span class="text-[10px] font-black uppercase text-brand-700 tracking-widest bg-brand-50 px-2.5 py-1 rounded border border-brand-200">CHAPTER SAMPLE PREVIEW</span>
+                  <h4 class="text-lg sm:text-xl font-black text-slate-900 border-b border-slate-100 pb-3">${activePage ? activePage.heading : 'Sample Content'}</h4>
+                  <div class="whitespace-pre-line text-xs sm:text-sm text-slate-700 leading-relaxed font-sans font-medium">
+                    ${activePage ? activePage.content : ebook.summary}
+                  </div>
+                </div>
 
-        function toggleFaq(id) {
-            const content = document.getElementById(`${id}-content`);
-            const icon = document.getElementById(`${id}-icon`);
-            content.classList.toggle('hidden');
-            icon.classList.toggle('rotate-180');
-        }
+                <div class="bg-blue-50 border border-blue-200 rounded-2xl p-4 text-xs text-blue-900 font-semibold flex items-center gap-3">
+                  <i class="fa-solid fa-circle-info text-blue-600 text-lg shrink-0"></i>
+                  <span>यो केवल Sample Chapter मात्र हो। पूर्ण eBook खरिद पछि १००% Complete PDF File Instant WhatsApp मा प्राप्त हुनेछ।</span>
+                </div>
+              </div>
 
-        function startCountdownTimer() {
-            let h = 12, m = 45, s = 30;
-            setInterval(() => {
-                if (s > 0) {
-                    s--;
-                } else {
-                    s = 59;
-                    if (m > 0) {
-                        m--;
-                    } else {
-                        m = 59;
-                        if (h > 0) h--;
-                    }
-                }
-                document.getElementById('timer-hours').innerText = h < 10 ? '0' + h : h;
-                document.getElementById('timer-minutes').innerText = m < 10 ? '0' + m : m;
-                document.getElementById('timer-seconds').innerText = s < 10 ? '0' + s : s;
-            }, 1000);
-        }
+              <!-- Footer Buy Bar -->
+              <div class="bg-white px-6 py-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                  <span class="text-xs text-slate-500 font-bold block">Full Complete Ebook PDF</span>
+                  <span class="text-2xl font-black text-slate-900">NPR ${ebook.salePrice} <span class="text-xs text-slate-400 line-through">NPR ${ebook.regularPrice}</span></span>
+                </div>
 
-        function openSettingsModal() {
-            document.getElementById('settings-modal').classList.remove('hidden');
-        }
+                <div class="flex items-center gap-3 w-full sm:w-auto">
+                  <button onclick="closeEbookPreviewModal()" class="flex-1 sm:flex-none px-5 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs border border-slate-300">
+                    Close
+                  </button>
+                  <a href="${ebook.payUrl}" target="_blank" rel="noopener noreferrer" class="flex-1 sm:flex-none px-8 py-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs sm:text-sm shadow-glow-gold transition-all flex items-center justify-center gap-2 border border-amber-600">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>BUY NOW</span>
+                  </a>
+                </div>
+              </div>
 
-        function closeSettingsModal() {
-            document.getElementById('settings-modal').classList.add('hidden');
-        }
+            </div>
+          </div>
+        `;
+      }
 
-        function authenticateSettings() {
-            const input = document.getElementById('settings-pass-input').value;
-            const err = document.getElementById('settings-login-err');
+      window.switchModalPage = function(index) {
+        activePageIndex = index;
+        renderModalContent();
+      };
 
-            if (input === SETTINGS_PASS) {
-                isSettingsUnlocked = true;
-                err.classList.add('hidden');
-                document.getElementById('settings-login-screen').classList.add('hidden');
-                document.getElementById('settings-content-screen').classList.remove('hidden');
-                renderSettingsProductsTable();
-            } else {
-                err.classList.remove('hidden');
-            }
-        }
+      renderModalContent();
+    }
 
-        function renderSettingsProductsTable() {
-            const tbody = document.getElementById('settings-products-table');
-            tbody.innerHTML = products.map(p => `
-                <tr>
-                    <td class="p-3 font-semibold text-slate-800">${p.title}</td>
-                    <td class="p-3 text-slate-500">${p.category}</td>
-                    <td class="p-3 font-bold text-slate-900">NPR ${p.discountPrice}</td>
-                    <td class="p-3 text-emerald-600 font-bold">${p.regularPrice - p.discountPrice} NPR</td>
-                    <td class="p-3 text-right">
-                        <button onclick="deleteProduct('${p.id}')" class="text-rose-600 hover:text-rose-800 font-bold text-xs"><i class="fa-solid fa-trash"></i> Delete</button>
-                    </td>
-                </tr>
-            `).join('');
-        }
+    function closeEbookPreviewModal() {
+      const modalContainer = document.getElementById('modal-container');
+      if (modalContainer) modalContainer.innerHTML = '';
+    }
 
-        function deleteProduct(id) {
-            products = products.filter(p => p.id !== id);
-            localStorage.setItem('nasa_ebooks', JSON.stringify(products));
-            renderSettingsProductsTable();
-            renderCatalog();
-        }
+    function toggleFaq(id) {
+      const content = document.getElementById(`${id}-content`);
+      const icon = document.getElementById(`${id}-icon`);
+      if (content) {
+        content.classList.toggle('hidden');
+        if (icon) icon.classList.toggle('rotate-180');
+      }
+    }
 
-        function openAddNewProductForm() {
-            const newTitle = prompt("नयाँ Ebook को Title राख्नुहोस्:");
-            if (!newTitle) return;
-            const newPrice = prompt("Discount Price (NPR):", "499");
-            if (!newPrice) return;
+    function renderAdminView(container) {
+      if (!isAdminLoggedIn) {
+        renderAdminLogin(container);
+        return;
+      }
 
-            const newProd = {
-                id: "ebook-" + Date.now(),
-                title: newTitle,
-                subtitle: "Practical Guide for Nepali Learners",
-                category: "Computer Skills",
-                image: "https://placehold.co/400x560/1e293b/ffffff?text=" + encodeURIComponent(newTitle),
-                shortSummary: "नयाँ Ebook सङ्ग्रह...",
-                description: "विस्तृत विवरण...",
-                regularPrice: parseInt(newPrice) + 400,
-                discountPrice: parseInt(newPrice),
-                rating: 5.0,
-                reviewCount: 1,
-                featured: false,
-                isNew: true
-            };
+      container.innerHTML = `
+        <div class="min-h-screen bg-paper-50 text-slate-800 flex flex-col">
+          <header class="bg-white border-b border-slate-200 px-6 py-4 flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+              <span class="bg-brand-600 text-white px-3 py-1 rounded-lg text-xs font-black tracking-widest uppercase">CMS DASHBOARD</span>
+              <h1 class="font-black text-lg text-slate-900">MD. NS Ebook Store Management</h1>
+            </div>
 
-            products.push(newProd);
-            localStorage.setItem('nasa_ebooks', JSON.stringify(products));
-            renderSettingsProductsTable();
-            renderCatalog();
-        }
+            <div class="flex items-center gap-3">
+              <a href="#/" class="text-xs font-extrabold bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl border border-slate-300 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-globe"></i> View Storefront
+              </a>
+              <button onclick="handleAdminLogout()" class="text-xs font-extrabold bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-xl transition-colors">
+                Logout
+              </button>
+            </div>
+          </header>
 
-        function switchSettingsTab(tab) {
-            document.getElementById('set-tab-products').classList.add('hidden');
-            document.getElementById('set-tab-content').classList.add('hidden');
-            document.getElementById('set-tab-export').classList.add('hidden');
+          <div class="flex-1 max-w-7xl w-full mx-auto p-6 grid grid-cols-1 md:grid-cols-12 gap-6">
+            <aside class="md:col-span-3 bg-white rounded-2xl p-4 border border-slate-200 self-start space-y-2 shadow-sm">
+              <div class="text-[10px] font-black text-slate-400 uppercase tracking-widest px-3 py-1">NAVIGATION</div>
+              <nav class="space-y-1">
+                <button onclick="switchAdminTab('ebooks')" class="admin-tab-btn w-full text-left px-4 py-3 rounded-xl font-bold text-xs flex items-center gap-3 bg-brand-600 text-white shadow-glow-blue" id="tab-btn-ebooks">
+                  <i class="fa-solid fa-book"></i> Catalog Ebooks
+                </button>
+                <button onclick="switchAdminTab('settings')" class="admin-tab-btn w-full text-left px-4 py-3 rounded-xl font-bold text-xs flex items-center gap-3 text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="tab-btn-settings">
+                  <i class="fa-solid fa-sliders"></i> Store Info & Banner
+                </button>
+                <button onclick="switchAdminTab('security')" class="admin-tab-btn w-full text-left px-4 py-3 rounded-xl font-bold text-xs flex items-center gap-3 text-slate-600 hover:bg-slate-100 hover:text-slate-900" id="tab-btn-security">
+                  <i class="fa-solid fa-shield-halved"></i> Update Password
+                </button>
+              </nav>
+            </aside>
 
-            document.getElementById(`set-tab-${tab}`).classList.remove('hidden');
-        }
+            <main class="md:col-span-9 bg-white rounded-2xl p-6 border border-slate-200 shadow-sm" id="admin-panel-content">
+              <!-- Rendered via JS -->
+            </main>
+          </div>
+        </div>
+      `;
 
-        function exportCatalogData() {
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(products, null, 2));
-            const dlAnchorElem = document.createElement('a');
-            dlAnchorElem.setAttribute("href", dataStr);
-            dlAnchorElem.setAttribute("download", "MD_NASA_Ebooks_Catalog.json");
-            dlAnchorElem.click();
-        }
+      switchAdminTab('ebooks');
+    }
 
-        function resetDefaultData() {
-            localStorage.removeItem('nasa_ebooks');
-            products = DEFAULT_PRODUCTS;
-            renderSettingsProductsTable();
-            renderCatalog();
-        }
-    </script>
+    function renderAdminLogin(container) {
+      container.innerHTML = `
+        <div class="min-h-screen bg-paper-50 flex items-center justify-center p-4 relative">
+          <div class="bg-white rounded-3xl max-w-md w-full p-8 shadow-card-hover border border-slate-200 relative z-10">
+            <div class="text-center mb-6">
+              <div class="w-14 h-14 bg-gradient-to-tr from-brand-600 to-indigo-600 text-white rounded-2xl flex items-center justify-center font-black text-2xl mx-auto mb-3 shadow-glow-blue">
+                MN
+              </div>
+              <h2 class="text-2xl font-black text-slate-900">Admin CMS Portal</h2>
+              <p class="text-xs text-slate-500 font-semibold mt-1">MD. NS Ebook Store Management</p>
+            </div>
+
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Administrator Password</label>
+                <input type="password" id="admin-password-input" required placeholder="Enter secret admin password" class="w-full px-4 py-3 rounded-xl bg-paper-50 border border-slate-300 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium">
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-black text-sm shadow-glow-blue transition-all">
+                Login to Dashboard
+              </button>
+            </form>
+          </div>
+        </div>
+      `;
+    }
+
+    async function handleAdminLogin(e) {
+      e.preventDefault();
+      const input = document.getElementById('admin-password-input').value;
+      const hashedInput = await hashPassword(input);
+      const storedHash = localStorage.getItem('srain_admin_pass_hash') || INITIAL_ADMIN_HASH;
+
+      if (hashedInput === storedHash) {
+        isAdminLoggedIn = true;
+        sessionStorage.setItem('srain_admin_auth', 'true');
+        showToast("🔓 Access Granted", "success");
+        handleRouting();
+      } else {
+        showToast("❌ Invalid Password", "error");
+      }
+    }
+
+    function handleAdminLogout() {
+      isAdminLoggedIn = false;
+      sessionStorage.removeItem('srain_admin_auth');
+      showToast("🔒 Logged Out", "info");
+      handleRouting();
+    }
+
+    function switchAdminTab(tabName) {
+      document.querySelectorAll('.admin-tab-btn').forEach(btn => {
+        btn.classList.remove('bg-brand-600', 'text-white', 'shadow-glow-blue');
+        btn.classList.add('text-slate-600');
+      });
+      const activeBtn = document.getElementById(`tab-btn-${tabName}`);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-brand-600', 'text-white', 'shadow-glow-blue');
+        activeBtn.classList.remove('text-slate-600');
+      }
+
+      const content = document.getElementById('admin-panel-content');
+      if (!content) return;
+
+      if (tabName === 'ebooks') {
+        content.innerHTML = `
+          <div class="space-y-6">
+            <div class="border-b border-slate-200 pb-4 flex items-center justify-between">
+              <h3 class="text-lg font-black text-slate-900">Manage Catalog Ebooks (${appState.ebooks.length})</h3>
+              <button onclick="addNewEbookPrompt()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-black rounded-xl shadow-glow-blue">
+                + Add New Ebook
+              </button>
+            </div>
+
+            <div class="space-y-4">
+              ${appState.ebooks.map((b, idx) => `
+                <div class="p-4 bg-paper-50 border border-slate-200 rounded-2xl space-y-3">
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div>
+                      <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Title</label>
+                      <input type="text" id="eb-title-${idx}" value="${b.title}" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs font-bold text-slate-900">
+                    </div>
+                    <div>
+                      <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Category</label>
+                      <select id="eb-cat-${idx}" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs font-semibold text-slate-900">
+                        ${appState.categories.filter(c => c.id !== 'ALL').map(c => `
+                          <option value="${c.id}" ${b.category === c.id ? 'selected' : ''}>${c.label}</option>
+                        `).join('')}
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-3 gap-3">
+                    <div>
+                      <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Regular Price</label>
+                      <input type="number" id="eb-reg-${idx}" value="${b.regularPrice}" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs text-slate-900">
+                    </div>
+                    <div>
+                      <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Sale Price</label>
+                      <input type="number" id="eb-sale-${idx}" value="${b.salePrice}" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs font-bold text-amber-600">
+                    </div>
+                    <div>
+                      <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Discount %</label>
+                      <input type="number" id="eb-disc-${idx}" value="${b.discountPercent}" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs text-slate-900">
+                    </div>
+                  </div>
+
+                  <div>
+                    <label class="block text-[10px] font-bold text-slate-500 uppercase mb-1">Payment / Buy Link</label>
+                    <input type="url" id="eb-pay-${idx}" value="${b.payUrl}" class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-xs font-mono text-brand-700">
+                  </div>
+                </div>
+              `).join('')}
+            </div>
+
+            <button onclick="saveAdminEbooks()" class="px-6 py-3 bg-gradient-to-r from-brand-600 to-brand-700 text-white text-xs font-black rounded-xl shadow-glow-blue">
+              Save All Changes
+            </button>
+          </div>
+        `;
+      } else if (tabName === 'settings') {
+        content.innerHTML = `
+          <form onsubmit="saveStoreSettings(event)" class="space-y-4 max-w-lg">
+            <h3 class="text-lg font-black text-slate-900 border-b border-slate-200 pb-3">Store Information</h3>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Brand Name</label>
+              <input type="text" id="st-brand" value="${appState.storeInfo.brandName}" required class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 font-medium">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Author Name</label>
+              <input type="text" id="st-author" value="${appState.storeInfo.authorName}" required class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 font-medium">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp Support Link</label>
+              <input type="text" id="st-wa" value="${appState.storeInfo.supportWhatsapp}" required class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 font-mono">
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">Top Promo Ticker Text</label>
+              <input type="text" id="st-promo" value="${appState.storeInfo.promoText}" required class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 font-medium">
+            </div>
+            <button type="submit" class="px-6 py-3 bg-brand-600 text-white text-xs font-black rounded-xl shadow-glow-blue">
+              Save Settings
+            </button>
+          </form>
+        `;
+      } else if (tabName === 'security') {
+        content.innerHTML = `
+          <form onsubmit="handleChangePassword(event)" class="space-y-4 max-w-sm">
+            <h3 class="text-lg font-black text-slate-900 border-b border-slate-200 pb-3">Update CMS Password</h3>
+            <div>
+              <label class="block text-xs font-bold text-slate-700 mb-1">New Password</label>
+              <input type="password" id="new-admin-pass" required class="w-full px-3 py-2 rounded-xl bg-white border border-slate-300 text-sm text-slate-900 font-medium">
+            </div>
+            <button type="submit" class="px-6 py-3 bg-rose-600 text-white text-xs font-black rounded-xl shadow-sm">
+              Change Password
+            </button>
+          </form>
+        `;
+      }
+    }
+
+    function saveAdminEbooks() {
+      appState.ebooks.forEach((b, idx) => {
+        const titleEl = document.getElementById(`eb-title-${idx}`);
+        const catEl = document.getElementById(`eb-cat-${idx}`);
+        const regEl = document.getElementById(`eb-reg-${idx}`);
+        const saleEl = document.getElementById(`eb-sale-${idx}`);
+        const discEl = document.getElementById(`eb-disc-${idx}`);
+        const payEl = document.getElementById(`eb-pay-${idx}`);
+
+        if (titleEl) b.title = titleEl.value;
+        if (catEl) b.category = catEl.value;
+        if (regEl) b.regularPrice = Number(regEl.value);
+        if (saleEl) b.salePrice = Number(saleEl.value);
+        if (discEl) b.discountPercent = Number(discEl.value);
+        if (payEl) b.payUrl = payEl.value;
+      });
+
+      saveStore(appState);
+    }
+
+    function addNewEbookPrompt() {
+      const title = prompt("Enter New Ebook Title:");
+      if (!title) return;
+
+      appState.ebooks.unshift({
+        id: "eb-" + Date.now(),
+        title: title,
+        subtitle: "Practical Guide by MD. NS",
+        category: "COMPUTER",
+        author: appState.storeInfo.authorName,
+        regularPrice: 999,
+        salePrice: 499,
+        discountPercent: 50,
+        payUrl: "https://srain.com.np/PAYMENT-LINK",
+        summary: "Detailed practical ebook content.",
+        highlights: ["Practical Examples", "Step-by-step Guide"]
+      });
+
+      saveStore(appState);
+      switchAdminTab('ebooks');
+    }
+
+    function saveStoreSettings(e) {
+      e.preventDefault();
+      appState.storeInfo.brandName = document.getElementById('st-brand').value;
+      appState.storeInfo.authorName = document.getElementById('st-author').value;
+      appState.storeInfo.supportWhatsapp = document.getElementById('st-wa').value;
+      appState.storeInfo.promoText = document.getElementById('st-promo').value;
+
+      saveStore(appState);
+    }
+
+    async function handleChangePassword(e) {
+      e.preventDefault();
+      const newPass = document.getElementById('new-admin-pass').value;
+      if (newPass.length < 6) {
+        showToast("⚠️ Min 6 characters required", "error");
+        return;
+      }
+      const newHash = await hashPassword(newPass);
+      localStorage.setItem('srain_admin_pass_hash', newHash);
+      showToast("🔑 Password updated successfully!", "success");
+      e.target.reset();
+    }
+  </script>
 </body>
 </html>

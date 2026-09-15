@@ -89,17 +89,34 @@
             background: #F59E0B;
             border-radius: 4px;
         }
+
+        /* Continuous Right-to-Left Ticker Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 28s linear infinite;
+        }
+
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 <body class="min-h-screen pb-20 md:pb-0">
     <div id="root"></div>
 
     <script type="text/babel">
-        const { useState, useEffect, useMemo, useRef } = React;
+        const { useState, useEffect, useMemo } = React;
 
-        // CONSTANTS & INITIAL DATA
+        // BRAND CONFIGURATION
         const BRAND_CONFIG = {
-            storeName: "MD. NS Ebook Store",
+            storeName: "NS EBOOKS",
+            tagline: "MD. NS Practical Skills",
             authorName: "MD. NS (MD. NASA)",
             whatsappNumber: "+977 9702784684",
             whatsappRaw: "9779702784684",
@@ -118,13 +135,14 @@
             { id: "nepali-youth-career-guides", name: "Nepali Youth Career Guides", icon: "compass" }
         ];
 
+        // LINKED FLASH ANNOUNCEMENTS FOR THE TICKER
         const INITIAL_FLASH_ANNOUNCEMENTS = [
-            "Flash Sale — सीमित समयका लागि विशेष Ebook Offer!",
-            "Limited-Time Offer — आफ्नो Career का लागि सही Ebook छान्नुहोस्।",
-            "Ebook Combo Discount — धेरै Ebook सँगै लिएर बचत गर्नुहोस्।",
-            "New Ebook Launch — नयाँ Learning Resource चाँडै हेर्नुहोस्।",
-            "Free Preview — Sample Chapter पढेर निर्णय गर्नुहोस्।",
-            "Career Skills Campaign — आफ्नो Practical Skills विकास गर्नुहोस्।"
+            { text: "⚡ Flash Sale — Complete Computer Operator Guide (50% OFF)!", productId: "eb-001" },
+            { text: "🔥 Limited-Time Offer — Freelancing & Digital Skills Blueprint (54% OFF)!", productId: "eb-002" },
+            { text: "🎁 Super Combo Offer — Ultimate Career Bundle मा 75% सम्म बचत गर्नुहोस्!", bundleId: "bundle-ultimate-career" },
+            { text: "📚 LokSewa Exam Special — Smart GK & Exam Strategy Ebook!", productId: "eb-003" },
+            { text: "📈 Share Market Starter — NEPSE Beginner Guide केवल रु. ३९९ मा!", productId: "eb-004" },
+            { text: "🗣️ Career Boost — Confidence & Interview Success Guide!", productId: "eb-005" }
         ];
 
         const INITIAL_PRODUCTS = [
@@ -452,15 +470,13 @@
         function App() {
             // STATE MANAGEMENT
             const [products, setProducts] = useState(INITIAL_PRODUCTS);
-            const [flashAnnouncements, setFlashAnnouncements] = useState(INITIAL_FLASH_ANNOUNCEMENTS);
-            const [flashIndex, setFlashIndex] = useState(0);
-            const [isFlashPaused, setIsFlashPaused] = useState(false);
+            const [flashAnnouncements] = useState(INITIAL_FLASH_ANNOUNCEMENTS);
             
             const [selectedCategory, setSelectedCategory] = useState("all");
             const [searchQuery, setSearchQuery] = useState("");
             const [sortBy, setSortBy] = useState("featured");
 
-            const [cart, setCart] = useState([]); // [{ product, isCombo, isBundle, quantity, items }]
+            const [cart, setCart] = useState([]);
             const [isCartOpen, setIsCartOpen] = useState(false);
 
             const [activeModalProduct, setActiveModalProduct] = useState(null);
@@ -480,14 +496,26 @@
                 setTimeout(() => setToastMessage(null), 3000);
             };
 
-            // FLASH SALE TIMER EFFECT
-            useEffect(() => {
-                if (isFlashPaused) return;
-                const interval = setInterval(() => {
-                    setFlashIndex((prev) => (prev + 1) % flashAnnouncements.length);
-                }, 4000);
-                return () => clearInterval(interval);
-            }, [isFlashPaused, flashAnnouncements]);
+            const scrollToSection = (id) => {
+                const el = document.getElementById(id);
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // ANNOUNCEMENT CLICK HANDLER
+            const handleAnnouncementClick = (ann) => {
+                if (ann.productId) {
+                    const foundProd = products.find(p => p.id === ann.productId);
+                    if (foundProd) {
+                        setActiveModalProduct(foundProd);
+                        return;
+                    }
+                }
+                if (ann.bundleId) {
+                    scrollToSection('bundles');
+                    return;
+                }
+                scrollToSection('explore');
+            };
 
             // FILTER & SORT PRODUCTS
             const filteredProducts = useMemo(() => {
@@ -586,7 +614,6 @@
                 const selectedObjs = products.filter(p => comboSelectedIds.includes(p.id));
                 const regTotal = selectedObjs.reduce((acc, p) => acc + p.regularPrice, 0);
                 const saleTotal = selectedObjs.reduce((acc, p) => acc + p.salePrice, 0);
-                // Extra 15% bonus discount for custom combo of 2 or more
                 let bonusDiscount = 0;
                 if (selectedObjs.length >= 2) {
                     bonusDiscount = Math.round(saleTotal * 0.15);
@@ -602,11 +629,6 @@
                 };
             }, [comboSelectedIds, products]);
 
-            const scrollToSection = (id) => {
-                const el = document.getElementById(id);
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-            };
-
             return (
                 <div className="min-h-screen flex flex-col relative">
                     {/* TOAST NOTIFICATION */}
@@ -617,93 +639,80 @@
                         </div>
                     )}
 
-                    {/* 1. TOP FLASH SALE BAR */}
-                    <div className="bg-slate-900 text-amber-400 border-b border-amber-500/20 py-2 px-4 text-xs md:text-sm font-medium sticky top-0 z-40">
-                        <div className="max-w-7xl mx-auto flex items-center justify-between">
-                            <div className="flex items-center space-x-2 overflow-hidden">
-                                <span className="bg-amber-500 text-slate-950 font-bold px-2 py-0.5 rounded text-[10px] uppercase tracking-wider animate-pulse">
-                                    FLASH OFFER
-                                </span>
-                                <span className="truncate text-slate-100">
-                                    {flashAnnouncements[flashIndex]}
-                                </span>
+                    {}
+                    {/* 1. TOP COMPACT STICKY FLASH SALE BAR (AUTO SLIDING TICKER - NO BUTTONS) */}
+                    <div className="bg-slate-950 text-amber-400 border-b border-amber-500/30 py-1.5 px-2 text-xs font-semibold sticky top-0 z-40 overflow-hidden select-none">
+                        <div className="max-w-7xl mx-auto flex items-center">
+                            <div className="shrink-0 bg-amber-500 text-slate-950 font-black px-2.5 py-0.5 rounded text-[10px] uppercase tracking-wider z-10 shadow-sm flex items-center space-x-1 mr-2">
+                                <span>FLASH OFFER</span>
                             </div>
-                            <div className="flex items-center space-x-2 shrink-0">
-                                <button 
-                                    onClick={() => setFlashIndex((prev) => (prev - 1 + flashAnnouncements.length) % flashAnnouncements.length)}
-                                    className="p-1 hover:text-white transition"
-                                    title="Previous"
-                                >
-                                    ‹
-                                </button>
-                                <button 
-                                    onClick={() => setIsFlashPaused(!isFlashPaused)}
-                                    className="px-1.5 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[11px]"
-                                >
-                                    {isFlashPaused ? "Play" : "Pause"}
-                                </button>
-                                <button 
-                                    onClick={() => setFlashIndex((prev) => (prev + 1) % flashAnnouncements.length)}
-                                    className="p-1 hover:text-white transition"
-                                    title="Next"
-                                >
-                                    ›
-                                </button>
+                            
+                            {/* Smooth Auto Right-to-Left Sliding Text */}
+                            <div className="overflow-hidden relative w-full flex items-center">
+                                <div className="animate-marquee whitespace-nowrap flex items-center space-x-8">
+                                    {/* Duplicated list for seamless infinite loop */}
+                                    {[...flashAnnouncements, ...flashAnnouncements].map((ann, idx) => (
+                                        <span 
+                                            key={idx} 
+                                            onClick={() => handleAnnouncementClick(ann)}
+                                            className="inline-flex items-center space-x-1 text-slate-200 hover:text-amber-300 transition cursor-pointer hover:underline text-xs"
+                                        >
+                                            <span>{ann.text}</span>
+                                            <span className="text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/40 px-1.5 py-0.2 rounded ml-1 font-bold">हेर्नुहोस् ➔</span>
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* 2. COMPACT STICKY HEADER */}
-                    <header className="bg-white/95 backdrop-blur-md sticky top-[33px] z-30 border-b border-amber-200/80 shadow-sm">
-                        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-                            {/* Brand identity */}
-                            <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection('hero')}>
-                                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-md border border-amber-300">
-                                    NS
+                    {/* 2. STICKY HEADER (MD LOGO, NS EBOOKS, TAGLINE & CART, BEST TODAY) */}
+                    <header className="bg-white/95 backdrop-blur-md sticky top-[29px] z-30 border-b border-amber-200/80 shadow-sm">
+                        <div className="max-w-7xl mx-auto px-4 py-2.5 flex items-center justify-between">
+                            {/* Left side: MD logo, Store name & Tagline */}
+                            <div className="flex items-center space-x-3 cursor-pointer group" onClick={() => scrollToSection('hero')}>
+                                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-slate-950 font-black text-xl shadow-md border border-amber-300 shrink-0 group-hover:scale-105 transition-transform">
+                                    MD
                                 </div>
-                                <div>
-                                    <h1 className="font-extrabold text-base md:text-lg text-slate-900 leading-tight">
+                                <div className="flex flex-col justify-center">
+                                    <h1 className="font-extrabold text-base md:text-lg text-slate-900 leading-tight tracking-tight">
                                         {BRAND_CONFIG.storeName}
                                     </h1>
-                                    <p className="text-xs text-slate-500 font-medium">By {BRAND_CONFIG.authorName}</p>
+                                    <p className="text-[10px] md:text-xs text-amber-700 font-bold leading-none mt-0.5">
+                                        {BRAND_CONFIG.tagline}
+                                    </p>
                                 </div>
                             </div>
 
-                            {/* Header controls */}
-                            <div className="flex items-center space-x-2 md:space-x-4">
-                                <button 
-                                    onClick={() => scrollToSection('explore')}
-                                    className="hidden md:flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-amber-50 text-amber-800 hover:bg-amber-100 text-xs font-bold border border-amber-200 transition"
-                                >
-                                    <span>Browse Library</span>
-                                </button>
-                                
-                                <button 
-                                    onClick={() => scrollToSection('bundles')}
-                                    className="px-3 py-1.5 rounded-lg bg-amber-500 text-slate-950 hover:bg-amber-600 font-extrabold text-xs shadow-sm transition"
-                                >
-                                    🔥 Best Today
-                                </button>
-
+                            {/* Right side: CART Icon & 🔥 BEST TODAY ▶️ */}
+                            <div className="flex items-center space-x-2 md:space-x-3">
                                 <button 
                                     onClick={() => setIsCartOpen(true)}
-                                    className="relative p-2 rounded-xl bg-slate-100 hover:bg-amber-100 text-slate-800 transition"
+                                    className="relative p-2.5 rounded-xl bg-slate-100 hover:bg-amber-100 text-slate-800 transition flex items-center justify-center border border-slate-200/60"
                                     aria-label="Shopping Cart"
+                                    title="Shopping Cart"
                                 >
-                                    🛒
+                                    <span className="text-lg leading-none">🛒</span>
                                     {cartTotals.count > 0 && (
-                                        <span className="absolute -top-1 -right-1 bg-amber-600 text-white font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
+                                        <span className="absolute -top-1.5 -right-1.5 bg-amber-600 text-white font-black text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">
                                             {cartTotals.count}
                                         </span>
                                     )}
+                                </button>
+
+                                <button 
+                                    onClick={() => scrollToSection('bundles')}
+                                    className="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-extrabold text-xs shadow-sm transition flex items-center space-x-1 shrink-0"
+                                >
+                                    <span>🔥 BEST TODAY ▶️</span>
                                 </button>
                             </div>
                         </div>
                     </header>
 
+                    {}
                     {/* MAIN CONTENT AREA */}
                     <main className="flex-grow">
-                        {}
                         {/* 3. HERO SECTION */}
                         <section id="hero" className="bg-gradient-to-b from-amber-50/70 via-amber-50/30 to-white py-10 md:py-16 border-b border-amber-200/50">
                             <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
@@ -721,7 +730,7 @@
                                             <div className="mt-3 flex items-center justify-between text-xs px-1 text-slate-600 font-semibold">
                                                 <span>📄 {products[0]?.pages} Pages</span>
                                                 <span>📚 {products[0]?.chapters} Chapters</span>
-                                                <span className="text-amber-700 bg-amber-100 px-2 py-0.5 rounded">⭐ {products[0]?.rating} ({products[0]?.reviewCount})</span>
+                                                <span className="text-amber-700 bg-amber-100 px-2 py-0.5 rounded font-bold">⭐ {products[0]?.rating} ({products[0]?.reviewCount})</span>
                                             </div>
                                         </div>
                                     </div>
@@ -1463,7 +1472,6 @@
                         </button>
                     </nav>
 
-                    {}
                     {/* 16. PRODUCT DETAILS MODAL */}
                     {activeModalProduct && (
                         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs">
@@ -1604,7 +1612,7 @@
 
                                 <div className="space-y-3 text-xs">
                                     <h5 className="font-bold text-slate-800">Ebooks Pricing & Covers Editor</h5>
-                                    {products.map((p, idx) => (
+                                    {products.map((p) => (
                                         <div key={p.id} className="p-3 border rounded-xl space-y-2 bg-slate-50">
                                             <span className="font-bold text-slate-900">{p.title}</span>
                                             <div className="grid grid-cols-2 gap-2">

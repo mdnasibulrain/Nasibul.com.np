@@ -1817,7 +1817,8 @@ To learn more about my qualifications, practical experience, certifications, and
         </span>
     </div>
 
-    <!-- ================= RECRUITER CV POPUP MODAL ================= -->
+
+<!-- ================= RECRUITER CV POPUP MODAL ================= -->
 <div id="customCvModal" class="recruiter-modal-backdrop" style="display: none;">
   <div class="recruiter-modal">
     
@@ -2078,12 +2079,15 @@ To learn more about my qualifications, practical experience, certifications, and
   background: var(--gradient-white-bg);
   border-radius: 20px;
   width: 100%;
-  max-width: 680px;
+  max-width: 420px;
   padding: 28px 22px;
   box-shadow: 0 20px 40px rgba(8, 108, 129, 0.18);
   border: 1px solid rgba(255, 255, 255, 0.9);
   box-sizing: border-box;
   animation: modalSlideUp 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Screen se bahar na jaye aur Cross button visible rahe */
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 @keyframes modalSlideUp {
@@ -2094,8 +2098,8 @@ To learn more about my qualifications, practical experience, certifications, and
 /* Close Button (X) */
 .modal-close-btn {
   position: absolute;
-  top: 6px;
-  right: 10px;
+  top: 0px;
+  right: 0px;
   background: transparent;
   border: none;
   font-size: 1.5rem;
@@ -2105,6 +2109,8 @@ To learn more about my qualifications, practical experience, certifications, and
   line-height: 1;
   opacity: 0.75;
   transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10; /* Cross button hamesha sabse upar dikhega */
+  
 }
 
 .modal-close-btn:hover {
@@ -2136,8 +2142,8 @@ To learn more about my qualifications, practical experience, certifications, and
 
 /* Layout Grid */
 .recruiter-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column; /* Desktop/Tablet/Mobile sabhi me single column layout */
   gap: 14px;
   margin-bottom: 18px;
 }
@@ -2322,21 +2328,6 @@ To learn more about my qualifications, practical experience, certifications, and
   padding-top: 12px;
 }
 
-/* Mobile Breakpoints */
-@media (max-width: 560px) {
-  .recruiter-grid {
-    grid-template-columns: 1fr;
-  }
-  .recruiter-modal {
-    padding: 22px 14px 16px 14px;
-  }
-  .cv-card {
-    padding: 38px 12px 12px 12px;
-  }
-}
-
-
-
 </style>
 
 
@@ -2394,6 +2385,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </script>
 
+    
     <!-- scroll reveal  -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <!-- Swiper JS -->

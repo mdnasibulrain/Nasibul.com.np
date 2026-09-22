@@ -1817,275 +1817,565 @@ To learn more about my qualifications, practical experience, certifications, and
         </span>
     </div>
 
-    <!-- ================= CUSTOM CV DOWNLOAD MODAL ================= -->
-<div id="customCvModal" class="custom-modal">
-  <div class="custom-modal-content">
-    <span class="custom-close-btn">&times;</span>
-    <h3 class="modal-main-title">Select Position to Download CV</h3>
-    <p class="modal-subtitle">Choose the profile that matches your hiring requirements:</p>
     
-    <div class="custom-cv-options">
-      <!-- Option 1 -->
-      <a href="https://rb.gy/0vb6y4" class="btn custom-cv-link" target="_blank">
-        <div class="cv-text-wrapper">
-          <span class="cv-title">Accounting Clerk</span>
-          <span class="cv-tags">Tally Prime • QuickBooks • Ledgers</span>
-        </div>
-        <i class='bx bx-download cv-icon'></i>
-      </a>
+<!-- ================= RECRUITER CV POPUP MODAL ================= -->
+<div id="customCvModal" class="recruiter-modal-backdrop" style="display: none;">
+  <div class="recruiter-modal">
+    
+    <!-- Close Button -->
+    <button class="modal-close-btn custom-close-btn" aria-label="Close modal">✕</button>
 
-      <!-- Option 2 -->
-      <a href="https://rb.gy/xjg0z3" class="btn custom-cv-link" target="_blank">
-        <div class="cv-text-wrapper">
-          <span class="cv-title">Computer Operator</span>
-          <span class="cv-tags">MS Office • Data Entry • AI Tools</span>
-        </div>
-        <i class='bx bx-download cv-icon'></i>
-      </a>
-
-      <!-- Option 3 -->
-      <a href="https://rb.gy/dq4qtp" class="btn custom-cv-link" target="_blank">
-        <div class="cv-text-wrapper">
-          <span class="cv-title">Storekeeper / Inventory</span>
-          <span class="cv-tags">Stock Control • Logistics • Auditing</span>
-        </div>
-        <i class='bx bx-download cv-icon'></i>
-      </a>
-
-      <!-- Option 4 -->
-      <a href="https://rb.gy/btwufy" class="btn custom-cv-link" target="_blank">
-        <div class="cv-text-wrapper">
-          <span class="cv-title">Cashier / POS Operator</span>
-          <span class="cv-tags">POS Systems • Cash Flow • Transparency</span>
-        </div>
-        <i class='bx bx-download cv-icon'></i>
-      </a>
+    <!-- Modal Header -->
+    <div class="recruiter-header">
+      <h2>Select Position to Download CV</h2>
+      <p>Choose the profile that matches your hiring requirements:</p>
     </div>
-    
-    <p class="modal-footer-note">All CVs are updated with latest experience.</p>
+
+    <!-- CV Grid -->
+    <div class="recruiter-grid">
+      
+      <!-- 1. ACCOUNTS & BOOKKEEPING -->
+      <div class="cv-card">
+        <span class="corner-badge-left">Gulf Ready</span>
+        <span class="corner-badge-right">5+ Yrs Exp</span>
+        
+        <div>
+          <h3 class="cv-title">1. Accounts & Bookkeeping</h3>
+          <p class="cv-roles">Accounts Clerk • Junior Accountant • Bookkeeper</p>
+          
+          <div class="status-wrapper">
+            <span class="pulsing-dot"></span>
+            <span class="status-text">Immediate Joining</span>
+          </div>
+        </div>
+
+        <a href="https://rb.gy/0vb6y4" target="_blank" rel="noopener" class="cv-download-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          DOWNLOAD CV
+        </a>
+      </div>
+
+      <!-- 2. STORE & INVENTORY -->
+      <div class="cv-card">
+        <span class="corner-badge-left">Gulf Ready</span>
+        <span class="corner-badge-right">5+ Yrs Exp</span>
+        
+        <div>
+          <h3 class="cv-title">2. Store & Inventory</h3>
+          <p class="cv-roles">Storekeeper • Inventory Controller</p>
+          
+          <div class="status-wrapper">
+            <span class="pulsing-dot"></span>
+            <span class="status-text">Immediate Joining</span>
+          </div>
+        </div>
+
+        <a href="https://rb.gy/dq4qtp" target="_blank" rel="noopener" class="cv-download-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          DOWNLOAD CV
+        </a>
+      </div>
+
+      <!-- 3. CASHIER & POS OPERATIONS -->
+      <div class="cv-card">
+        <span class="corner-badge-left">Gulf Ready</span>
+        <span class="corner-badge-right">5+ Yrs Exp</span>
+        
+        <div>
+          <h3 class="cv-title">3. Cashier & POS Operations</h3>
+          <p class="cv-roles">Cashier • POS Operator</p>
+          
+          <div class="status-wrapper">
+            <span class="pulsing-dot"></span>
+            <span class="status-text">Immediate Joining</span>
+          </div>
+        </div>
+
+        <a href="https://rb.gy/btwufy" target="_blank" rel="noopener" class="cv-download-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          DOWNLOAD CV
+        </a>
+      </div>
+
+      <!-- 4. OFFICE & ADMIN SUPPORT -->
+      <div class="cv-card">
+        <span class="corner-badge-left">Gulf Ready</span>
+        <span class="corner-badge-right">5+ Yrs Exp</span>
+        
+        <div>
+          <h3 class="cv-title">4. Office & Admin Support</h3>
+          <p class="cv-roles">Computer Operator • Office Assistant • Office Boy • Messenger • Office Clerk</p>
+          
+          <div class="status-wrapper">
+            <span class="pulsing-dot"></span>
+            <span class="status-text">Immediate Joining</span>
+          </div>
+        </div>
+
+        <a href="https://rb.gy/xjg0z3" target="_blank" rel="noopener" class="cv-download-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          DOWNLOAD CV
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Trust Footer Reference -->
+    <div class="recruiter-footer-note">
+      All CVs are updated with latest experience.
+    </div>
+
   </div>
 </div>
 
-    <div id="customDocumentModal" class="custom-modal">
-  <div class="custom-modal-content">
-    <span class="custom-doc-close-btn" style="position: absolute; right: 20px; top: 12px; font-size: 30px; cursor: pointer; color: #888; transition: 0.3s;">&times;</span>
-    <h3 class="modal-main-title">Select Position to Download Documents</h3>
-    <p class="modal-subtitle">Choose the position to download certificates & experience letters:</p>
+<!-- ================= RECRUITER DOCUMENT POPUP MODAL ================= -->
+<div id="customDocumentModal" class="recruiter-modal-backdrop" style="display: none;">
+  <div class="recruiter-modal">
     
-    <div class="custom-cv-options">
-      <a href="https://rb.gy/1hbnge" class="btn custom-cv-link" target="_blank">
-        <div class="cv-text-wrapper">
-          <span class="cv-title">Accounting Clerk Docs</span>
-          
-        </div>
-        <i class='bx bx-download cv-icon'></i>
-      </a>
+    <!-- Close Button -->
+    <button class="modal-close-btn custom-doc-close-btn" aria-label="Close modal">✕</button>
 
-      <a href="https://rb.gy/t4f9vv" class="btn custom-cv-link" target="_blank">
-        <div class="cv-text-wrapper">
-          <span class="cv-title">Computer Operator Docs</span>
-          
-        </div>
-        <i class='bx bx-download cv-icon'></i>
-      </a>
-
-      <a href="https://rb.gy/wfq1u3" class="btn custom-cv-link" target="_blank">
-        <div class="cv-text-wrapper">
-          <span class="cv-title">Storekeeper Docs</span>
-          
-        </div>
-        <i class='bx bx-download cv-icon'></i>
-      </a>
-
-      <a href="https://rb.gy/00qwil" class="btn custom-cv-link" target="_blank">
-        <div class="cv-text-wrapper">
-          <span class="cv-title">Cashier Docs</span>
-          
-        </div>
-        <i class='bx bx-download cv-icon'></i>
-      </a>
+    <!-- Modal Header -->
+    <div class="recruiter-header">
+      <h2>Select Position to Download Documents</h2>
+      <p>Choose the profile to download certificates & experience letters:</p>
     </div>
-    
-    <p class="modal-footer-note">All documents are verified and scanned in high resolution.</p>
+
+    <!-- Document Grid -->
+    <div class="recruiter-grid">
+      
+      <!-- 1. ACCOUNTS & BOOKKEEPING DOCS -->
+      <div class="cv-card">
+        <span class="corner-badge-left">Verified</span>
+        <span class="corner-badge-right">PDF Format</span>
+        
+        <div>
+          <h3 class="cv-title">1. Accounts & Bookkeeping</h3>
+          <p class="cv-roles">Certificates & Experience Letters</p>
+          
+          <div class="status-wrapper">
+            <span class="pulsing-dot"></span>
+            <span class="status-text">High Resolution</span>
+          </div>
+        </div>
+
+        <a href="https://rb.gy/1hbnge" target="_blank" rel="noopener" class="cv-download-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          DOWNLOAD DOCS
+        </a>
+      </div>
+
+      <!-- 2. STORE & INVENTORY DOCS -->
+      <div class="cv-card">
+        <span class="corner-badge-left">Verified</span>
+        <span class="corner-badge-right">PDF Format</span>
+        
+        <div>
+          <h3 class="cv-title">2. Store & Inventory</h3>
+          <p class="cv-roles">Certificates & Experience Letters</p>
+          
+          <div class="status-wrapper">
+            <span class="pulsing-dot"></span>
+            <span class="status-text">High Resolution</span>
+          </div>
+        </div>
+
+        <a href="https://rb.gy/wfq1u3" target="_blank" rel="noopener" class="cv-download-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          DOWNLOAD DOCS
+        </a>
+      </div>
+
+      <!-- 3. CASHIER & POS OPERATIONS DOCS -->
+      <div class="cv-card">
+        <span class="corner-badge-left">Verified</span>
+        <span class="corner-badge-right">PDF Format</span>
+        
+        <div>
+          <h3 class="cv-title">3. Cashier & POS Operations</h3>
+          <p class="cv-roles">Certificates & Experience Letters</p>
+          
+          <div class="status-wrapper">
+            <span class="pulsing-dot"></span>
+            <span class="status-text">High Resolution</span>
+          </div>
+        </div>
+
+        <a href="https://rb.gy/00qwil" target="_blank" rel="noopener" class="cv-download-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          DOWNLOAD DOCS
+        </a>
+      </div>
+
+      <!-- 4. OFFICE & ADMIN SUPPORT DOCS -->
+      <div class="cv-card">
+        <span class="corner-badge-left">Verified</span>
+        <span class="corner-badge-right">PDF Format</span>
+        
+        <div>
+          <h3 class="cv-title">4. Office & Admin Support</h3>
+          <p class="cv-roles">Certificates & Experience Letters</p>
+          
+          <div class="status-wrapper">
+            <span class="pulsing-dot"></span>
+            <span class="status-text">High Resolution</span>
+          </div>
+        </div>
+
+        <a href="https://rb.gy/t4f9vv" target="_blank" rel="noopener" class="cv-download-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          DOWNLOAD DOCS
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Trust Footer Reference -->
+    <div class="recruiter-footer-note">
+      All documents are verified and scanned in high resolution.
+    </div>
+
   </div>
 </div>
 
 
 
     <style>
-/* Custom Modal Background */
-.custom-modal {
-  display: none; 
-  position: fixed;
-  z-index: 99999; 
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
+
+:root {
+  --bg-color: #e3edf7;
+  --surface-light: #ffffff;
+  --gradient-white-bg: linear-gradient(0deg, #ffffff 0%, #edf4fa 51%, #e5eef7 100%);
+  --primary: #086c81;
+  --main-color: #088178;
+  --secondary-green: #08815a;
+  --gradient-color-bg: linear-gradient(180deg, #084e81 0%, #08815a 51%, #086c81 100%);
+  --font-color: #90979f;
+  --text-dark: #222222;
+  --hover-box-shadow: rgba(236, 254, 253, 0.9) 0px 8px 18px, rgba(8, 129, 120, 0.35) 0px 5px 10px;
 }
 
-/* Modal Content Box */
-.custom-modal-content {
-  background-color: #ffffff;
-  margin: 10% auto;
-  padding: 35px 25px 25px 25px;
-  border-radius: 14px;
-  width: 92%;
-  max-width: 440px;
-  text-align: center;
+/* Backdrop & Fixed Overlay */
+.recruiter-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background: rgba(8, 78, 129, 0.45);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  font-family: 'Poppins', 'Roboto', sans-serif;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.recruiter-modal {
   position: relative;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  animation: modalSlideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: var(--gradient-white-bg);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 680px;
+  padding: 28px 22px;
+  box-shadow: 0 20px 40px rgba(8, 108, 129, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-sizing: border-box;
+  animation: modalSlideUp 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @keyframes modalSlideUp {
-  from {transform: translateY(40px); opacity: 0;}
-  to {transform: translateY(0); opacity: 1;}
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
-/* Titles & Text */
-.modal-main-title {
-  color: #086c81; 
-  font-size: 22px; 
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.modal-subtitle {
-  color: #666;
-  font-size: 13px;
-  margin-bottom: 25px;
-}
-.modal-footer-note {
-  font-size: 11px;
-  color: #999;
-  margin-top: 15px;
-  font-style: italic;
-}
-
-/* Close Button */
-.custom-close-btn {
+/* Close Button (X) */
+.modal-close-btn {
   position: absolute;
+  top: 18px;
   right: 20px;
-  top: 12px;
-  font-size: 30px;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
   cursor: pointer;
-  color: #888;
-  transition: 0.3s;
+  line-height: 1;
+  opacity: 0.75;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
-.custom-close-btn:hover { color: #ff4d4d; }
-        
-/* Wrapper Options */
-.custom-cv-options {
+
+.modal-close-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Header Elements */
+.recruiter-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.recruiter-header h2 {
+  color: var(--primary);
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.recruiter-header p {
+  color: var(--font-color);
+  font-size: 0.85rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Layout Grid */
+.recruiter-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+/* Individual Cards */
+.cv-card {
+  position: relative;
+  background: var(--surface-light);
+  border-radius: 14px;
+  padding: 34px 14px 14px 14px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-}
-
-/* Update this specific part in your existing CSS */
-
-/* Recruiter Attracting Buttons */
-.custom-cv-link {
-  display: flex !important;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  padding: 14px 20px !important;
-  box-sizing: border-box;
-  text-align: left !important;
-  border-radius: 8px !important;
-  background: #f8fbfb !important;
-  border: 1px solid #e1ecee !important;
-  color: #333 !important; /* Default text color */
-  text-decoration: none;
-  transition: all 0.3s ease !important;
+  text-align: center;
+  border: 1px solid rgba(8, 108, 129, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease-in-out;
+  overflow: hidden;
 }
 
-/* Hover Effect: Forcefully changing all text to white */
-.custom-cv-link:hover, 
-.custom-cv-link:hover .cv-title, 
-.custom-cv-link:hover .cv-tags, 
-.custom-cv-link:hover .cv-icon {
-  background: #086c81 !important;
-  color: #ffffff !important; /* Yahan color white set kar diya hai */
-  border-color: #086c81 !important;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(8, 108, 129, 0.2);
+.cv-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--hover-box-shadow);
+  border-color: var(--main-color);
 }
 
-.cv-text-wrapper {
-  display: flex;
-  flex-direction: column;
+/* Corner Badges */
+.corner-badge-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--bg-color);
+  color: var(--primary);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-bottom-right-radius: 10px;
+  border-right: 1px solid rgba(8, 108, 129, 0.1);
+  border-bottom: 1px solid rgba(8, 108, 129, 0.1);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
 }
 
+.corner-badge-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-bottom-left-radius: 10px;
+  letter-spacing: 0.3px;
+}
+
+/* Typography & Content */
 .cv-title {
-  font-size: 16px;
+  color: var(--primary);
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin: 4px 0 6px 0;
+  text-transform: uppercase;
+  line-height: 1.25;
+  letter-spacing: 0.4px;
+}
+
+.cv-roles {
+  color: var(--text-dark);
+  font-size: 0.78rem;
   font-weight: 600;
-  display: block;
+  margin: 0 0 10px 0;
+  line-height: 1.35;
 }
 
-.cv-tags {
-  font-size: 11px;
-  opacity: 0.7;
-  margin-top: 3px;
-  font-weight: 400;
+/* Status Indicator */
+.status-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(8, 129, 90, 0.08);
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
 }
 
-.cv-icon {
-  font-size: 20px;
+.pulsing-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--secondary-green);
+  border-radius: 50%;
+  position: relative;
 }
+
+.pulsing-dot::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 13px;
+  height: 13px;
+  background-color: var(--secondary-green);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: pulse 1.6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.5); opacity: 0.9; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.status-text {
+  color: var(--secondary-green);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Action Button */
+.cv-download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--gradient-color-bg);
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 8px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.cv-download-btn:hover {
+  opacity: 0.92;
+  box-shadow: 0 4px 10px rgba(8, 78, 129, 0.3);
+}
+
+.cv-download-btn svg {
+  width: 13px;
+  height: 13px;
+  fill: currentColor;
+}
+
+/* Footer Note */
+.recruiter-footer-note {
+  text-align: center;
+  color: var(--font-color);
+  font-size: 0.78rem;
+  font-style: italic;
+  font-weight: 500;
+  margin-top: 6px;
+  border-top: 1px dashed rgba(8, 108, 129, 0.15);
+  padding-top: 12px;
+}
+
+/* Mobile Breakpoints */
+@media (max-width: 560px) {
+  .recruiter-grid {
+    grid-template-columns: 1fr;
+  }
+  .recruiter-modal {
+    padding: 22px 14px 16px 14px;
+  }
+  .cv-card {
+    padding: 32px 12px 12px 12px;
+  }
+}
+
+        
 </style>
 
 
     <script>
+
 document.addEventListener("DOMContentLoaded", function() {
-  // === CV Modal Logic ===
-  const cvButtons = document.querySelectorAll(".d-CV");
+  // Elements for CV Modal
+  const cvTriggers = document.querySelectorAll(".d-CV");
   const customCvModal = document.getElementById("customCvModal");
   const closeCvBtn = document.querySelector(".custom-close-btn");
 
-  cvButtons.forEach(button => {
-    button.addEventListener("click", function(event) {
-      event.preventDefault(); 
-      customCvModal.style.display = "block";
-    });
-  });
-
-  closeCvBtn.addEventListener("click", function() {
-    customCvModal.style.display = "none";
-  });
-
-
-  // === Document Modal Logic (Using ID Only) ===
+  // Elements for Document Modal
   const docTrigger = document.getElementById("documentMenuTrigger");
   const customDocModal = document.getElementById("customDocumentModal");
   const closeDocBtn = document.querySelector(".custom-doc-close-btn");
 
-  if(docTrigger) {
+  // Toggle CV Modal
+  cvTriggers.forEach(button => {
+    button.addEventListener("click", function(event) {
+      event.preventDefault();
+      if (customCvModal) customCvModal.style.display = "flex";
+    });
+  });
+
+  if (closeCvBtn) {
+    closeCvBtn.addEventListener("click", function() {
+      if (customCvModal) customCvModal.style.display = "none";
+    });
+  }
+
+  // Toggle Document Modal
+  if (docTrigger) {
     docTrigger.addEventListener("click", function(event) {
       event.preventDefault();
-      customDocModal.style.display = "block";
+      if (customDocModal) customDocModal.style.display = "flex";
     });
   }
 
-  if(closeDocBtn) {
+  if (closeDocBtn) {
     closeDocBtn.addEventListener("click", function() {
-      customDocModal.style.display = "none";
+      if (customDocModal) customDocModal.style.display = "none";
     });
   }
 
-
-  // === Global Window Click (To close modals when clicking outside) ===
+  // Close modals on clicking outside content area
   window.addEventListener("click", function(event) {
-    if (event.target == customCvModal) {
+    if (event.target === customCvModal) {
       customCvModal.style.display = "none";
     }
-    if (event.target == customDocModal) {
+    if (event.target === customDocModal) {
       customDocModal.style.display = "none";
     }
   });
 });
+
+
+        
 </script>
 
 
